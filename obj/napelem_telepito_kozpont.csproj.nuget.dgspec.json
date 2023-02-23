@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
+    "C:\\Users\\DirrDurrKandúr\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
+    "C:\\Users\\DirrDurrKandúr\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectUniqueName": "C:\\Users\\DirrDurrKandúr\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "projectName": "napelem_telepito_kozpont",
-        "projectPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
-        "packagesPath": "C:\\Users\\mesza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\obj\\",
+        "projectPath": "C:\\Users\\DirrDurrKandúr\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "packagesPath": "C:\\Users\\DirrDurrKandúr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DirrDurrKandúr\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mesza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DirrDurrKandúr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

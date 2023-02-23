@@ -28,43 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            testLabel = new Label();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(409, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(12, 388);
+            button1.Name = "button1";
+            button1.Size = new Size(116, 50);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 23);
-            this.textBox1.TabIndex = 1;
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(257, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // testLabel
+            // 
+            testLabel.AutoSize = true;
+            testLabel.Location = new Point(488, 140);
+            testLabel.Name = "testLabel";
+            testLabel.Size = new Size(38, 15);
+            testLabel.TabIndex = 2;
+            testLabel.Text = "label1";
             // 
             // Fomenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Name = "Fomenu";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(testLabel);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Name = "Fomenu";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
         private TextBox textBox1;
+        private Label testLabel;
     }
 }
