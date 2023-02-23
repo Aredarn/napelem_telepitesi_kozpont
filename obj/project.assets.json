@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programos\\Unfinished\\napelemszoftver\\napelem_telepito_kozpont\\napelem_telepito_kozpont.csproj",
+      "projectUniqueName": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
       "projectName": "napelem_telepito_kozpont",
-      "projectPath": "D:\\Programos\\Unfinished\\napelemszoftver\\napelem_telepito_kozpont\\napelem_telepito_kozpont.csproj",
+      "projectPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
       "packagesPath": "C:\\Users\\mesza\\.nuget\\packages\\",
-      "outputPath": "D:\\Programos\\Unfinished\\napelemszoftver\\napelem_telepito_kozpont\\obj\\",
+      "outputPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mesza\\AppData\\Roaming\\NuGet\\NuGet.Config",
