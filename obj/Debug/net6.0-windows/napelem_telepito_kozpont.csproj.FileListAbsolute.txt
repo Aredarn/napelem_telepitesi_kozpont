@@ -1,0 +1,17 @@
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\bin\Debug\net6.0-windows\napelem_telepito_kozpont.exe
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\bin\Debug\net6.0-windows\napelem_telepito_kozpont.deps.json
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\bin\Debug\net6.0-windows\napelem_telepito_kozpont.runtimeconfig.json
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\bin\Debug\net6.0-windows\napelem_telepito_kozpont.dll
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\bin\Debug\net6.0-windows\napelem_telepito_kozpont.pdb
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.csproj.AssemblyReference.cache
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.Form1.resources
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.csproj.GenerateResource.cache
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.AssemblyInfoInputs.cache
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.AssemblyInfo.cs
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.csproj.CoreCompileInputs.cache
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.dll
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\refint\napelem_telepito_kozpont.dll
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.pdb
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.genruntimeconfig.cache
+D:\Programos\Unfinished\napelemszoftver\napelem_telepito_kozpont\obj\Debug\net6.0-windows\ref\napelem_telepito_kozpont.dll
