@@ -9,9 +9,9 @@ namespace napelem_telepito_kozpont
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MyDbContext x = new MyDbContext();
+            UserController x = new UserController();
 
-            string result = x.TestSqlConnection();
+            string result = x.TestSqlConnection(usernameBox.Text);
             testLabel.Text = result;
         }
     }

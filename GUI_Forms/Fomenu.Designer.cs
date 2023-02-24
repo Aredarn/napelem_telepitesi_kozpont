@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            textBox1 = new TextBox();
+            usernameBox = new TextBox();
             testLabel = new Label();
             SuspendLayout();
             // 
@@ -43,12 +43,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox1
+            // usernameBox
             // 
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 23);
-            textBox1.TabIndex = 1;
+            usernameBox.Location = new Point(12, 12);
+            usernameBox.Name = "usernameBox";
+            usernameBox.Size = new Size(257, 23);
+            usernameBox.TabIndex = 1;
             // 
             // testLabel
             // 
@@ -65,7 +65,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(testLabel);
-            Controls.Add(textBox1);
+            Controls.Add(usernameBox);
             Controls.Add(button1);
             Name = "Fomenu";
             Text = "Form1";
@@ -76,7 +76,7 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox1;
+        private TextBox usernameBox;
         private Label testLabel;
     }
 }
