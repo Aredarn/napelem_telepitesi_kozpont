@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laura\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
+    "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laura\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
+    "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laura\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectUniqueName": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "projectName": "napelem_telepito_kozpont",
-        "projectPath": "C:\\Users\\Laura\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
-        "packagesPath": "C:\\Users\\Laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laura\\Source\\Repos\\napelem_telepitesi_kozpont\\obj\\",
+        "projectPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "packagesPath": "C:\\Users\\boton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Laura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\boton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -77,7 +77,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
