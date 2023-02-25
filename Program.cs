@@ -10,6 +10,7 @@ namespace napelem_telepito_kozpont
         {
             // To customize application configuration such as set high DPI settings or default font,
             // JANI
+            // helo<3
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Fomenu());
