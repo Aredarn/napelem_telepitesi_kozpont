@@ -34,35 +34,36 @@
             testLabel = new Label();
             userBindingSource = new BindingSource(components);
             userControllerBindingSource = new BindingSource(components);
+            label_Name = new Label();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userControllerBindingSource).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(12, 388);
+            button1.Location = new Point(328, 162);
             button1.Name = "button1";
-            button1.Size = new Size(116, 50);
+            button1.Size = new Size(90, 31);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Névkeresés";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(12, 12);
+            usernameBox.Location = new Point(109, 12);
             usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(257, 23);
+            usernameBox.Size = new Size(309, 23);
             usernameBox.TabIndex = 1;
             // 
             // testLabel
             // 
             testLabel.AutoSize = true;
-            testLabel.Location = new Point(106, 103);
+            testLabel.Location = new Point(12, 59);
             testLabel.Name = "testLabel";
-            testLabel.Size = new Size(38, 15);
+            testLabel.Size = new Size(81, 15);
             testLabel.TabIndex = 2;
-            testLabel.Text = "label1";
+            testLabel.Text = "*Információk*";
             // 
             // userBindingSource
             // 
@@ -72,11 +73,21 @@
             // 
             userControllerBindingSource.DataSource = typeof(UserController);
             // 
+            // label_Name
+            // 
+            label_Name.AutoSize = true;
+            label_Name.Location = new Point(12, 15);
+            label_Name.Name = "label_Name";
+            label_Name.Size = new Size(91, 15);
+            label_Name.TabIndex = 3;
+            label_Name.Text = "Név megadása: ";
+            // 
             // Fomenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(430, 205);
+            Controls.Add(label_Name);
             Controls.Add(testLabel);
             Controls.Add(usernameBox);
             Controls.Add(button1);
@@ -95,5 +106,6 @@
         private Label testLabel;
         private BindingSource userBindingSource;
         private BindingSource userControllerBindingSource;
+        private Label label_Name;
     }
 }
