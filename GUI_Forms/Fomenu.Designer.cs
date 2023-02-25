@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             usernameBox = new TextBox();
             testLabel = new Label();
+            userBindingSource = new BindingSource(components);
+            userControllerBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)userControllerBindingSource).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -53,11 +58,19 @@
             // testLabel
             // 
             testLabel.AutoSize = true;
-            testLabel.Location = new Point(488, 140);
+            testLabel.Location = new Point(106, 103);
             testLabel.Name = "testLabel";
             testLabel.Size = new Size(38, 15);
             testLabel.TabIndex = 2;
             testLabel.Text = "label1";
+            // 
+            // userBindingSource
+            // 
+            userBindingSource.DataSource = typeof(User);
+            // 
+            // userControllerBindingSource
+            // 
+            userControllerBindingSource.DataSource = typeof(UserController);
             // 
             // Fomenu
             // 
@@ -69,6 +82,8 @@
             Controls.Add(button1);
             Name = "Fomenu";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userControllerBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -78,5 +93,7 @@
         private Button button1;
         private TextBox usernameBox;
         private Label testLabel;
+        private BindingSource userBindingSource;
+        private BindingSource userControllerBindingSource;
     }
 }
