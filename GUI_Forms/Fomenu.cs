@@ -9,10 +9,10 @@ namespace napelem_telepito_kozpont
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserController x = new UserController();
-
-            string result = x.TestSqlConnection(usernameBox.Text);
-            testLabel.Text = result;
+            string sqlFilePath = @"C:\Users\DirrDurrKandúr\source\repos\napelem_telepitesi_kozpont\DataBase\napelem.sql";
+            string databaseName = "napelem_rendszer";
+            UserController.LoadDatabaseFromSQLFile(sqlFilePath, databaseName);
+            testLabel.Text = "Database loaded successfully!";
         }
     }
 }

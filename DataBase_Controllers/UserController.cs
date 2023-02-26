@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 public class UserController : DbContext
@@ -36,6 +37,21 @@ public class UserController : DbContext
             }
         }
     }
+
+    public static void LoadDatabaseFromSQLFile(string sqlFilePath, string databaseName)
+    {
+        string sqlConnectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog={databaseName};Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        using (SqlConnection connection = new SqlConnection(sqlConnectionString))
+        {
+            connection.Open();
+            string script = File.ReadAllText(sqlFilePath);
+            SqlCommand command = new SqlCommand(script, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+    }
+
+
 }
 
 public class User
