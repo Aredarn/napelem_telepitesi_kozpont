@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class UserController : DbContext
 {
-    private readonly string _connectionString = "Data Source=DESKTOP-EBBB9JL\\SQLEXPRESS01;Initial Catalog=napelem_rendszer;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    private readonly string _connectionString = "Server=(localdb)\\mssqllocaldb;Database=aspnet-53bc9b9d-9d6a-45d4-8429-2a2761773502;Trusted_Connection=True;MultipleActiveResultSets=true";
 
     public DbSet<User> Users { get; set; }
 
@@ -20,37 +20,21 @@ public class UserController : DbContext
         modelBuilder.Entity<User>().HasKey(u => u.Name);
     }
 
-    public string TestSqlConnection(string userName)
+    public int TestSqlConnection(string name)
     {
         using (var context = new UserController())
         {
-            var user = context.Users.FirstOrDefault(u => u.Name == userName);
-
+            var user = context.Users.FirstOrDefault(u => u.Name == name);
             if (user != null)
             {
-                string hashedPassword = BitConverter.ToString(user.Password).Replace("-", "");
-                return $"User '{user.Name}' has hashed password '{hashedPassword}'";
+                return user.Role;
             }
             else
             {
-                return $"No user found with name '{userName}'";
+                return -1;
             }
         }
     }
-
-    public static void LoadDatabaseFromSQLFile(string sqlFilePath, string databaseName)
-    {
-        string sqlConnectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog={databaseName};Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        using (SqlConnection connection = new SqlConnection(sqlConnectionString))
-        {
-            connection.Open();
-            string script = File.ReadAllText(sqlFilePath);
-            SqlCommand command = new SqlCommand(script, connection);
-            command.ExecuteNonQuery();
-            connection.Close();
-        }
-    }
-
 
 }
 

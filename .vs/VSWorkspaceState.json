@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GUI_Forms"
   ],
-  "SelectedNode": "\\napelem_telepito_kozpont.sln",
+  "SelectedNode": "\\GUI_Forms\\Fomenu.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -28,75 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            button1 = new Button();
-            usernameBox = new TextBox();
-            testLabel = new Label();
-            userBindingSource = new BindingSource(components);
-            userControllerBindingSource = new BindingSource(components);
-            label_Name = new Label();
-            ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)userControllerBindingSource).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.button1 = new System.Windows.Forms.Button();
+            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(328, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 31);
-            button1.TabIndex = 0;
-            button1.Text = "Névkeresés";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(328, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 31);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Névkeresés";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(109, 12);
-            usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(309, 23);
-            usernameBox.TabIndex = 1;
+            this.usernameBox.Location = new System.Drawing.Point(109, 12);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(309, 23);
+            this.usernameBox.TabIndex = 1;
             // 
             // testLabel
             // 
-            testLabel.AutoSize = true;
-            testLabel.Location = new Point(12, 59);
-            testLabel.Name = "testLabel";
-            testLabel.Size = new Size(81, 15);
-            testLabel.TabIndex = 2;
-            testLabel.Text = "*Információk*";
-            // 
-            // userBindingSource
-            // 
-            userBindingSource.DataSource = typeof(User);
-            // 
-            // userControllerBindingSource
-            // 
-            userControllerBindingSource.DataSource = typeof(UserController);
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(12, 59);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(81, 15);
+            this.testLabel.TabIndex = 2;
+            this.testLabel.Text = "*Információk*";
             // 
             // label_Name
             // 
-            label_Name.AutoSize = true;
-            label_Name.Location = new Point(12, 15);
-            label_Name.Name = "label_Name";
-            label_Name.Size = new Size(91, 15);
-            label_Name.TabIndex = 3;
-            label_Name.Text = "Név megadása: ";
+            this.label_Name.AutoSize = true;
+            this.label_Name.Location = new System.Drawing.Point(12, 15);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(91, 15);
+            this.label_Name.TabIndex = 3;
+            this.label_Name.Text = "Név megadása: ";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(User);
             // 
             // Fomenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 205);
-            Controls.Add(label_Name);
-            Controls.Add(testLabel);
-            Controls.Add(usernameBox);
-            Controls.Add(button1);
-            Name = "Fomenu";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)userControllerBindingSource).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(512, 231);
+            this.Controls.Add(this.label_Name);
+            this.Controls.Add(this.testLabel);
+            this.Controls.Add(this.usernameBox);
+            this.Controls.Add(this.button1);
+            this.Name = "Fomenu";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -104,8 +98,7 @@
         private Button button1;
         private TextBox usernameBox;
         private Label testLabel;
-        private BindingSource userBindingSource;
-        private BindingSource userControllerBindingSource;
         private Label label_Name;
+        private BindingSource userBindingSource;
     }
 }
