@@ -1,4 +1,7 @@
-﻿namespace napelem_telepito_kozpont
+﻿using napelem_telepito_kozpont.DataLayer.Models;
+using napelem_telepito_kozpont.DataLayer.Repositories;
+
+namespace napelem_telepito_kozpont
 {
     partial class Fomenu
     {
@@ -67,11 +70,11 @@
             // 
             // userBindingSource
             // 
-            userBindingSource.DataSource = typeof(User);
+            userBindingSource.DataSource = typeof(Cat);
             // 
             // userControllerBindingSource
             // 
-            userControllerBindingSource.DataSource = typeof(UserController);
+            userControllerBindingSource.DataSource = typeof(CatParadiseRepository);
             // 
             // label_Name
             // 
