@@ -9,7 +9,7 @@ namespace napelem_telepito_kozpont
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //helo
         }
 
         private void button1_Click_1(object sender, EventArgs e)
