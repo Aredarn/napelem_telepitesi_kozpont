@@ -15,9 +15,12 @@ namespace napelem_telepito_kozpont.Backend.DatabaseConnection
         //egyszer elég
 
         //Creates the 'tables' to use in the program
-        public List<User> Users { get; set; }
-        public DbSet<Project> Projects { get; set; }
-        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Felhasznalo> Felhasznalo { get; set; }
+        public DbSet<Arucikk> Arucikk { get; set; }
+        public DbSet<Polc> Polc { get; set; }
+        public DbSet<Projektek> Projekt { get; set; }
+        public DbSet<Status> Státusz { get; set; }
+        public DbSet<ProjektArucikkhez> ProjektekArucikkhez { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

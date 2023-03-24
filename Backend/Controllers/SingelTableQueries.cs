@@ -1,9 +1,11 @@
-﻿using napelem_telepito_kozpont.Backend.DatabaseConnection;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace napelem_telepito_kozpont.Backend.Controllers
 {
@@ -11,11 +13,11 @@ namespace napelem_telepito_kozpont.Backend.Controllers
     {
 
         //Összes USER-t visszaadja egy listában.
-        public List<User> GetUsers()
+        public void GetUsers()
         {
             using (var context = new NapelemDbContext())
             {
-                return context.Users.ToList();
+                //return context.Users.ToList();
             }
         }
 

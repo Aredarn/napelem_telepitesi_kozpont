@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace napelem_telepito_kozpont.Backend.Modells_Tables
 {
-    public class Project
+    public class Projektek
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectID { get; set; }
-        public string ProjectManager { get; set; }
-        public int StatusID { get; set; }
 
         [ForeignKey("Projectmanager")]
-        public User User { get; set; }
+        public string User { get; set; }
 
         [ForeignKey("StatusID")]
-        public Status Status { get; set; }
+        public int Status { get; set; }
     }
 }

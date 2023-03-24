@@ -16,8 +16,6 @@ namespace napelem_telepito_kozpont
         private void button1_Click_1(object sender, EventArgs e)
         {
             testLabel.Text = "Test";
-            UserController x = new UserController();
-            testLabel.Text = x.TestSqlConnection(usernameBox.Text).ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

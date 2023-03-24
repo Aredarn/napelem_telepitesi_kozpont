@@ -4,5 +4,8 @@
     <Compile Update="GUI_Forms\Fomenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI_Forms\Szakember.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

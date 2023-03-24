@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mesza\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
+    "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mesza\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
+    "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mesza\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectUniqueName": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "projectName": "napelem_telepito_kozpont",
-        "projectPath": "C:\\Users\\mesza\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "packagesPath": "C:\\Users\\mesza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mesza\\source\\repos\\Aredarn\\napelem_telepitesi_kozpont\\obj\\",
+        "outputPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\mesza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

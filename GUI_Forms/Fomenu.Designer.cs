@@ -74,20 +74,19 @@
             // 
             // userBindingSource
             // 
-            this.userBindingSource.DataSource = typeof(User);
+            this.userBindingSource.DataSource = typeof(void);
             // 
             // Fomenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 231);
+            this.ClientSize = new System.Drawing.Size(451, 231);
             this.Controls.Add(this.label_Name);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.usernameBox);
             this.Controls.Add(this.button1);
             this.Name = "Fomenu";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.Text = "Főmenü";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace napelem_telepito_kozpont.Backend.Modells_Tables
 {
-    public class User
+    public class Felhasznalo
     {
         [Key]
         public string Name { get; set; }
