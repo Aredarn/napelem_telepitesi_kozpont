@@ -11,7 +11,7 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
     {
         [Key]
         public string Name { get; set; }
-        public byte[] Password { get; set; }
+        public string Password { get; set; }
         public int Role { get; set; }
     }
 }
