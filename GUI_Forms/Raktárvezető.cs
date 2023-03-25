@@ -15,6 +15,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
         public Raktárvezető()
         {
             InitializeComponent();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            //almenu_cim.Visible= false;
+            hozzaadPanel.Visible= false;
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)
@@ -23,6 +26,13 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
             l1.Show();
             this.Hide();
+        }
+
+        private void hozzaadMenu_Click(object sender, EventArgs e)
+        {
+            almenu_cim.Text = "Új alkatrész hozzáadása:";
+            //almenu_cim.Visible = true;
+            hozzaadPanel.Visible = true;
         }
     }
 }

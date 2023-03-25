@@ -128,6 +128,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Valasszon!";
             // 
             // Login
             // 

@@ -28,9 +28,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
         //kiválasztott érték (combobox) alapján navigálás
         private void buttonBelepes_Click(object sender, EventArgs e)
         {
-            //combobox értéke stringé alakítás
-            object b = comboBox1.SelectedItem;
-            string be = Convert.ToString(b);
+            string be = comboBox1.Text;
+            
             if (be == "Szakember")
             {
                 Szakember sz1 = new Szakember();
@@ -59,6 +58,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 a1.Show();
                 this.Hide();
             }
+            
         }
     }
 }
