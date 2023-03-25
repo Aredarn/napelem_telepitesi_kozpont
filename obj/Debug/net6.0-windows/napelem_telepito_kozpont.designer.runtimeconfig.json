@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\mesza\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\mesza\\.nuget\\packages",
+      "C:\\Users\\boton\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\boton\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

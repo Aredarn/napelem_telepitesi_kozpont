@@ -1,6 +1,6 @@
 ﻿namespace napelem_telepito_kozpont.GUI_Forms
 {
-    partial class Szakember
+    partial class Raktaros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLoginSzakember = new System.Windows.Forms.Button();
+            this.buttonLoginRaktaros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonLoginSzakember
+            // buttonLoginRaktaros
             // 
-            this.buttonLoginSzakember.Location = new System.Drawing.Point(652, 409);
-            this.buttonLoginSzakember.Name = "buttonLoginSzakember";
-            this.buttonLoginSzakember.Size = new System.Drawing.Size(136, 29);
-            this.buttonLoginSzakember.TabIndex = 0;
-            this.buttonLoginSzakember.Text = "Vissza a Loginhez";
-            this.buttonLoginSzakember.UseVisualStyleBackColor = true;
-            this.buttonLoginSzakember.Click += new System.EventHandler(this.buttonLoginSzakember_Click);
+            this.buttonLoginRaktaros.Location = new System.Drawing.Point(639, 409);
+            this.buttonLoginRaktaros.Name = "buttonLoginRaktaros";
+            this.buttonLoginRaktaros.Size = new System.Drawing.Size(149, 29);
+            this.buttonLoginRaktaros.TabIndex = 0;
+            this.buttonLoginRaktaros.Text = "Vissza a Loginhez";
+            this.buttonLoginRaktaros.UseVisualStyleBackColor = true;
+            this.buttonLoginRaktaros.Click += new System.EventHandler(this.buttonLoginRaktaros_Click);
             // 
-            // Szakember
+            // Raktaros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonLoginSzakember);
-            this.Name = "Szakember";
-            this.Text = "Szakember";
+            this.Controls.Add(this.buttonLoginRaktaros);
+            this.Name = "Raktaros";
+            this.Text = "Raktaros";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button buttonLoginSzakember;
+        private Button buttonLoginRaktaros;
     }
 }

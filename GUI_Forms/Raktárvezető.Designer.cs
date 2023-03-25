@@ -1,6 +1,6 @@
 ﻿namespace napelem_telepito_kozpont.GUI_Forms
 {
-    partial class Szakember
+    partial class Raktárvezető
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLoginSzakember = new System.Windows.Forms.Button();
+            this.buttonLoginRaktarvezeto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonLoginSzakember
+            // buttonLoginRaktarvezeto
             // 
-            this.buttonLoginSzakember.Location = new System.Drawing.Point(652, 409);
-            this.buttonLoginSzakember.Name = "buttonLoginSzakember";
-            this.buttonLoginSzakember.Size = new System.Drawing.Size(136, 29);
-            this.buttonLoginSzakember.TabIndex = 0;
-            this.buttonLoginSzakember.Text = "Vissza a Loginhez";
-            this.buttonLoginSzakember.UseVisualStyleBackColor = true;
-            this.buttonLoginSzakember.Click += new System.EventHandler(this.buttonLoginSzakember_Click);
+            this.buttonLoginRaktarvezeto.Location = new System.Drawing.Point(632, 384);
+            this.buttonLoginRaktarvezeto.Name = "buttonLoginRaktarvezeto";
+            this.buttonLoginRaktarvezeto.Size = new System.Drawing.Size(138, 29);
+            this.buttonLoginRaktarvezeto.TabIndex = 0;
+            this.buttonLoginRaktarvezeto.Text = "Vissza a Loginhez";
+            this.buttonLoginRaktarvezeto.UseVisualStyleBackColor = true;
+            this.buttonLoginRaktarvezeto.Click += new System.EventHandler(this.buttonLoginRaktarvezeto_Click);
             // 
-            // Szakember
+            // Raktárvezető
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonLoginSzakember);
-            this.Name = "Szakember";
-            this.Text = "Szakember";
+            this.Controls.Add(this.buttonLoginRaktarvezeto);
+            this.Name = "Raktárvezető";
+            this.Text = "Raktárvezető";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button buttonLoginSzakember;
+        private Button buttonLoginRaktarvezeto;
     }
 }

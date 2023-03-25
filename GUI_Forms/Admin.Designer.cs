@@ -1,6 +1,6 @@
 ﻿namespace napelem_telepito_kozpont.GUI_Forms
 {
-    partial class Szakember
+    partial class Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLoginSzakember = new System.Windows.Forms.Button();
+            this.buttonLoginAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonLoginSzakember
+            // buttonLoginAdmin
             // 
-            this.buttonLoginSzakember.Location = new System.Drawing.Point(652, 409);
-            this.buttonLoginSzakember.Name = "buttonLoginSzakember";
-            this.buttonLoginSzakember.Size = new System.Drawing.Size(136, 29);
-            this.buttonLoginSzakember.TabIndex = 0;
-            this.buttonLoginSzakember.Text = "Vissza a Loginhez";
-            this.buttonLoginSzakember.UseVisualStyleBackColor = true;
-            this.buttonLoginSzakember.Click += new System.EventHandler(this.buttonLoginSzakember_Click);
+            this.buttonLoginAdmin.Location = new System.Drawing.Point(634, 391);
+            this.buttonLoginAdmin.Name = "buttonLoginAdmin";
+            this.buttonLoginAdmin.Size = new System.Drawing.Size(146, 29);
+            this.buttonLoginAdmin.TabIndex = 0;
+            this.buttonLoginAdmin.Text = "Vissza a Loginhez";
+            this.buttonLoginAdmin.UseVisualStyleBackColor = true;
+            this.buttonLoginAdmin.Click += new System.EventHandler(this.buttonLoginAdmin_Click);
             // 
-            // Szakember
+            // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonLoginSzakember);
-            this.Name = "Szakember";
-            this.Text = "Szakember";
+            this.Controls.Add(this.buttonLoginAdmin);
+            this.Name = "Admin";
+            this.Text = "Admin";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button buttonLoginSzakember;
+        private Button buttonLoginAdmin;
     }
 }

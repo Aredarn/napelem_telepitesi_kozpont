@@ -1,3 +1,5 @@
+using napelem_telepito_kozpont.GUI_Forms;
+
 namespace napelem_telepito_kozpont
 {
     internal static class Program
@@ -12,7 +14,9 @@ namespace napelem_telepito_kozpont
 
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Fomenu());
+            //Application.Run(new Fomenu());
+
+            Application.Run(new Login());
         }
     }
 }

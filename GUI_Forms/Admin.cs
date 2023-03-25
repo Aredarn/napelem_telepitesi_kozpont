@@ -10,15 +10,14 @@ using System.Windows.Forms;
 
 namespace napelem_telepito_kozpont.GUI_Forms
 {
-    public partial class Szakember : Form
+    public partial class Admin : Form
     {
-        public Szakember()
+        public Admin()
         {
             InitializeComponent();
         }
-
-        //vissza a login felületre
-        private void buttonLoginSzakember_Click(object sender, EventArgs e)
+        //vissza a Login felületre
+        private void buttonLoginAdmin_Click(object sender, EventArgs e)
         {
             Login l1 = new Login();
 
