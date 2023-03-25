@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace napelem_telepito_kozpont.GUI_Forms
 {
@@ -15,6 +16,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
         public Login()
         {
             InitializeComponent();
+            textBoxJelszo.Text = "";
+            // The password character is an asterisk.
+            textBoxJelszo.PasswordChar = '*';
+            // The control will allow no more than 14 characters.
+            textBoxJelszo.MaxLength = 14;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
 
