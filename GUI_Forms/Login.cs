@@ -40,16 +40,16 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
                 /* A begépelt felhasználónév & jelszó értékek változóba
                    való mentése. */
-                string username = textBoxFelhasznalonev.Text;
-                string password = textBoxJelszo.Text;
+                string felhasznalonev = textBoxFelhasznalonev.Text;
+                string jelszo = textBoxJelszo.Text;
 
                 /* Validáció annak érdekében, hogy a felhasználó értesítést
                    kapjon, ha bármelyik mező üresen maradt. */
-                if (username == "")
+                if (felhasznalonev == "")
                 {
                     throw new Exception("Felhasználónév nem lehet üres!");
                 }
-                else if (password == "")
+                else if (jelszo == "")
                 {
                     throw new Exception("Jelszó nem lehet üres!");
                 }
@@ -57,8 +57,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 /* Megvizsgálásra kerül, hogy létezik-e felhasználó a korábban
                    mentett felhasználó, illetve jelszó értékekkel. */
                 felhasznalo = felhasznaloController.Login(
-                    username,
-                    password
+                    felhasznalonev,
+                    jelszo
                 );
 
                 /* A következő rész fog abban segíteni, hogy a megfelelő
@@ -98,46 +98,6 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 /* Bármilyen hiba, vagy kivétel esetén a felhasználó értesítve lesz! */
                 MessageBox.Show($"Bejelentkezés sikertelen. ('{exception.Message}')");
             }
-
-            /*
-
-            felhasznalo = new FelhasznaloController.Login(
-                textBoxJelszo.Text,
-                textBoxJelszo.Text
-            );
-            string be = comboBox1.Text;
-            
-            if (be == "Szakember")
-            {
-                Szakember sz1 = new Szakember();
-                
-                sz1.Show();
-                this.Hide();
-            }
-            if (be == "Raktáros")
-            {
-                Raktaros r1 = new Raktaros();
-
-                r1.Show();
-                this.Hide();
-            }
-            if (be == "Raktárvezető")
-            {
-                Raktárvezető rv1 = new Raktárvezető();
-
-                rv1.Show();
-                this.Hide();
-            }
-            if (be == "Admin")
-            {
-                Admin a1 = new Admin();
-
-                a1.Show();
-                this.Hide();
-            }
-
-            */
-            
         }
     }
 }
