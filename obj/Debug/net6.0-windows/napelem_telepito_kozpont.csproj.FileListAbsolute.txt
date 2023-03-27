@@ -398,3 +398,4 @@ C:\Users\boton\Source\Repos\napelem_telepitesi_kozpont\obj\Debug\net6.0-windows\
 C:\Users\boton\Source\Repos\napelem_telepitesi_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.GUI_Forms.Raktaros.resources
 C:\Users\boton\Source\Repos\napelem_telepitesi_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.GUI_Forms.Admin.resources
 C:\Users\boton\Source\Repos\napelem_telepitesi_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.GUI_Forms.Raktárvezető.resources
+C:\Users\boton\source\repos\napelem_telepitesi_kozpont\obj\Debug\net6.0-windows\napelem_telepito_kozpont.Properties.Resources.resources

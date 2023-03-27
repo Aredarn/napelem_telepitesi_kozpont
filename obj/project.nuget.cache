@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u5KrqZz+m2TF567acclXT0e84jpUfOOxDZJ2eO2Ti8j/vefOiwZoJ4ZW4pQu6OCDWBOEAayhGhNIGyEHyckYwA==",
+  "dgSpecHash": "qVAQduauM3rdyHT8is+yHKhFJrYopf9ZDhn+wApLNammXq4Ml40aPeT+i8bktkhfqD3gW56dlU2RVyQu0C7kHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+  "projectFilePath": "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\boton\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\boton\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
