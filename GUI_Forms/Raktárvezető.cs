@@ -44,6 +44,10 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadasButton.Visible = true;
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
+
+            ujNev.Text = "";
+            ujAr.Text = "";
+            rekeszenkentiMax.Text = "1";
         }
 
         private void hozzaadasButton_Click(object sender, EventArgs e)
@@ -102,6 +106,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 MessageBox.Show(exception.Message);
             }
+            finally
+            {
+                ujNev.Text = "";
+                ujAr.Text = "";
+                rekeszenkentiMax.Text = "1";
+            }
         }
 
         private void modositMenu_Click(object sender, EventArgs e)
@@ -126,6 +136,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 arucikkekCombobox.Items.Add(item.Arucikknev);
             }
+
+            arucikkekCombobox.Text = "";
+            ujAr.Text = "";
         }
 
         private void arModositasButton_Click(object sender, EventArgs e)
@@ -155,6 +168,11 @@ namespace napelem_telepito_kozpont.GUI_Forms
             catch (Exception exception)
             {
                 MessageBox.Show($"A módosítás sikertelen volt. ({exception.Message})");
+            }
+            finally
+            {
+                arucikkekCombobox.Text = "";
+                ujAr.Text = "";
             }
         }
 
