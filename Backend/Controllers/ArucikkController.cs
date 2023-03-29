@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace napelem_telepito_kozpont.Backend.Controllers
 {
@@ -38,6 +40,30 @@ namespace napelem_telepito_kozpont.Backend.Controllers
             {
                 /* Hiba, vagy kivétel esetén adjon vissza hamis értéket. */
                 return false;
+            }
+        }
+
+        public List<Arucikk> GetItems()
+        {
+            NapelemDbContext context = new();
+
+            return context.Arucikk.ToList();
+        }
+
+        public int GetPrizeFromName(string name)
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                var data = context.Arucikk
+                    .Single(row => row.Arucikknev == name);
+
+                return data.Price;
+            }
+            catch (Exception)
+            {
+                return 0;
             }
         }
     }

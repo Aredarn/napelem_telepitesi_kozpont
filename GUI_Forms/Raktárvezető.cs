@@ -40,9 +40,10 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadPanel.Visible = true;
             ujNev.Visible = true;
             rekeszMaxLabel.Visible = true;
-            rekeszenkentiMax.Visible= true;
+            rekeszenkentiMax.Visible = true;
             hozzaadasButton.Visible = true;
             arModositasButton.Visible = false;
+            arucikkekCombobox.Visible = false;
         }
 
         private void hozzaadasButton_Click(object sender, EventArgs e)
@@ -77,12 +78,13 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
                 /* Egy `Arucikk` megalkotása, mivel a következő `Add()` metódus
                    paraméterben egy `Arucikk` objektumot vár. */
-                Arucikk arucikk = new Arucikk {
+                Arucikk arucikk = new Arucikk
+                {
                     Arucikknev = nev,
                     Price = Int32.Parse(ar),
                     MaxOnShelf = Int32.Parse(max)
                 };
-                
+
                 /* Mentsük el egy logikai változóba, hogy a hozzáadás sikeres volt-e,
                    vagy sem. */
                 bool siker = arucikkController.Add(arucikk);
@@ -106,12 +108,65 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             hozzaadPanel.Visible = true;
             almenu_cim.Text = "Alkatrész árának módosítása:";
-            rekeszenkentiMax.Visible= false;
-            rekeszMaxLabel.Visible= false;
-            hozzaadasButton.Visible= false;
+            rekeszenkentiMax.Visible = false;
+            rekeszMaxLabel.Visible = false;
+            hozzaadasButton.Visible = false;
             arModositasButton.Visible = true;
             arucikkekCombobox.Visible = true;
-            ujNev.Visible= false;
+            ujNev.Visible = false;
+
+            /* Lekéri az összes árucikket az adatbázisból.
+               Majd ezután hozzáadja egyesével az összeset a
+               ComboBox-hoz, és a megjelenített szöveg az
+               árucikkek neve lesz. */
+            arucikkekCombobox.Items.Clear();
+
+            ArucikkController arucikkController = new();
+            foreach (var item in arucikkController.GetItems())
+            {
+                arucikkekCombobox.Items.Add(item.Arucikknev);
+            }
+        }
+
+        private void arModositasButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SingelTableQueries singelTableQueries = new();
+
+                string arucikkNev = arucikkekCombobox.Text;
+                string ar = ujAr.Text;
+
+                /* Alapvető validáció, hogy elkerüljük az üres mezők
+                   megadását. */
+                if (arucikkNev == "")
+                {
+                    throw new Exception("Név nem lehet üres!");
+                }
+                else if (ar == "")
+                {
+                    throw new Exception("Ár nem lehet üres!");
+                }
+
+                string eredmeny = singelTableQueries.ModifyItemPrice(arucikkNev, Int32.Parse(ar));
+
+                MessageBox.Show(eredmeny);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"A módosítás sikertelen volt. ({exception.Message})");
+            }
+        }
+
+        private void arucikkekComboboxChanged(object sender, EventArgs e)
+        {
+            ArucikkController arucikkController = new();
+
+            string arucikkNev = arucikkekCombobox.Text;
+
+            int ar = arucikkController.GetPrizeFromName(arucikkNev);
+
+            ujAr.Text = ar.ToString();
         }
     }
 }

@@ -29,261 +29,243 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raktárvezető));
-            this.buttonLoginRaktarvezeto = new System.Windows.Forms.Button();
-            this.raktarvezetoMenu = new System.Windows.Forms.MenuStrip();
-            this.alkatreszekMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.hozzaadMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.modositMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.hianyzikMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.raktarMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.beerkezoMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tarolasMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.almenu_cim = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rekeszMaxLabel = new System.Windows.Forms.Label();
-            this.ujNev = new System.Windows.Forms.TextBox();
-            this.ujAr = new System.Windows.Forms.TextBox();
-            this.rekeszenkentiMax = new System.Windows.Forms.NumericUpDown();
-            this.hozzaadPanel = new System.Windows.Forms.Panel();
-            this.arucikkekCombobox = new System.Windows.Forms.ComboBox();
-            this.arModositasButton = new System.Windows.Forms.Button();
-            this.hozzaadasButton = new System.Windows.Forms.Button();
-            this.raktarvezetoMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rekeszenkentiMax)).BeginInit();
-            this.hozzaadPanel.SuspendLayout();
-            this.SuspendLayout();
+            buttonLoginRaktarvezeto = new Button();
+            raktarvezetoMenu = new MenuStrip();
+            alkatreszekMenu = new ToolStripMenuItem();
+            hozzaadMenu = new ToolStripMenuItem();
+            modositMenu = new ToolStripMenuItem();
+            hianyzikMenu = new ToolStripMenuItem();
+            raktarMenu = new ToolStripMenuItem();
+            beerkezoMenu = new ToolStripMenuItem();
+            tarolasMenu = new ToolStripMenuItem();
+            almenu_cim = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            rekeszMaxLabel = new Label();
+            ujNev = new TextBox();
+            ujAr = new TextBox();
+            rekeszenkentiMax = new NumericUpDown();
+            hozzaadPanel = new Panel();
+            arModositasButton = new Button();
+            hozzaadasButton = new Button();
+            arucikkekCombobox = new ComboBox();
+            raktarvezetoMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)rekeszenkentiMax).BeginInit();
+            hozzaadPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // buttonLoginRaktarvezeto
             // 
-            this.buttonLoginRaktarvezeto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLoginRaktarvezeto.Location = new System.Drawing.Point(1003, 589);
-            this.buttonLoginRaktarvezeto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonLoginRaktarvezeto.Name = "buttonLoginRaktarvezeto";
-            this.buttonLoginRaktarvezeto.Size = new System.Drawing.Size(190, 56);
-            this.buttonLoginRaktarvezeto.TabIndex = 0;
-            this.buttonLoginRaktarvezeto.Text = "Vissza a Loginhez";
-            this.buttonLoginRaktarvezeto.UseVisualStyleBackColor = true;
-            this.buttonLoginRaktarvezeto.Click += new System.EventHandler(this.buttonLoginRaktarvezeto_Click);
+            buttonLoginRaktarvezeto.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLoginRaktarvezeto.Location = new Point(1003, 589);
+            buttonLoginRaktarvezeto.Margin = new Padding(3, 2, 3, 2);
+            buttonLoginRaktarvezeto.Name = "buttonLoginRaktarvezeto";
+            buttonLoginRaktarvezeto.Size = new Size(190, 56);
+            buttonLoginRaktarvezeto.TabIndex = 0;
+            buttonLoginRaktarvezeto.Text = "Vissza a Loginhez";
+            buttonLoginRaktarvezeto.UseVisualStyleBackColor = true;
+            buttonLoginRaktarvezeto.Click += buttonLoginRaktarvezeto_Click;
             // 
             // raktarvezetoMenu
             // 
-            this.raktarvezetoMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(201)))), ((int)(((byte)(136)))));
-            this.raktarvezetoMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.raktarvezetoMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.raktarvezetoMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alkatreszekMenu,
-            this.raktarMenu});
-            this.raktarvezetoMenu.Location = new System.Drawing.Point(0, 0);
-            this.raktarvezetoMenu.Name = "raktarvezetoMenu";
-            this.raktarvezetoMenu.Size = new System.Drawing.Size(82, 671);
-            this.raktarvezetoMenu.TabIndex = 1;
-            this.raktarvezetoMenu.Text = "raktarvezetoMenu";
+            raktarvezetoMenu.BackColor = Color.FromArgb(236, 201, 136);
+            raktarvezetoMenu.Dock = DockStyle.Left;
+            raktarvezetoMenu.ImageScalingSize = new Size(20, 20);
+            raktarvezetoMenu.Items.AddRange(new ToolStripItem[] { alkatreszekMenu, raktarMenu });
+            raktarvezetoMenu.Location = new Point(0, 0);
+            raktarvezetoMenu.Name = "raktarvezetoMenu";
+            raktarvezetoMenu.Size = new Size(82, 671);
+            raktarvezetoMenu.TabIndex = 1;
+            raktarvezetoMenu.Text = "raktarvezetoMenu";
             // 
             // alkatreszekMenu
             // 
-            this.alkatreszekMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hozzaadMenu,
-            this.modositMenu,
-            this.hianyzikMenu});
-            this.alkatreszekMenu.Name = "alkatreszekMenu";
-            this.alkatreszekMenu.Size = new System.Drawing.Size(69, 19);
-            this.alkatreszekMenu.Text = "alkatrészek";
+            alkatreszekMenu.DropDownItems.AddRange(new ToolStripItem[] { hozzaadMenu, modositMenu, hianyzikMenu });
+            alkatreszekMenu.Name = "alkatreszekMenu";
+            alkatreszekMenu.Size = new Size(69, 19);
+            alkatreszekMenu.Text = "alkatrészek";
             // 
             // hozzaadMenu
             // 
-            this.hozzaadMenu.Name = "hozzaadMenu";
-            this.hozzaadMenu.Size = new System.Drawing.Size(129, 22);
-            this.hozzaadMenu.Text = "hozzáadás";
-            this.hozzaadMenu.Click += new System.EventHandler(this.hozzaadMenu_Click);
+            hozzaadMenu.Name = "hozzaadMenu";
+            hozzaadMenu.Size = new Size(129, 22);
+            hozzaadMenu.Text = "hozzáadás";
+            hozzaadMenu.Click += hozzaadMenu_Click;
             // 
             // modositMenu
             // 
-            this.modositMenu.Name = "modositMenu";
-            this.modositMenu.Size = new System.Drawing.Size(129, 22);
-            this.modositMenu.Text = "módosítás";
-            this.modositMenu.Click += new System.EventHandler(this.modositMenu_Click);
+            modositMenu.Name = "modositMenu";
+            modositMenu.Size = new Size(129, 22);
+            modositMenu.Text = "módosítás";
+            modositMenu.Click += modositMenu_Click;
             // 
             // hianyzikMenu
             // 
-            this.hianyzikMenu.Name = "hianyzikMenu";
-            this.hianyzikMenu.Size = new System.Drawing.Size(129, 22);
-            this.hianyzikMenu.Text = "hiányzik";
+            hianyzikMenu.Name = "hianyzikMenu";
+            hianyzikMenu.Size = new Size(129, 22);
+            hianyzikMenu.Text = "hiányzik";
             // 
             // raktarMenu
             // 
-            this.raktarMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.beerkezoMenu,
-            this.tarolasMenu});
-            this.raktarMenu.Name = "raktarMenu";
-            this.raktarMenu.Size = new System.Drawing.Size(69, 19);
-            this.raktarMenu.Text = "raktár";
+            raktarMenu.DropDownItems.AddRange(new ToolStripItem[] { beerkezoMenu, tarolasMenu });
+            raktarMenu.Name = "raktarMenu";
+            raktarMenu.Size = new Size(69, 19);
+            raktarMenu.Text = "raktár";
             // 
             // beerkezoMenu
             // 
-            this.beerkezoMenu.Name = "beerkezoMenu";
-            this.beerkezoMenu.Size = new System.Drawing.Size(181, 22);
-            this.beerkezoMenu.Text = "beérkező alkatrészek";
+            beerkezoMenu.Name = "beerkezoMenu";
+            beerkezoMenu.Size = new Size(181, 22);
+            beerkezoMenu.Text = "beérkező alkatrészek";
             // 
             // tarolasMenu
             // 
-            this.tarolasMenu.Name = "tarolasMenu";
-            this.tarolasMenu.Size = new System.Drawing.Size(181, 22);
-            this.tarolasMenu.Text = "tárolás";
+            tarolasMenu.Name = "tarolasMenu";
+            tarolasMenu.Size = new Size(181, 22);
+            tarolasMenu.Text = "tárolás";
             // 
             // almenu_cim
             // 
-            this.almenu_cim.AutoSize = true;
-            this.almenu_cim.BackColor = System.Drawing.Color.Transparent;
-            this.almenu_cim.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.almenu_cim.ForeColor = System.Drawing.Color.White;
-            this.almenu_cim.Location = new System.Drawing.Point(24, 37);
-            this.almenu_cim.Name = "almenu_cim";
-            this.almenu_cim.Size = new System.Drawing.Size(96, 37);
-            this.almenu_cim.TabIndex = 2;
-            this.almenu_cim.Text = "label1";
+            almenu_cim.AutoSize = true;
+            almenu_cim.BackColor = Color.Transparent;
+            almenu_cim.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            almenu_cim.ForeColor = Color.White;
+            almenu_cim.Location = new Point(24, 37);
+            almenu_cim.Name = "almenu_cim";
+            almenu_cim.Size = new Size(96, 37);
+            almenu_cim.TabIndex = 2;
+            almenu_cim.Text = "label1";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Név:";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(24, 158);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Név:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 206);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ár:";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(24, 206);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 25);
+            label2.TabIndex = 4;
+            label2.Text = "Ár:";
             // 
             // rekeszMaxLabel
             // 
-            this.rekeszMaxLabel.AutoSize = true;
-            this.rekeszMaxLabel.BackColor = System.Drawing.Color.Transparent;
-            this.rekeszMaxLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rekeszMaxLabel.ForeColor = System.Drawing.Color.White;
-            this.rekeszMaxLabel.Location = new System.Drawing.Point(24, 251);
-            this.rekeszMaxLabel.Name = "rekeszMaxLabel";
-            this.rekeszMaxLabel.Size = new System.Drawing.Size(329, 25);
-            this.rekeszMaxLabel.TabIndex = 5;
-            this.rekeszMaxLabel.Text = "Rekeszenkénti maximális darabszám:";
+            rekeszMaxLabel.AutoSize = true;
+            rekeszMaxLabel.BackColor = Color.Transparent;
+            rekeszMaxLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            rekeszMaxLabel.ForeColor = Color.White;
+            rekeszMaxLabel.Location = new Point(24, 251);
+            rekeszMaxLabel.Name = "rekeszMaxLabel";
+            rekeszMaxLabel.Size = new Size(329, 25);
+            rekeszMaxLabel.TabIndex = 5;
+            rekeszMaxLabel.Text = "Rekeszenkénti maximális darabszám:";
             // 
             // ujNev
             // 
-            this.ujNev.Location = new System.Drawing.Point(175, 163);
-            this.ujNev.Name = "ujNev";
-            this.ujNev.Size = new System.Drawing.Size(281, 23);
-            this.ujNev.TabIndex = 6;
+            ujNev.Location = new Point(175, 163);
+            ujNev.Name = "ujNev";
+            ujNev.Size = new Size(281, 23);
+            ujNev.TabIndex = 6;
             // 
             // ujAr
             // 
-            this.ujAr.Location = new System.Drawing.Point(177, 206);
-            this.ujAr.Name = "ujAr";
-            this.ujAr.Size = new System.Drawing.Size(281, 23);
-            this.ujAr.TabIndex = 7;
+            ujAr.Location = new Point(177, 206);
+            ujAr.Name = "ujAr";
+            ujAr.Size = new Size(281, 23);
+            ujAr.TabIndex = 7;
             // 
             // rekeszenkentiMax
             // 
-            this.rekeszenkentiMax.Location = new System.Drawing.Point(420, 251);
-            this.rekeszenkentiMax.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.rekeszenkentiMax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.rekeszenkentiMax.Name = "rekeszenkentiMax";
-            this.rekeszenkentiMax.Size = new System.Drawing.Size(38, 23);
-            this.rekeszenkentiMax.TabIndex = 8;
-            this.rekeszenkentiMax.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            rekeszenkentiMax.Location = new Point(420, 251);
+            rekeszenkentiMax.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            rekeszenkentiMax.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            rekeszenkentiMax.Name = "rekeszenkentiMax";
+            rekeszenkentiMax.Size = new Size(38, 23);
+            rekeszenkentiMax.TabIndex = 8;
+            rekeszenkentiMax.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // hozzaadPanel
             // 
-            this.hozzaadPanel.BackColor = System.Drawing.Color.Transparent;
-            this.hozzaadPanel.Controls.Add(this.arModositasButton);
-            this.hozzaadPanel.Controls.Add(this.hozzaadasButton);
-            this.hozzaadPanel.Controls.Add(this.label2);
-            this.hozzaadPanel.Controls.Add(this.rekeszenkentiMax);
-            this.hozzaadPanel.Controls.Add(this.ujAr);
-            this.hozzaadPanel.Controls.Add(this.rekeszMaxLabel);
-            this.hozzaadPanel.Controls.Add(this.ujNev);
-            this.hozzaadPanel.Controls.Add(this.almenu_cim);
-            this.hozzaadPanel.Controls.Add(this.label1);
-            this.hozzaadPanel.Controls.Add(this.arucikkekCombobox);
-            this.hozzaadPanel.Location = new System.Drawing.Point(139, 171);
-            this.hozzaadPanel.Name = "hozzaadPanel";
-            this.hozzaadPanel.Size = new System.Drawing.Size(670, 312);
-            this.hozzaadPanel.TabIndex = 9;
-            // 
-            // arucikkekCombobox
-            // 
-            this.arucikkekCombobox.FormattingEnabled = true;
-            this.arucikkekCombobox.Location = new System.Drawing.Point(174, 158);
-            this.arucikkekCombobox.Name = "arucikkekCombobox";
-            this.arucikkekCombobox.Size = new System.Drawing.Size(282, 23);
-            this.arucikkekCombobox.TabIndex = 11;
+            hozzaadPanel.BackColor = Color.Transparent;
+            hozzaadPanel.Controls.Add(arModositasButton);
+            hozzaadPanel.Controls.Add(hozzaadasButton);
+            hozzaadPanel.Controls.Add(label2);
+            hozzaadPanel.Controls.Add(rekeszenkentiMax);
+            hozzaadPanel.Controls.Add(ujAr);
+            hozzaadPanel.Controls.Add(rekeszMaxLabel);
+            hozzaadPanel.Controls.Add(ujNev);
+            hozzaadPanel.Controls.Add(almenu_cim);
+            hozzaadPanel.Controls.Add(label1);
+            hozzaadPanel.Controls.Add(arucikkekCombobox);
+            hozzaadPanel.Location = new Point(139, 171);
+            hozzaadPanel.Name = "hozzaadPanel";
+            hozzaadPanel.Size = new Size(670, 312);
+            hozzaadPanel.TabIndex = 9;
             // 
             // arModositasButton
             // 
-            this.arModositasButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.arModositasButton.Location = new System.Drawing.Point(529, 231);
-            this.arModositasButton.Name = "arModositasButton";
-            this.arModositasButton.Size = new System.Drawing.Size(137, 35);
-            this.arModositasButton.TabIndex = 10;
-            this.arModositasButton.Text = "Módosítás";
-            this.arModositasButton.UseVisualStyleBackColor = true;
+            arModositasButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            arModositasButton.Location = new Point(529, 231);
+            arModositasButton.Name = "arModositasButton";
+            arModositasButton.Size = new Size(137, 35);
+            arModositasButton.TabIndex = 10;
+            arModositasButton.Text = "Módosítás";
+            arModositasButton.UseVisualStyleBackColor = true;
+            arModositasButton.Click += arModositasButton_Click;
             // 
             // hozzaadasButton
             // 
-            this.hozzaadasButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.hozzaadasButton.Location = new System.Drawing.Point(529, 272);
-            this.hozzaadasButton.Name = "hozzaadasButton";
-            this.hozzaadasButton.Size = new System.Drawing.Size(138, 37);
-            this.hozzaadasButton.TabIndex = 9;
-            this.hozzaadasButton.Text = "Hozzáadás";
-            this.hozzaadasButton.UseVisualStyleBackColor = true;
-            this.hozzaadasButton.Click += new System.EventHandler(this.hozzaadasButton_Click);
+            hozzaadasButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            hozzaadasButton.Location = new Point(529, 272);
+            hozzaadasButton.Name = "hozzaadasButton";
+            hozzaadasButton.Size = new Size(138, 37);
+            hozzaadasButton.TabIndex = 9;
+            hozzaadasButton.Text = "Hozzáadás";
+            hozzaadasButton.UseVisualStyleBackColor = true;
+            hozzaadasButton.Click += hozzaadasButton_Click;
+            // 
+            // arucikkekCombobox
+            // 
+            arucikkekCombobox.FormattingEnabled = true;
+            arucikkekCombobox.Location = new Point(174, 158);
+            arucikkekCombobox.Name = "arucikkekCombobox";
+            arucikkekCombobox.Size = new Size(282, 23);
+            arucikkekCombobox.TabIndex = 11;
+            arucikkekCombobox.SelectedIndexChanged += arucikkekComboboxChanged;
             // 
             // Raktárvezető
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1224, 671);
-            this.Controls.Add(this.hozzaadPanel);
-            this.Controls.Add(this.buttonLoginRaktarvezeto);
-            this.Controls.Add(this.raktarvezetoMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.raktarvezetoMenu;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Raktárvezető";
-            this.Text = "Raktárvezető";
-            this.raktarvezetoMenu.ResumeLayout(false);
-            this.raktarvezetoMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rekeszenkentiMax)).EndInit();
-            this.hozzaadPanel.ResumeLayout(false);
-            this.hozzaadPanel.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1224, 671);
+            Controls.Add(hozzaadPanel);
+            Controls.Add(buttonLoginRaktarvezeto);
+            Controls.Add(raktarvezetoMenu);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = raktarvezetoMenu;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Raktárvezető";
+            Text = "Raktárvezető";
+            raktarvezetoMenu.ResumeLayout(false);
+            raktarvezetoMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)rekeszenkentiMax).EndInit();
+            hozzaadPanel.ResumeLayout(false);
+            hozzaadPanel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
