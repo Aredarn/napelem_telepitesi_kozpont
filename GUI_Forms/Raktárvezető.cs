@@ -21,6 +21,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             this.BackgroundImageLayout = ImageLayout.Stretch;
             //almenu_cim.Visible= false;
             hozzaadPanel.Visible = false;
+            arModositasButton.Visible = false;
+            arucikkekCombobox.Visible = false;
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)
@@ -36,6 +38,11 @@ namespace napelem_telepito_kozpont.GUI_Forms
             almenu_cim.Text = "Új alkatrész hozzáadása:";
             //almenu_cim.Visible = true;
             hozzaadPanel.Visible = true;
+            ujNev.Visible = true;
+            rekeszMaxLabel.Visible = true;
+            rekeszenkentiMax.Visible= true;
+            hozzaadasButton.Visible = true;
+            arModositasButton.Visible = false;
         }
 
         private void hozzaadasButton_Click(object sender, EventArgs e)
@@ -93,6 +100,18 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void modositMenu_Click(object sender, EventArgs e)
+        {
+            hozzaadPanel.Visible = true;
+            almenu_cim.Text = "Alkatrész árának módosítása:";
+            rekeszenkentiMax.Visible= false;
+            rekeszMaxLabel.Visible= false;
+            hozzaadasButton.Visible= false;
+            arModositasButton.Visible = true;
+            arucikkekCombobox.Visible = true;
+            ujNev.Visible= false;
         }
     }
 }
