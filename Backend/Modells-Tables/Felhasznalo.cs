@@ -11,7 +11,14 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
     {
         [Key]
         public string Name { get; set; }
+
         public string Password { get; set; }
+
         public int Role { get; set; }
+
+        public virtual ICollection<Projektek> ProjectsAsProjectManager { get; set; }
+
+        public virtual ICollection<Projektek> ProjectsAsClient { get; set; }
     }
+
 }
