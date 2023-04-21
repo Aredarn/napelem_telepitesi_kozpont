@@ -14,20 +14,18 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectID { get; set; }
 
-        [ForeignKey("ProjectManager")]
+        [ForeignKey("Felhasznalo")]
         public string ProjectManagerID { get; set; }
 
-        public virtual Felhasznalo ProjectManager { get; set; }
-
-        [ForeignKey("Client")]
+        [ForeignKey("Felhasznalo")]
         public string ClientID { get; set; }
 
-        public virtual Felhasznalo Client { get; set; }
-
+        [Required]
         public DateTime ApproxTimeToFinish { get; set; }
 
+        [Required]
         public int ApproxCost { get; set; }
 
-
     }
+
 }

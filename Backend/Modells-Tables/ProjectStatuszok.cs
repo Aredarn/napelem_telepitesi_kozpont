@@ -14,16 +14,13 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StateID { get; set; }
 
+        [ForeignKey("Projektek")]
+
         public int ProjectID { get; set; }
 
-        [ForeignKey("ProjectID")]
-        public virtual Projektek Project { get; set; }
-
+        [ForeignKey("Status")]
         public int StatusID { get; set; }
-
-        [ForeignKey("StatusID")]
-        public virtual Status Status { get; set; }
-
-        public DateTime Date { get; set; }
+                
+        public DateTime FazisKezdete { get; set; }
     }
 }

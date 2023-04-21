@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace napelem_telepito_kozpont.Migrations
 {
     /// <inheritdoc />
-    public partial class Create : Migration
+    public partial class mssqllocal_migration_714 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,7 +29,7 @@ namespace napelem_telepito_kozpont.Migrations
                 columns: table => new
                 {
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Password = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -37,17 +38,50 @@ namespace napelem_telepito_kozpont.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "projectStatuszok",
+                columns: table => new
+                {
+                    StateID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProjectID = table.Column<int>(type: "int", nullable: false),
+                    StatusID = table.Column<int>(type: "int", nullable: false),
+                    FazisKezdete = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_projectStatuszok", x => x.StateID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projekt",
                 columns: table => new
                 {
                     ProjectID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    User = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    ProjectManagerID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ClientID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApproxTimeToFinish = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ApproxCost = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projekt", x => x.ProjectID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProjektekArucikkhez",
+                columns: table => new
+                {
+                    ProjectToItemID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    IsReserved = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectID = table.Column<int>(type: "int", nullable: false),
+                    Arucikknev = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProjektekArucikkhez", x => x.ProjectToItemID);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,6 +95,21 @@ namespace napelem_telepito_kozpont.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Státusz", x => x.StatusID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ujArucikkIgeny",
+                columns: table => new
+                {
+                    AruIgenyID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AruNev = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mennyiseg = table.Column<int>(type: "int", nullable: false),
+                    ProjectID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ujArucikkIgeny", x => x.AruIgenyID);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,47 +134,10 @@ namespace napelem_telepito_kozpont.Migrations
                         principalColumn: "Arucikknev");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ProjektekArucikkhez",
-                columns: table => new
-                {
-                    ProjectToItemID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    IsReserved = table.Column<bool>(type: "bit", nullable: false),
-                    ProjectID = table.Column<int>(type: "int", nullable: false),
-                    Arucikknev = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProjektekArucikkhez", x => x.ProjectToItemID);
-                    table.ForeignKey(
-                        name: "FK_ProjektekArucikkhez_Arucikk_Arucikknev",
-                        column: x => x.Arucikknev,
-                        principalTable: "Arucikk",
-                        principalColumn: "Arucikknev");
-                    table.ForeignKey(
-                        name: "FK_ProjektekArucikkhez_Projekt_ProjectID",
-                        column: x => x.ProjectID,
-                        principalTable: "Projekt",
-                        principalColumn: "ProjectID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Polc_ItemName",
                 table: "Polc",
                 column: "ItemName");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProjektekArucikkhez_Arucikknev",
-                table: "ProjektekArucikkhez",
-                column: "Arucikknev");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProjektekArucikkhez_ProjectID",
-                table: "ProjektekArucikkhez",
-                column: "ProjectID");
         }
 
         /// <inheritdoc />
@@ -138,16 +150,22 @@ namespace napelem_telepito_kozpont.Migrations
                 name: "Polc");
 
             migrationBuilder.DropTable(
+                name: "projectStatuszok");
+
+            migrationBuilder.DropTable(
+                name: "Projekt");
+
+            migrationBuilder.DropTable(
                 name: "ProjektekArucikkhez");
 
             migrationBuilder.DropTable(
                 name: "Státusz");
 
             migrationBuilder.DropTable(
-                name: "Arucikk");
+                name: "ujArucikkIgeny");
 
             migrationBuilder.DropTable(
-                name: "Projekt");
+                name: "Arucikk");
         }
     }
 }

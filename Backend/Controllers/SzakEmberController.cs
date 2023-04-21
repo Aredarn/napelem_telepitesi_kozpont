@@ -33,14 +33,14 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 foreach (var arucikk in arucikkek.Keys)
                 {
                     var quantity = arucikkek[arucikk];
-                    var projektArucikkhez = context.ProjektekArucikkhez.SingleOrDefault(p => p.ProjectToItemID == projectID && p.Arucikk.Arucikknev == arucikk.Arucikknev);
+                    var projektArucikkhez = context.ProjektekArucikkhez.SingleOrDefault(p => p.ProjectToItemID == projectID && p.Arucikknev == arucikk.Arucikknev);
 
                     if (projektArucikkhez == null)
                     {
                         projektArucikkhez = new ProjektArucikkhez
                         {
                             ProjectToItemID = projectID,
-                            Arucikk = arucikk,
+                            Arucikknev = arucikk.Arucikknev,
                             Quantity = quantity,
                             IsReserved = false
                         };

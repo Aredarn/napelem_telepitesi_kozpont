@@ -17,6 +17,5 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
 
         [ForeignKey("Projektek")]
         public int ProjectID { get; set; }
-        public virtual Projektek Projektek { get; set; }
     }
 }

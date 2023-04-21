@@ -16,9 +16,12 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         public int Quantity { get; set; }
         public bool IsReserved { get; set; }
 
-        [ForeignKey("ProjectID")]
-        public virtual Projektek Project { get; set; }
-        public virtual Arucikk Arucikk { get; set; }
+        [ForeignKey("Projektek")]
+        public int ProjectID { get; set; }
+
+        [ForeignKey("Arucikknev")]
+        public string Arucikknev { get; set; }
+
     }
 
 }

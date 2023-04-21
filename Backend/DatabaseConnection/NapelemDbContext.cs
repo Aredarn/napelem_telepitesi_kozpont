@@ -20,9 +20,9 @@ namespace napelem_telepito_kozpont.Backend.DatabaseConnection
         public DbSet<Polc> Polc { get; set; }
         public DbSet<Projektek> Projekt { get; set; }
         public DbSet<Status> Státusz { get; set; }
-        public DbSet<ProjectStatuszok> ProjectStatus { get; set; }
         public DbSet<ProjektArucikkhez> ProjektekArucikkhez { get; set; }
         public DbSet<UjArucikkIgeny> ujArucikkIgeny { get; set; }
+        public DbSet<ProjectStatuszok> projectStatuszok { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
