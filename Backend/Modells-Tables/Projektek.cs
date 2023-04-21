@@ -24,5 +24,10 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
 
         public virtual Felhasznalo Client { get; set; }
 
+        public DateTime ApproxTimeToFinish { get; set; }
+
+        public int ApproxCost { get; set; }
+
+
     }
 }
