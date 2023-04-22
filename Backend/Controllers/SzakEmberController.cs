@@ -53,12 +53,41 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 }
 
                 // PROJEKTSTATUST is modosítani kell DRAFT-ra
+
                 
                 context.SaveChanges();
-                MessageBox.Show("A termékek sikeresen hozzárendelve a projekthez.");
+                MessageBox.Show("A termékek sikeresen hozzárendelve a projekthez.");     
             }
         }
 
+
+        // A5.
+
+        public void Arkalkulacio(int projectID, int becsultOra, DateTime becsultVegzes)
+        {
+            using (var context = new NapelemDbContext())
+            {
+                var project = context.Projekt.FirstOrDefault(c => c.ProjectID == projectID);
+
+                
+                if(project == null)
+                {
+                    MessageBox.Show($"Nem létezik a {projectID}. ID val ellátott projekt");
+                }
+                else if (project.ApproxCost != null)
+                {
+                    MessageBox.Show($"Ennek a projektnek már megtörtént az árkalkulációja");
+                }
+                else
+                {
+                    project.ApproxCost = becsultOra;
+                    project.ApproxTimeToFinish = becsultVegzes;
+                    context.SaveChanges();
+                    MessageBox.Show($"Az árkalkuláció sikeresen frissítve lett a {projectID}. ID-val ellátott projektben.");
+                }
+            }
+
+        }
 
     }
 }

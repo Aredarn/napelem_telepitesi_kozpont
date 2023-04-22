@@ -20,10 +20,13 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         [ForeignKey("Felhasznalo")]
         public string ClientID { get; set; }
 
+        public string leiras { get; set; }
+
+        public string helyszin { get; set; }
+
         [Required]
         public DateTime ApproxTimeToFinish { get; set; }
 
-        [Required]
         public int ApproxCost { get; set; }
 
     }
