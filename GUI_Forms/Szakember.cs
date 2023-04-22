@@ -50,5 +50,10 @@ namespace napelem_telepito_kozpont.GUI_Forms
             //a megírt backend függvény segítségével UPDATE utastást hajt végre az adatbázison
             //a kijelölt map<Árucikk,Darab> értékeivel, a "projektIDTextBox"-ban megadott projekthez
         }
+
+        private void kivalasztottAlkatreszekTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
