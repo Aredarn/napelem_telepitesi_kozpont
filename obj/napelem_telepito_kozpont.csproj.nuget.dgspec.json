@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
+    "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {}
   },
   "projects": {
-    "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
+    "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectUniqueName": "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "projectName": "napelem_telepito_kozpont",
-        "projectPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+        "projectPath": "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
         "packagesPath": "C:\\Users\\boton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\obj\\",
+        "outputPath": "C:\\Users\\boton\\source\\repos\\napelem_telepitesi_kozpont\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
