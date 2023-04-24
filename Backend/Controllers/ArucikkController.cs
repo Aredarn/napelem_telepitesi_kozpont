@@ -66,5 +66,29 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 return 0;
             }
         }
+
+        public bool Add(Polc polc)
+        {
+            try
+            {
+                /* Adatbázis kapcsolat, hogy hozzá lehessen adni az
+                   `Polc` nevű táblához egy új rekordot. */
+                NapelemDbContext context = new();
+
+                /* Az `Add()` metódust alkalmazva a paraméterben megadott
+                   `Polc` objektummal a hozzáadás egyszerűen
+                   megtörténik. A `SaveChanges` után hajtódik végre. */
+                context.Polc.Add(polc);
+                context.SaveChanges();
+
+                /* Sikeresen lefutott a metódus, adjon vissza igaz értéket. */
+                return true;
+            }
+            catch (Exception)
+            {
+                /* Hiba, vagy kivétel esetén adjon vissza hamis értéket. */
+                return false;
+            }
+        }
     }
 }
