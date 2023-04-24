@@ -23,6 +23,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadPanel.Visible = false;
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
+            raktarHozzaadPanel.Visible = false;
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadasButton.Visible = true;
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
+            raktarHozzaadPanel.Visible = false;
 
             ujNev.Text = "";
             ujAr.Text = "";
@@ -124,6 +126,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arModositasButton.Visible = true;
             arucikkekCombobox.Visible = true;
             ujNev.Visible = false;
+            raktarHozzaadPanel.Visible = false;
 
             /* Lekéri az összes árucikket az adatbázisból.
                Majd ezután hozzáadja egyesével az összeset a
@@ -186,5 +189,84 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
             ujAr.Text = ar.ToString();
         }
+
+        private void beerkezoMenu_Click(object sender, EventArgs e)
+        {
+            raktarHozzaadPanel.Visible = true;
+            hozzaadPanel.Visible = false;
+            arModositasButton.Visible = false;
+            arucikkekCombobox.Visible = false;
+
+            beerkezettAlkComboBox.Items.Clear();
+
+            ArucikkController arucikkController = new();
+            foreach (var item in arucikkController.GetItems())
+            {
+                beerkezettAlkComboBox.Items.Add(item.Arucikknev);
+            }
+        }
+
+        private void raktarHozzaadButton_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                /* Az `ArucikkController` objektum létrehozása, hogy
+                   alkalmazni lehessen az `Add()` metódust, hogy új árucikket
+                   hozhassunk létre. */
+                ArucikkController arucikkController = new();
+
+                /* Változók deklarálása, valamint inicializálása az input
+                   mezőkben megadott értékekkel. */
+                string nev = beerkezettAlkComboBox.Text;
+                string mennyiseg = mennyisegTextBox.Text;
+
+                /* Alapvető validáció, hogy elkerüljük az üres mezők
+                   megadását. */
+                
+                if (mennyiseg == "")
+                {
+                    throw new Exception("Mennyiség nem lehet üres!");
+                }
+
+                /* Egy `Arucikk` megalkotása, mivel a következő `Add()` metódus
+                   paraméterben egy `Arucikk` objektumot vár. 
+                Arucikk arucikk = new Arucikk
+                {
+                    Arucikknev = nev,
+                    Price = Int32.Parse(ar),
+                    MaxOnShelf = Int32.Parse(max)
+                };  
+                */
+                
+                Polc polc = new Polc
+                {
+                    ItemsInShelf = Int32.Parse(mennyiseg),
+                    //ItemName = nev
+                };  
+
+                /* Mentsük el egy logikai változóba, hogy a hozzáadás sikeres volt-e,
+                   vagy sem. */
+                //bool siker = arucikkController.Add(polc);
+
+                /* Az alapján, hogy az `Add()` metódus milyen logikai értékkel tért
+                   vissza, értesítjük a felhasználót. 
+                if (!siker)
+                {
+                    throw new Exception("Árucikk hozzáadása sikertelen!");
+                }
+                */
+                MessageBox.Show("Árucikk hozzáadása sikeresen megtörtént!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            finally
+            {
+                mennyisegTextBox.Text = "1";
+            }
+            
+        } 
     }
 }
