@@ -23,6 +23,7 @@ namespace napelem_telepito_kozpont.Backend.DatabaseConnection
         public DbSet<ProjektArucikkhez> ProjektekArucikkhez { get; set; }
         public DbSet<UjArucikkIgeny> ujArucikkIgeny { get; set; }
         public DbSet<ProjectStatuszok> projectStatuszok { get; set; }
+        public DbSet<Megrendelo> Megrendelok { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

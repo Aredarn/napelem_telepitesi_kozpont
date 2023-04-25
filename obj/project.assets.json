@@ -1433,6 +1433,9 @@
             "rid": "win"
           }
         }
+      },
+      "TrackableEntities.CodeTemplates.Shared.Net45/2.5.2": {
+        "type": "package"
       }
     }
   },
@@ -4151,6 +4154,24 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "TrackableEntities.CodeTemplates.Shared.Net45/2.5.2": {
+      "sha512": "6wB1jCgB+k3DBD1W/7qYWkaULDHOBuqyfVNcQoUL57l8CNzuxS7Oj1V9QjhTliapgSDnfif4TXEfJS+z8jrLnQ==",
+      "type": "package",
+      "path": "trackableentities.codetemplates.shared.net45/2.5.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/CodeTemplates/EFModelFromDatabase/Context.cs.t4",
+        "Content/CodeTemplates/EFModelFromDatabase/EntityType.cs.t4",
+        "Content/CodeTemplates/ReverseEngineerCodeFirst/Context.tt",
+        "Content/CodeTemplates/ReverseEngineerCodeFirst/Entity.tt",
+        "Content/CodeTemplates/ReverseEngineerCodeFirst/Mapping.tt",
+        "tools/install.ps1",
+        "trackableentities.codetemplates.shared.net45.2.5.2.nupkg.sha512",
+        "trackableentities.codetemplates.shared.net45.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -4159,27 +4180,28 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
       "Microsoft.Extensions.Configuration.UserSecrets >= 7.0.0",
-      "MySql.EntityFrameworkCore >= 7.0.0"
+      "MySql.EntityFrameworkCore >= 7.0.0",
+      "TrackableEntities.CodeTemplates.Shared.Net45 >= 2.5.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\boton\\.nuget\\packages\\": {},
+    "C:\\Users\\mesza\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+      "projectUniqueName": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
       "projectName": "napelem_telepito_kozpont",
-      "projectPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
-      "packagesPath": "C:\\Users\\boton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\boton\\Source\\Repos\\napelem_telepitesi_kozpont\\obj\\",
+      "projectPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\napelem_telepito_kozpont.csproj",
+      "packagesPath": "C:\\Users\\mesza\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mesza\\source\\repos\\napelem_telepitesi_kozpont\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\boton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mesza\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4188,7 +4210,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4228,6 +4249,10 @@
           "MySql.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "TrackableEntities.CodeTemplates.Shared.Net45": {
+            "target": "Package",
+            "version": "[2.5.2, )"
           }
         },
         "imports": [
@@ -4249,7 +4274,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
