@@ -267,6 +267,14 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 mennyisegTextBox.Text = "1";
             }
             
-        } 
+        }
+
+        private void buttonLoginRaktarvezeto_Click_1(object sender, EventArgs e)
+        {
+            Login l1 = new Login();
+            l1.Show();
+
+            this.Hide();
+        }
     }
 }

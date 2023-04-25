@@ -40,12 +40,14 @@
             this.munkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.munkadíjIdőtartamMeghatározásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alkHozzarendelPanel = new System.Windows.Forms.Panel();
+            this.darabszamTextBox = new System.Windows.Forms.TextBox();
+            this.arucikkListView = new System.Windows.Forms.ListView();
+            this.nev1 = new System.Windows.Forms.ColumnHeader();
+            this.darab = new System.Windows.Forms.ColumnHeader();
             this.projektIDTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.hozzarendelButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.kivalasztottAlkatreszekTextBox = new System.Windows.Forms.TextBox();
-            this.darabszamComboBox = new System.Windows.Forms.ComboBox();
             this.alkatreszComboBox = new System.Windows.Forms.ComboBox();
             this.hozzaadButton = new System.Windows.Forms.Button();
             this.darabszamLabel = new System.Windows.Forms.Label();
@@ -76,6 +78,7 @@
             this.mennyiseg = new System.Windows.Forms.ColumnHeader();
             this.label3 = new System.Windows.Forms.Label();
             this.munkadijPanel = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.szamitasButton = new System.Windows.Forms.Button();
             this.projektAzonositoTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,6 +86,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.befejezesTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.nevTextBox = new System.Windows.Forms.TextBox();
+            this.lakcimTextBox = new System.Windows.Forms.TextBox();
+            this.telefonszamTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.szakemberMenu.SuspendLayout();
             this.alkHozzarendelPanel.SuspendLayout();
             this.ujProjektPanel.SuspendLayout();
@@ -182,12 +194,12 @@
             // alkHozzarendelPanel
             // 
             this.alkHozzarendelPanel.BackColor = System.Drawing.Color.Transparent;
+            this.alkHozzarendelPanel.Controls.Add(this.darabszamTextBox);
+            this.alkHozzarendelPanel.Controls.Add(this.arucikkListView);
             this.alkHozzarendelPanel.Controls.Add(this.projektIDTextBox);
             this.alkHozzarendelPanel.Controls.Add(this.label2);
             this.alkHozzarendelPanel.Controls.Add(this.hozzarendelButton);
             this.alkHozzarendelPanel.Controls.Add(this.label1);
-            this.alkHozzarendelPanel.Controls.Add(this.kivalasztottAlkatreszekTextBox);
-            this.alkHozzarendelPanel.Controls.Add(this.darabszamComboBox);
             this.alkHozzarendelPanel.Controls.Add(this.alkatreszComboBox);
             this.alkHozzarendelPanel.Controls.Add(this.hozzaadButton);
             this.alkHozzarendelPanel.Controls.Add(this.darabszamLabel);
@@ -199,6 +211,37 @@
             this.alkHozzarendelPanel.Name = "alkHozzarendelPanel";
             this.alkHozzarendelPanel.Size = new System.Drawing.Size(859, 522);
             this.alkHozzarendelPanel.TabIndex = 9;
+            // 
+            // darabszamTextBox
+            // 
+            this.darabszamTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.darabszamTextBox.Location = new System.Drawing.Point(288, 195);
+            this.darabszamTextBox.Name = "darabszamTextBox";
+            this.darabszamTextBox.Size = new System.Drawing.Size(125, 24);
+            this.darabszamTextBox.TabIndex = 14;
+            // 
+            // arucikkListView
+            // 
+            this.arucikkListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nev1,
+            this.darab});
+            this.arucikkListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.arucikkListView.Location = new System.Drawing.Point(539, 146);
+            this.arucikkListView.Name = "arucikkListView";
+            this.arucikkListView.Size = new System.Drawing.Size(281, 171);
+            this.arucikkListView.TabIndex = 13;
+            this.arucikkListView.UseCompatibleStateImageBehavior = false;
+            this.arucikkListView.View = System.Windows.Forms.View.Details;
+            // 
+            // nev1
+            // 
+            this.nev1.Text = "Megnevezés";
+            this.nev1.Width = 180;
+            // 
+            // darab
+            // 
+            this.darab.Text = "darabszam";
+            this.darab.Width = 100;
             // 
             // projektIDTextBox
             // 
@@ -242,33 +285,15 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Kiválasztott alkatrészek:\r\n";
             // 
-            // kivalasztottAlkatreszekTextBox
-            // 
-            this.kivalasztottAlkatreszekTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kivalasztottAlkatreszekTextBox.Location = new System.Drawing.Point(542, 146);
-            this.kivalasztottAlkatreszekTextBox.Multiline = true;
-            this.kivalasztottAlkatreszekTextBox.Name = "kivalasztottAlkatreszekTextBox";
-            this.kivalasztottAlkatreszekTextBox.Size = new System.Drawing.Size(278, 171);
-            this.kivalasztottAlkatreszekTextBox.TabIndex = 8;
-            this.kivalasztottAlkatreszekTextBox.TextChanged += new System.EventHandler(this.kivalasztottAlkatreszekTextBox_TextChanged);
-            // 
-            // darabszamComboBox
-            // 
-            this.darabszamComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.darabszamComboBox.FormattingEnabled = true;
-            this.darabszamComboBox.Location = new System.Drawing.Point(288, 195);
-            this.darabszamComboBox.Name = "darabszamComboBox";
-            this.darabszamComboBox.Size = new System.Drawing.Size(48, 26);
-            this.darabszamComboBox.TabIndex = 7;
-            // 
             // alkatreszComboBox
             // 
             this.alkatreszComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.alkatreszComboBox.FormattingEnabled = true;
             this.alkatreszComboBox.Location = new System.Drawing.Point(153, 146);
             this.alkatreszComboBox.Name = "alkatreszComboBox";
-            this.alkatreszComboBox.Size = new System.Drawing.Size(183, 26);
+            this.alkatreszComboBox.Size = new System.Drawing.Size(260, 26);
             this.alkatreszComboBox.TabIndex = 6;
+            this.alkatreszComboBox.SelectedIndexChanged += new System.EventHandler(this.alkatreszComboBox_SelectedIndexChanged);
             // 
             // hozzaadButton
             // 
@@ -317,6 +342,14 @@
             // ujProjektPanel
             // 
             this.ujProjektPanel.BackColor = System.Drawing.Color.Transparent;
+            this.ujProjektPanel.Controls.Add(this.emailTextBox);
+            this.ujProjektPanel.Controls.Add(this.telefonszamTextBox);
+            this.ujProjektPanel.Controls.Add(this.lakcimTextBox);
+            this.ujProjektPanel.Controls.Add(this.nevTextBox);
+            this.ujProjektPanel.Controls.Add(this.label17);
+            this.ujProjektPanel.Controls.Add(this.label16);
+            this.ujProjektPanel.Controls.Add(this.label15);
+            this.ujProjektPanel.Controls.Add(this.label14);
             this.ujProjektPanel.Controls.Add(this.leirasTextBox);
             this.ujProjektPanel.Controls.Add(this.textBox1);
             this.ujProjektPanel.Controls.Add(this.button1);
@@ -534,6 +567,8 @@
             // munkadijPanel
             // 
             this.munkadijPanel.BackColor = System.Drawing.Color.Transparent;
+            this.munkadijPanel.Controls.Add(this.befejezesTextBox);
+            this.munkadijPanel.Controls.Add(this.label13);
             this.munkadijPanel.Controls.Add(this.szamitasButton);
             this.munkadijPanel.Controls.Add(this.projektAzonositoTextBox);
             this.munkadijPanel.Controls.Add(this.label12);
@@ -548,12 +583,23 @@
             this.munkadijPanel.Size = new System.Drawing.Size(1039, 522);
             this.munkadijPanel.TabIndex = 13;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(22, 226);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(320, 28);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Adja meg a tervezett befejezést:";
+            // 
             // szamitasButton
             // 
             this.szamitasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.szamitasButton.Location = new System.Drawing.Point(506, 146);
+            this.szamitasButton.Location = new System.Drawing.Point(525, 146);
             this.szamitasButton.Name = "szamitasButton";
-            this.szamitasButton.Size = new System.Drawing.Size(147, 70);
+            this.szamitasButton.Size = new System.Drawing.Size(147, 68);
             this.szamitasButton.TabIndex = 6;
             this.szamitasButton.Text = "Kalkulálás";
             this.szamitasButton.UseVisualStyleBackColor = true;
@@ -564,7 +610,7 @@
             this.projektAzonositoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.projektAzonositoTextBox.Location = new System.Drawing.Point(351, 146);
             this.projektAzonositoTextBox.Name = "projektAzonositoTextBox";
-            this.projektAzonositoTextBox.Size = new System.Drawing.Size(125, 30);
+            this.projektAzonositoTextBox.Size = new System.Drawing.Size(160, 30);
             this.projektAzonositoTextBox.TabIndex = 5;
             // 
             // label12
@@ -572,7 +618,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(24, 146);
+            this.label12.Location = new System.Drawing.Point(22, 146);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(321, 28);
             this.label12.TabIndex = 4;
@@ -583,7 +629,7 @@
             this.munkaoraTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.munkaoraTextBox.Location = new System.Drawing.Point(352, 186);
             this.munkaoraTextBox.Name = "munkaoraTextBox";
-            this.munkaoraTextBox.Size = new System.Drawing.Size(125, 30);
+            this.munkaoraTextBox.Size = new System.Drawing.Size(159, 30);
             this.munkaoraTextBox.TabIndex = 3;
             // 
             // label11
@@ -591,7 +637,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(27, 186);
+            this.label11.Location = new System.Drawing.Point(22, 188);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(326, 28);
             this.label11.TabIndex = 2;
@@ -619,21 +665,106 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Munkadíj meghatározása";
             // 
+            // befejezesTextBox
+            // 
+            this.befejezesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.befejezesTextBox.Location = new System.Drawing.Point(351, 226);
+            this.befejezesTextBox.Name = "befejezesTextBox";
+            this.befejezesTextBox.Size = new System.Drawing.Size(160, 30);
+            this.befejezesTextBox.TabIndex = 8;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(415, 189);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 32);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "Név:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(415, 223);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 32);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Lakcím:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(415, 255);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(154, 32);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Telefonszám:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(415, 291);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 32);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "E-mail:";
+            // 
+            // nevTextBox
+            // 
+            this.nevTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nevTextBox.Location = new System.Drawing.Point(474, 197);
+            this.nevTextBox.Name = "nevTextBox";
+            this.nevTextBox.Size = new System.Drawing.Size(329, 24);
+            this.nevTextBox.TabIndex = 17;
+            // 
+            // lakcimTextBox
+            // 
+            this.lakcimTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lakcimTextBox.Location = new System.Drawing.Point(517, 231);
+            this.lakcimTextBox.Name = "lakcimTextBox";
+            this.lakcimTextBox.Size = new System.Drawing.Size(286, 24);
+            this.lakcimTextBox.TabIndex = 18;
+            // 
+            // telefonszamTextBox
+            // 
+            this.telefonszamTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.telefonszamTextBox.Location = new System.Drawing.Point(565, 263);
+            this.telefonszamTextBox.Name = "telefonszamTextBox";
+            this.telefonszamTextBox.Size = new System.Drawing.Size(238, 24);
+            this.telefonszamTextBox.TabIndex = 19;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailTextBox.Location = new System.Drawing.Point(509, 299);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(294, 24);
+            this.emailTextBox.TabIndex = 20;
+            // 
             // Szakember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1399, 895);
+            this.Controls.Add(this.buttonLoginSzakember);
+            this.Controls.Add(this.szakemberMenu);
+            this.Controls.Add(this.ujProjektPanel);
+            this.Controls.Add(this.alkHozzarendelPanel);
             this.Controls.Add(this.munkadijPanel);
             this.Controls.Add(this.alkatreszekPanel);
             this.Controls.Add(this.projektListazasPanel);
-            this.Controls.Add(this.ujProjektPanel);
-            this.Controls.Add(this.alkHozzarendelPanel);
-            this.Controls.Add(this.buttonLoginSzakember);
-            this.Controls.Add(this.szakemberMenu);
             this.Name = "Szakember";
             this.Text = "Szakember";
+            this.Load += new System.EventHandler(this.Szakember_Load);
             this.szakemberMenu.ResumeLayout(false);
             this.szakemberMenu.PerformLayout();
             this.alkHozzarendelPanel.ResumeLayout(false);
@@ -665,8 +796,6 @@
         private Label label2;
         private Button hozzarendelButton;
         private Label label1;
-        private TextBox kivalasztottAlkatreszekTextBox;
-        private ComboBox darabszamComboBox;
         private ComboBox alkatreszComboBox;
         private TextBox projektIDTextBox;
         private ToolStripMenuItem alkatrészekListázásaToolStripMenuItem;
@@ -707,5 +836,19 @@
         private Label label9;
         private Label label8;
         private Button szamitasButton;
+        private Label label13;
+        private ListView arucikkListView;
+        private ColumnHeader nev1;
+        private ColumnHeader darab;
+        private TextBox darabszamTextBox;
+        private TextBox emailTextBox;
+        private TextBox telefonszamTextBox;
+        private TextBox lakcimTextBox;
+        private TextBox nevTextBox;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private TextBox befejezesTextBox;
     }
 }
