@@ -14,5 +14,4 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         public int Price { get; set; }
         public int MaxOnShelf { get; set; }
     }
-
 }

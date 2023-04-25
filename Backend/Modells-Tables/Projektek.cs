@@ -17,7 +17,7 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         [ForeignKey("Felhasznalo")]
         public string ProjectManagerID { get; set; }
 
-        [ForeignKey("Felhasznalo")]
+        [ForeignKey("Megrendelo")]
         public string ClientID { get; set; }
 
         public string leiras { get; set; }
