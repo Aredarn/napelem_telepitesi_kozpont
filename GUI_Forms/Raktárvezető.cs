@@ -1,4 +1,6 @@
-﻿using napelem_telepito_kozpont.Backend.Controllers;
+﻿using Microsoft.EntityFrameworkCore;
+using napelem_telepito_kozpont.Backend.Controllers;
+using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arucikkekCombobox.Visible = false;
             raktarHozzaadPanel.Visible = false;
             this.userID = userID;
+            rekeszPanel.Visible = false;
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
             raktarHozzaadPanel.Visible = false;
+            rekeszPanel.Visible = false;
 
             ujNev.Text = "";
             ujAr.Text = "";
@@ -129,6 +133,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arucikkekCombobox.Visible = true;
             ujNev.Visible = false;
             raktarHozzaadPanel.Visible = false;
+            rekeszPanel.Visible = false;   
 
             /* Lekéri az összes árucikket az adatbázisból.
                Majd ezután hozzáadja egyesével az összeset a
@@ -198,6 +203,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadPanel.Visible = false;
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
+            rekeszPanel.Visible = false;
 
             beerkezettAlkComboBox.Items.Clear();
 
@@ -277,6 +283,42 @@ namespace napelem_telepito_kozpont.GUI_Forms
             l1.Show();
 
             this.Hide();
+        }
+
+        private void Raktárvezető_Load(object sender, EventArgs e)
+        {
+            using (var context = new NapelemDbContext())
+            {
+                List<Polc> polcs = context.Polc.ToList();
+                rekeszekDataGridView.DataSource = polcs;
+            }
+        }
+
+        private void tarolasMenu_Click(object sender, EventArgs e)
+        {
+            raktarHozzaadPanel.Visible= false;
+            hozzaadPanel.Visible= false;
+
+            rekeszPanel.Visible = true;
+        }
+
+        private void rekeszekDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+           
+                if (e.RowIndex >= 0 && e.ColumnIndex == rekeszekDataGridView.Columns["ItemsInShelf"].Index)
+                {
+                    var polc = rekeszekDataGridView.Rows[e.RowIndex].DataBoundItem as Polc;
+                    if (polc != null)
+                    {
+                        polc.ItemsInShelf = Convert.ToInt32(rekeszekDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                        using (var context = new NapelemDbContext())
+                        {
+                            context.Entry(polc).State = EntityState.Modified;
+                            context.SaveChanges();
+                        }
+                    }
+                }
+            
         }
     }
 }
