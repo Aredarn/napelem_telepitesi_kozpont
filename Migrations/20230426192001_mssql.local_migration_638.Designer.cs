@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 
@@ -11,9 +12,11 @@ using napelem_telepito_kozpont.Backend.DatabaseConnection;
 namespace napelem_telepito_kozpont.Migrations
 {
     [DbContext(typeof(NapelemDbContext))]
-    partial class NapelemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230426192001_mssql.local_migration_638")]
+    partial class mssqllocal_migration_638
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

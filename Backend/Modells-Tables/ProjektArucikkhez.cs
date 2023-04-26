@@ -19,9 +19,8 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         [ForeignKey("Projektek")]
         public int ProjectID { get; set; }
 
-        [ForeignKey("Arucikknev")]
-        public string Arucikknev { get; set; }
+        [ForeignKey("Arucikk")]
+        public int ArucikkID { get; set; }
 
     }
-
 }

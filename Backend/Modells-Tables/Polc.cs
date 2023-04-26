@@ -23,8 +23,9 @@ namespace napelem_telepito_kozpont.Backend.Modells_Tables
         public int Column { get; set; }
         public int Level { get; set; }
         public int ItemsInShelf { get; set; }
-        [ForeignKey("ItemName")]
-        public virtual Arucikk Arucikk { get; set; }
+        [ForeignKey("Arucikk")]
+        public int ArucikkID { get; set; }
     }
 
 }
+

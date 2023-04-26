@@ -151,10 +151,14 @@ namespace napelem_telepito_kozpont.GUI_Forms
             darabszamTextBox.Clear();
             string selectedArucikknev = alkatreszComboBox.SelectedItem.ToString();
 
+            
+
             using (var context = new NapelemDbContext())
             {
+                int arucikkID = context.Arucikk.Where(a => a.Arucikknev == selectedArucikknev).Select(a => a.ArucikkID).FirstOrDefault();
+
                 int itemCount = context.Polc
-                    .Where(p => p.Arucikk.Arucikknev == selectedArucikknev)
+                    .Where(p => arucikkID == p.ArucikkID)
                     .Sum(p => p.ItemsInShelf);
 
                 darabszamTextBox.Text = itemCount.ToString();
@@ -223,8 +227,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 /* Projekt objektum létrehozásas */
                 Projektek projekt = new()
                 {
-                    ProjectManagerID = userID.ToString(),
-                    ClientID = megrendeloID.ToString(),
+                    FelhasznaloID = userID,
+                    ClientID = megrendeloID,
                     leiras = leiras,
                     helyszin = helyszin,
                     ApproxTimeToFinish = new DateTime(), // Hardcoded

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 
@@ -11,9 +12,11 @@ using napelem_telepito_kozpont.Backend.DatabaseConnection;
 namespace napelem_telepito_kozpont.Migrations
 {
     [DbContext(typeof(NapelemDbContext))]
-    partial class NapelemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230426184028_mssql.local_migration_863")]
+    partial class mssqllocal_migration_863
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,15 +27,8 @@ namespace napelem_telepito_kozpont.Migrations
 
             modelBuilder.Entity("napelem_telepito_kozpont.Backend.Modells_Tables.Arucikk", b =>
                 {
-                    b.Property<int>("ArucikkID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArucikkID"));
-
                     b.Property<string>("Arucikknev")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("MaxOnShelf")
                         .HasColumnType("int");
@@ -40,22 +36,15 @@ namespace napelem_telepito_kozpont.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.HasKey("ArucikkID");
+                    b.HasKey("Arucikknev");
 
                     b.ToTable("Arucikk");
                 });
 
             modelBuilder.Entity("napelem_telepito_kozpont.Backend.Modells_Tables.Felhasznalo", b =>
                 {
-                    b.Property<int>("FelhasznaloID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FelhasznaloID"));
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -64,7 +53,7 @@ namespace napelem_telepito_kozpont.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.HasKey("FelhasznaloID");
+                    b.HasKey("Name");
 
                     b.ToTable("Felhasznalo");
                 });
@@ -106,9 +95,6 @@ namespace napelem_telepito_kozpont.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShelfID"));
 
-                    b.Property<int>("ArucikkID")
-                        .HasColumnType("int");
-
                     b.Property<int>("Column")
                         .HasColumnType("int");
 
@@ -120,6 +106,10 @@ namespace napelem_telepito_kozpont.Migrations
 
                     b.Property<int>("Row")
                         .HasColumnType("int");
+
+                    b.Property<string>("itemName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ShelfID");
 
@@ -156,8 +146,9 @@ namespace napelem_telepito_kozpont.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectToItemID"));
 
-                    b.Property<int>("ArucikkID")
-                        .HasColumnType("int");
+                    b.Property<string>("Arucikknev")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsReserved")
                         .HasColumnType("bit");
@@ -187,11 +178,13 @@ namespace napelem_telepito_kozpont.Migrations
                     b.Property<DateTime>("ApproxTimeToFinish")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ClientID")
-                        .HasColumnType("int");
+                    b.Property<string>("ClientID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FelhasznaloID")
-                        .HasColumnType("int");
+                    b.Property<string>("ProjectManagerID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("helyszin")
                         .IsRequired()
