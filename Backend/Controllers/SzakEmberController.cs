@@ -15,7 +15,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
         // A4.
         public void AruCikkekBerendel(Dictionary<string, int> arucikkek, int projectID)
         {
-            /*
+            
             if (arucikkek == null || arucikkek.Count == 0)
             {
                 MessageBox.Show("Nincs árucikk hozzáadva a kosárhoz.");
@@ -31,17 +31,19 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                     return;
                 }
 
-                foreach (var arucikk in arucikkek.Keys)
+                foreach (var arucikk in arucikkek)
                 {
-                    var quantity = arucikkek[arucikk];
-                    var projektArucikkhez = context.ProjektekArucikkhez.SingleOrDefault(p => p.ProjectToItemID == projectID && p.Arucikknev == arucikkek[arucikk].First);
+                    string nev = arucikk.Key;
+                    int quantity = arucikk.Value;
+                    var AruID_Nevbol = context.Arucikk.FirstOrDefault(c => c.Arucikknev == nev);
+                    var projektArucikkhez = context.ProjektekArucikkhez.SingleOrDefault(p => p.ProjectToItemID == projectID && p.ArucikkID == AruID_Nevbol.ArucikkID);
 
                     if (projektArucikkhez == null)
                     {
                         projektArucikkhez = new ProjektArucikkhez
                         {
                             ProjectToItemID = projectID,
-                            Arucikknev = arucikkek.First,
+                            ArucikkID = AruID_Nevbol.ArucikkID,
                             Quantity = quantity,
                             IsReserved = false
                         };
@@ -59,7 +61,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 context.SaveChanges();
                 MessageBox.Show("A termékek sikeresen hozzárendelve a projekthez.");
             }
-            */
+            
         }
 
 
