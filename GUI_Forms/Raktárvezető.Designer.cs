@@ -57,10 +57,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.raktarHozzaadPanel = new System.Windows.Forms.Panel();
             this.raktarHozzaadButton = new System.Windows.Forms.Button();
+            this.rekeszPanel = new System.Windows.Forms.Panel();
+            this.rekeszekDataGridView = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.raktarvezetoMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rekeszenkentiMax)).BeginInit();
             this.hozzaadPanel.SuspendLayout();
             this.raktarHozzaadPanel.SuspendLayout();
+            this.rekeszPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rekeszekDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLoginRaktarvezeto
@@ -131,15 +137,16 @@
             // beerkezoMenu
             // 
             this.beerkezoMenu.Name = "beerkezoMenu";
-            this.beerkezoMenu.Size = new System.Drawing.Size(230, 26);
+            this.beerkezoMenu.Size = new System.Drawing.Size(267, 26);
             this.beerkezoMenu.Text = "beérkező alkatrészek";
             this.beerkezoMenu.Click += new System.EventHandler(this.beerkezoMenu_Click);
             // 
             // tarolasMenu
             // 
             this.tarolasMenu.Name = "tarolasMenu";
-            this.tarolasMenu.Size = new System.Drawing.Size(230, 26);
-            this.tarolasMenu.Text = "tárolás";
+            this.tarolasMenu.Size = new System.Drawing.Size(267, 26);
+            this.tarolasMenu.Text = "rekesz méretének kezelése";
+            this.tarolasMenu.Click += new System.EventHandler(this.tarolasMenu_Click);
             // 
             // almenu_cim
             // 
@@ -373,20 +380,68 @@
             this.raktarHozzaadButton.UseVisualStyleBackColor = true;
             this.raktarHozzaadButton.Click += new System.EventHandler(this.raktarHozzaadButton_Click);
             // 
+            // rekeszPanel
+            // 
+            this.rekeszPanel.BackColor = System.Drawing.Color.Transparent;
+            this.rekeszPanel.Controls.Add(this.rekeszekDataGridView);
+            this.rekeszPanel.Controls.Add(this.label7);
+            this.rekeszPanel.Controls.Add(this.label10);
+            this.rekeszPanel.Location = new System.Drawing.Point(161, 150);
+            this.rekeszPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rekeszPanel.Name = "rekeszPanel";
+            this.rekeszPanel.Size = new System.Drawing.Size(989, 582);
+            this.rekeszPanel.TabIndex = 17;
+            // 
+            // rekeszekDataGridView
+            // 
+            this.rekeszekDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rekeszekDataGridView.Location = new System.Drawing.Point(29, 159);
+            this.rekeszekDataGridView.Name = "rekeszekDataGridView";
+            this.rekeszekDataGridView.RowHeadersWidth = 51;
+            this.rekeszekDataGridView.RowTemplate.Height = 29;
+            this.rekeszekDataGridView.Size = new System.Drawing.Size(931, 353);
+            this.rekeszekDataGridView.TabIndex = 16;
+            this.rekeszekDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.rekeszekDataGridView_CellValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(29, 212);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 32);
+            this.label7.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(13, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(576, 92);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Rekeszben elhelyezhető maximális \r\ndarabszámú alkatrész";
+            // 
             // Raktárvezető
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1399, 895);
-            this.Controls.Add(this.raktarHozzaadPanel);
-            this.Controls.Add(this.hozzaadPanel);
             this.Controls.Add(this.buttonLoginRaktarvezeto);
             this.Controls.Add(this.raktarvezetoMenu);
+            this.Controls.Add(this.rekeszPanel);
+            this.Controls.Add(this.raktarHozzaadPanel);
+            this.Controls.Add(this.hozzaadPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.raktarvezetoMenu;
             this.Name = "Raktárvezető";
             this.Text = "Raktárvezető";
+            this.Load += new System.EventHandler(this.Raktárvezető_Load);
             this.raktarvezetoMenu.ResumeLayout(false);
             this.raktarvezetoMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rekeszenkentiMax)).EndInit();
@@ -394,6 +449,9 @@
             this.hozzaadPanel.PerformLayout();
             this.raktarHozzaadPanel.ResumeLayout(false);
             this.raktarHozzaadPanel.PerformLayout();
+            this.rekeszPanel.ResumeLayout(false);
+            this.rekeszPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rekeszekDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,5 +487,9 @@
         private Label label6;
         private Panel raktarHozzaadPanel;
         private Button raktarHozzaadButton;
+        private Panel rekeszPanel;
+        private DataGridView rekeszekDataGridView;
+        private Label label7;
+        private Label label10;
     }
 }
