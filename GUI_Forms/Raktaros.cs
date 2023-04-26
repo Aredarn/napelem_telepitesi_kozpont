@@ -13,9 +13,11 @@ namespace napelem_telepito_kozpont.GUI_Forms
 {
     public partial class Raktaros : Form
     {
-        public Raktaros()
+        private int userID;
+        public Raktaros(int userID)
         {
             InitializeComponent();
+            this.userID = userID;
         }
 
         private void buttonLoginRaktaros_Click(object sender, EventArgs e)

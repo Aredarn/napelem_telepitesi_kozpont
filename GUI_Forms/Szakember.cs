@@ -19,12 +19,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
     {
         private int userID;
 
-        public Szakember(int _userID)
+        public Szakember(int userID)
         {
             InitializeComponent();
             mindLathatatlan();
 
-            userID = _userID;
+            this.userID = userID;
         }
 
         //vissza a login felületre
@@ -208,7 +208,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 }
 
                 /* Megrendelő objektum létrehozásas */
-                Megrendelo megrendelo = new() {
+                Megrendelo megrendelo = new()
+                {
                     Name = megrendeloNev,
                     Address = megrendeloLakcim,
                     phoneNum = megrendeloTelefonszam,
@@ -242,6 +243,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 {
                     throw new Exception("Projekt hozzáadása sikertelen!");
                 }
+
+                MessageBox.Show("Projekt sikeresen létrehozva!");
             }
             catch (Exception exception)
             {
