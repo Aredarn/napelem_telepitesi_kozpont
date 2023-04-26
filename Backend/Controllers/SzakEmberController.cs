@@ -67,7 +67,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
         // A5.
 
-        public void Arkalkulacio(int projectID, int becsultOra, DateTime becsultVegzes)
+        public void Arkalkulacio(int projectID, int becsultOra )
         {
             using (var context = new NapelemDbContext())
             {
@@ -85,7 +85,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 else
                 {
                     project.ApproxCost = becsultOra;
-                    project.ApproxTimeToFinish = becsultVegzes;
+                    
                     context.SaveChanges();
                     MessageBox.Show($"Az árkalkuláció sikeresen frissítve lett a {projectID}. ID-val ellátott projektben.");
                 }
