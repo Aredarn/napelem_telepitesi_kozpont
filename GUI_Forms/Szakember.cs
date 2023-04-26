@@ -154,6 +154,68 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             alkatreszekPanel.Visible = true;
+            /*
+            ProjektController projektController = new();
+            List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
+
+            foreach (var projekt in projektLista)
+            {
+                ListViewItem item = new ListViewItem();
+
+                item.Text = projekt.ProjektID.ToString();
+                item.SubItems.Add(projekt.Leiras);
+                item.SubItems.Add(projekt.Helyszin);
+                item.SubItems.Add(projekt.MegrendeloNev);
+                item.SubItems.Add(projekt.MegrendeloCim);
+                item.SubItems.Add(projekt.Statusz);
+
+                projektekListView.Items.Add(item);
+            }
+            */
+
+            //ArucikkController arucikkContoller = new();
+            /*
+            var result = db.pruchasemasters.GroupBy(o => o.membername)
+                   .Select(g => new { membername = g.Key, total = g.Sum(i => i.cost) });
+
+            foreach (var group in result)
+            {
+                Console.WriteLine("Membername = {0} Totalcost={1}", group.membername, group.total);
+            } */
+            /*
+            List<AlkatreszViewModel> alkatreszLista = arucikkContoller.AlkatreszListaLekerese();
+
+            NapelemDbContext context = new();
+
+            List<AlkatreszViewModel> alkatreszListamasolat = alkatreszLista;
+
+            foreach (var a in alkatreszListamasolat)
+            {
+                for(int i=1; i<alkatreszListamasolat.Count; i++)
+                {
+                    int sum = 0;
+                    if (a.AlkatreszID == i)
+                    {
+                        sum += a.Raktaron;
+                    }
+                    a.Raktaron= sum;
+                }
+                
+            }
+
+            foreach (var alk in alkatreszLista)
+            {
+                ListViewItem item = new ListViewItem();
+                
+
+                item.Text = alk.AlkatreszNev
+                item.SubItems.Add(alk.Ar.ToString());
+                item.SubItems.Add(alk.Raktaron.ToString);
+                
+                projektekListView.Items.Add(item);
+                
+            } */
+
         }
 
         private void munkadíjIdőtartamMeghatározásaToolStripMenuItem_Click(object sender, EventArgs e)

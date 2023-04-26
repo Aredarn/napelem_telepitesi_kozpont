@@ -127,5 +127,49 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 return false;
             }
         }
+
+        public List<AlkatreszViewModel> AlkatreszListaLekerese()
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                /* Arucikk es Polc tabla joinolasa -- kiiratashoz ViewModel hasznalata */
+
+                List<AlkatreszViewModel> alkatreszek = context.Arucikk
+                    .Join(context.Polc,
+                          polc => polc.ArucikkID,
+                          arucikk => arucikk.ArucikkID,
+                          (arucikk, polc) => new {
+                              arucikk.ArucikkID,
+                              arucikk.Arucikknev,
+                              arucikk.Price,
+                              polc.ItemsInShelf
+                          })
+                        .Select(result => new AlkatreszViewModel
+                        {
+                            AlkatreszID = result.ArucikkID,
+                            AlkatreszNev = result.Arucikknev,
+                            Ar = result.Price,
+                            Raktaron = result.ItemsInShelf
+                        }).ToList();
+
+                return alkatreszek;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+
+                return new List<AlkatreszViewModel>();
+            }
+        }
+    }
+    public class AlkatreszViewModel
+    {
+        public int AlkatreszID { get; set; }
+        public string AlkatreszNev { get; set; }
+        public int Ar { get; set; }
+        public int Raktaron { get; set; }
+        
     }
 }
