@@ -81,7 +81,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
                         break;
 
                     case 1: // Szakember
-                        Szakember szakember = new Szakember();
+                        // Szakember szakember = new Szakember(felhasznalo.ID);
+                        Szakember szakember = new Szakember(1); // Hard coded
                         szakember.Show();
                         break;
 

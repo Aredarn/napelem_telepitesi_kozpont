@@ -11,18 +11,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace napelem_telepito_kozpont.Backend.Controllers
 {
-    public class ProjektController
+    public class MegrendelokController
     {
-        public int ProjektLetrehozasa(Projektek projekt)
+        public int MegrendeloHozzaadasa(Megrendelo megrendelo)
         {
             try
             {
                 NapelemDbContext context = new();
 
-                context.Projekt.Add(projekt);
+                context.Megrendelok.Add(megrendelo);
                 context.SaveChanges();
 
-                return projekt.ProjectID;
+                return megrendelo.ClientID;
             }
             catch (Exception exception)
             {

@@ -1,5 +1,7 @@
 ﻿using napelem_telepito_kozpont.Backend.Controllers;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
+using napelem_telepito_kozpont.Backend.Modells_Tables;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +17,14 @@ namespace napelem_telepito_kozpont.GUI_Forms
 {
     public partial class Szakember : Form
     {
-        public Szakember()
+        private int userID;
+
+        public Szakember(int _userID)
         {
             InitializeComponent();
             mindLathatatlan();
+
+            userID = _userID;
         }
 
         //vissza a login felületre
@@ -26,7 +32,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             Login l1 = new Login();
             l1.Show();
-            
+
             this.Hide();
         }
 
@@ -36,8 +42,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
             alkHozzarendelPanel.Visible = true;
         }
 
-        private void mindLathatatlan() { 
-            alkHozzarendelPanel.Visible= false;
+        private void mindLathatatlan()
+        {
+            alkHozzarendelPanel.Visible = false;
             ujProjektPanel.Visible = false;
             projektListazasPanel.Visible = false;
             alkatreszekPanel.Visible = false;
@@ -113,21 +120,21 @@ namespace napelem_telepito_kozpont.GUI_Forms
         private void munkadíjIdőtartamMeghatározásaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mindLathatatlan();
-            munkadijPanel.Visible= true;
+            munkadijPanel.Visible = true;
         }
 
         private void szamitasButton_Click(object sender, EventArgs e)
         {
-            
+
             string projektID = projektAzonositoTextBox.Text;
             int.Parse(projektID);
 
             string munkaora = munkaoraTextBox.Text;
-            
 
-            int munkadij = int.Parse(munkaora) *15000;
-            MessageBox.Show("Munkadíj meghatározva a(z) "+ projektID+ ". projekthez!\n" +
-                "Munkadíj összege: " +munkadij+ " Ft");
+
+            int munkadij = int.Parse(munkaora) * 15000;
+            MessageBox.Show("Munkadíj meghatározva a(z) " + projektID + ". projekthez!\n" +
+                "Munkadíj összege: " + munkadij + " Ft");
         }
 
         private void Szakember_Load(object sender, EventArgs e)
@@ -151,6 +158,90 @@ namespace napelem_telepito_kozpont.GUI_Forms
                     .Sum(p => p.ItemsInShelf);
 
                 darabszamTextBox.Text = itemCount.ToString();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                /* Deklaráció */
+                MegrendelokController megrendelokController = new();
+                ProjektController projektController = new();
+
+                string helyszin = textBox1.Text;
+                string leiras = leirasTextBox.Text;
+
+                string megrendeloNev = nevTextBox.Text;
+                string megrendeloLakcim = lakcimTextBox.Text;
+                string megrendeloTelefonszam = telefonszamTextBox.Text;
+                string megrendeloEmail = emailTextBox.Text;
+
+                /* Validáció */
+                if (helyszin == "")
+                {
+                    throw new Exception("A helyszín nem lehet üres!");
+                }
+                else if (leiras == "")
+                {
+                    throw new Exception("A leírás nem lehet üres!");
+                }
+                else if (megrendeloNev == "")
+                {
+                    throw new Exception("A megrendelő név nem lehet üres!");
+                }
+                else if (megrendeloLakcim == "")
+                {
+                    throw new Exception("A megrendelő lakcim nem lehet üres!");
+                }
+                else if (megrendeloTelefonszam == "")
+                {
+                    throw new Exception("A megrendelő telefonszám nem lehet üres!");
+                }
+                else if (megrendeloEmail == "")
+                {
+                    throw new Exception("A megrendelő email nem lehet üres!");
+                }
+
+                /* Megrendelő objektum létrehozásas */
+                Megrendelo megrendelo = new() {
+                    Name = megrendeloNev,
+                    Address = megrendeloLakcim,
+                    phoneNum = megrendeloTelefonszam,
+                    email = megrendeloEmail
+                };
+
+                /* Megrendelő hozzáadása az adatbázishoz */
+                int megrendeloID = megrendelokController.MegrendeloHozzaadasa(megrendelo);
+
+                /* Ha a megrendelő ID 0, akkor a megrendelőt nem sikerült létrehozni */
+                if (megrendeloID == 0)
+                {
+                    throw new Exception("Megrendelő hozzáadása sikertelen!");
+                }
+
+                /* Projekt objektum létrehozásas */
+                Projektek projekt = new()
+                {
+                    ProjectManagerID = userID.ToString(),
+                    ClientID = megrendeloID.ToString(),
+                    leiras = leiras,
+                    helyszin = helyszin,
+                    ApproxTimeToFinish = new DateTime(), // Hardcoded
+                    ApproxCost = 0 // Hard coded
+                };
+
+                /* Projekt hozzáadása az adatbázishoz */
+                int projektID = projektController.ProjektLetrehozasa(projekt);
+
+                if (projektID == 0)
+                {
+                    throw new Exception("Projekt hozzáadása sikertelen!");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
     }
