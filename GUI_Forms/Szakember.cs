@@ -19,12 +19,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
     {
         private int userID;
 
-        public Szakember(int _userID)
+        public Szakember(int userID)
         {
             InitializeComponent();
             mindLathatatlan();
 
-            userID = _userID;
+            this.userID = userID;
         }
 
         //vissza a login felületre

@@ -15,7 +15,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
 {
     public partial class Raktárvezető : Form
     {
-        public Raktárvezető()
+        private int userID;
+        public Raktárvezető(int userID)
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -24,6 +25,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
             raktarHozzaadPanel.Visible = false;
+            this.userID = userID;
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)

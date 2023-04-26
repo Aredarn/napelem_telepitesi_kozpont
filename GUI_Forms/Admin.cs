@@ -12,9 +12,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
 {
     public partial class Admin : Form
     {
-        public Admin()
+        private int userID;
+        public Admin(int userID)
         {
             InitializeComponent();
+
+            this.userID = userID;
         }
         //vissza a Login felületre
         private void buttonLoginAdmin_Click(object sender, EventArgs e)

@@ -66,23 +66,23 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 switch (felhasznalo.Role)
                 {
                     case 4: // Admin
-                        Admin admin = new Admin();
+                        Admin admin = new Admin(1);
                         admin.Show();
                         break;
 
                     case 3: // Raktárvezető
-                        Raktárvezető raktarvezeto = new Raktárvezető();
+                        Raktárvezető raktarvezeto = new Raktárvezető(2);
                         raktarvezeto.Show();
                         break;
 
                     case 2: // Raktáros
-                        Raktaros raktaros = new Raktaros();
+                        Raktaros raktaros = new Raktaros(3);
                         raktaros.Show();
                         break;
 
                     case 1: // Szakember
                         // Szakember szakember = new Szakember(felhasznalo.ID);
-                        Szakember szakember = new Szakember(1); // Hard coded
+                        Szakember szakember = new Szakember(4); // Hard coded
                         szakember.Show();
                         break;
 
