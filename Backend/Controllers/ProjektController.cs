@@ -66,8 +66,8 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                           statusz => statusz.StatusID,
                           (result, statusz) => new {
                               result.ProjectID,
-                              result.leiras,
                               result.helyszin,
+                              result.leiras,
                               result.Name,
                               result.Address,
                               result.StatusID,
@@ -82,8 +82,6 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                         MegrendeloCim = result.Address,
                         Statusz = result.StatusInfo
                     }).ToList();
-
-                MessageBox.Show("TEST");
 
                 return projektek;
             }

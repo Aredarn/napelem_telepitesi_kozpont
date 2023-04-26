@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySqlX.XDevAPI.Common;
 using napelem_telepito_kozpont.Backend.Controllers;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
@@ -114,11 +115,18 @@ namespace napelem_telepito_kozpont.GUI_Forms
             ProjektController projektController = new();
             List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
 
-            MessageBox.Show("ASD");
-            foreach (var c in projektLista)
+            foreach (var projekt in projektLista)
             {
-                MessageBox.Show(c.ProjektID.ToString());
-                projektekListView.Items.Add(c.ProjektID.ToString());
+                ListViewItem item = new ListViewItem();
+
+                item.Text = projekt.ProjektID.ToString();
+                item.SubItems.Add(projekt.Leiras);
+                item.SubItems.Add(projekt.Helyszin);
+                item.SubItems.Add(projekt.MegrendeloNev);
+                item.SubItems.Add(projekt.MegrendeloCim);
+                item.SubItems.Add(projekt.Statusz);
+
+                projektekListView.Items.Add(item);
             }
         }
 
