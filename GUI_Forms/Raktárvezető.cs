@@ -216,12 +216,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void raktarHozzaadButton_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 /* Az `ArucikkController` objektum létrehozása, hogy
-                   alkalmazni lehessen az `Add()` metódust, hogy új árucikket
-                   hozhassunk létre. */
+                   alkalmazni lehessen az `Add()` metódust, hogy új rekordot
+                   hozhassunk létre a Polc táblában. */
                 ArucikkController arucikkController = new();
 
                 /* Változók deklarálása, valamint inicializálása az input
@@ -231,40 +231,48 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
                 /* Alapvető validáció, hogy elkerüljük az üres mezők
                    megadását. */
-                
+
                 if (mennyiseg == "")
                 {
                     throw new Exception("Mennyiség nem lehet üres!");
                 }
 
-                /* Egy `Arucikk` megalkotása, mivel a következő `Add()` metódus
-                   paraméterben egy `Arucikk` objektumot vár. 
-                Arucikk arucikk = new Arucikk
+                /*  Meg kell keresni azt az arucikket amibol eppen a raktarba erkezett */
+
+                List<Arucikk> arucikkek = arucikkController.GetItems();
+
+
+                Arucikk result = arucikkek.Find(x => x.Arucikknev == nev);
+
+
+                if (result == null)
                 {
-                    Arucikknev = nev,
-                    Price = Int32.Parse(ar),
-                    MaxOnShelf = Int32.Parse(max)
-                };  
-                */
-                
+                    throw new Exception("Nincs még ilyen fajta alkatrész a rendszerben, először add hozzá a 'hozzáadás' lapfülnél!");
+                }
+
+                /* Új polc objektum létrehozása */
+
                 Polc polc = new Polc
                 {
+                    Column = 0,
+                    Row = 0,
+                    Level = 0,
                     ItemsInShelf = Int32.Parse(mennyiseg),
-                    //ItemName = nev
-                };  
+                    ArucikkID = result.ArucikkID
+                };
 
                 /* Mentsük el egy logikai változóba, hogy a hozzáadás sikeres volt-e,
                    vagy sem. */
-                //bool siker = arucikkController.Add(polc);
+                bool siker = arucikkController.Add(polc);
 
                 /* Az alapján, hogy az `Add()` metódus milyen logikai értékkel tért
-                   vissza, értesítjük a felhasználót. 
+                   vissza, értesítjük a felhasználót. */
                 if (!siker)
                 {
-                    throw new Exception("Árucikk hozzáadása sikertelen!");
+                    throw new Exception("Alkatrész felvétele a raktárba sikertelen!");
                 }
-                */
-                MessageBox.Show("Árucikk hozzáadása sikeresen megtörtént!");
+
+                MessageBox.Show("Alkatrész felvétele a raktárba sikeresen megtörtént!");
             }
             catch (Exception exception)
             {
@@ -274,7 +282,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 mennyisegTextBox.Text = "1";
             }
-            
+
         }
 
         private void buttonLoginRaktarvezeto_Click_1(object sender, EventArgs e)
