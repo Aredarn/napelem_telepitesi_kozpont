@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace napelem_telepito_kozpont.Backend.Controllers
@@ -32,5 +33,71 @@ namespace napelem_telepito_kozpont.Backend.Controllers
             }
 
         }
+        public List<ProjektViewModel> ProjektListaLekerese()
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                List<ProjektViewModel> projektek = context.Projekt
+                    .Join(context.Megrendelok,
+                          megrendelok => megrendelok.ClientID,
+                          projekt => projekt.ClientID,
+                          (projekt, megrendelok) => new {
+                              projekt.ProjectID,
+                              projekt.leiras,
+                              projekt.helyszin,
+                              megrendelok.Name,
+                              megrendelok.Address
+                          })
+                    .Join(context.projectStatuszok,
+                          result => result.ProjectID,
+                          projektStatuszok => projektStatuszok.ProjectID,
+                          (result, projektStatuszok) => new {
+                              result.ProjectID,
+                              result.leiras,
+                              result.helyszin,
+                              result.Name,
+                              result.Address,
+                              projektStatuszok.StatusID
+                          })
+                    .Join(context.Státusz,
+                          result => result.StatusID,
+                          statusz => statusz.StatusID,
+                          (result, statusz) => new {
+                              result.ProjectID,
+                              result.leiras,
+                              result.helyszin,
+                              result.Name,
+                              result.Address,
+                              result.StatusID,
+                              statusz.StatusInfo
+                          })
+                    .Select(result => new ProjektViewModel
+                    {
+                        ProjektID = result.ProjectID,
+                        Helyszin = result.helyszin.ToString(),
+                        Leiras = result.leiras.ToString(),
+                        MegrendeloNev = result.Name,
+                        MegrendeloCim = result.Address,
+                        Statusz = result.StatusInfo
+                    }).ToList();
+
+                return projektek;
+            }
+            catch (Exception)
+            {
+                return new List<ProjektViewModel>();
+            }
+        }
+    }
+    public class ProjektViewModel
+    {
+        public int ProjektID { get; set; }
+        public string Helyszin { get; set; }
+        public string Leiras { get; set; }
+        public string MegrendeloNev { get; set; }
+        public string MegrendeloCim { get; set; }
+        public string Statusz { get; set; }
     }
 }
