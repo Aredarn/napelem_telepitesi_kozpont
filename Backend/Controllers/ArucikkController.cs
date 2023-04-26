@@ -79,7 +79,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 /* utolso sor utolso oszlop utolso rekeszet megkeresem 
                     ami eddig a raktarban mar foglalt */
 
-                MessageBox.Show("0");
+                
 
                 if (context.Polc.ToList().Count < 0)
                 {
@@ -90,10 +90,10 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 else
                 {
                     int maxColumn = context.Polc.Max(p => p.Column);
-                    MessageBox.Show("0.5");
+                    
                     int maxRow = context.Polc.Max(p => p.Row);
                     int maxLevel = context.Polc.Max(p => p.Level);
-                    MessageBox.Show("1");
+                    
                     /* a polc amit kapunk parameterben csak az ItemNamet es a mennyiseget tartalmazza
                          azt hogy hol szeretnenk eltarolni az alkatreszt meg itt kell kiszamolni es hozzaadni
                         az objektumhoz */
@@ -103,7 +103,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
                     polc.Column = maxColumn + 1;
                     polc.Row = maxRow + 1;
-                    MessageBox.Show("1.5");
+                    
                     polc.Level = maxLevel + 1;
 
                 }
