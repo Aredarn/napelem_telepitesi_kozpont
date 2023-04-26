@@ -1,4 +1,5 @@
-﻿using napelem_telepito_kozpont.Backend.Controllers;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using napelem_telepito_kozpont.Backend.Controllers;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
 using Org.BouncyCastle.Bcpg;
@@ -72,7 +73,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             //a megírt backend függvény segítségével UPDATE utastást hajt végre az adatbázison
             //a kijelölt map<Árucikk,Darab> értékeivel, a "projektIDTextBox"-ban megadott projekthez
-            
+
             Dictionary<string, int> Arucikkek = new Dictionary<string, int>();
 
             foreach (ListViewItem item in arucikkListView.Items)
@@ -83,10 +84,10 @@ namespace napelem_telepito_kozpont.GUI_Forms
             }
             string projektID = projektIDTextBox.Text;
             int projektIDint = int.Parse(projektID);
-            
+
             SzakEmberController szakember = new SzakEmberController();
             szakember.AruCikkekBerendel(Arucikkek, projektIDint);
-            
+
         }
 
         private void kivalasztottAlkatreszekTextBox_TextChanged(object sender, EventArgs e)
@@ -109,6 +110,36 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             projektListazasPanel.Visible = true;
+
+            ProjektController projektController = new();
+            List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
+
+            MessageBox.Show("ASD");
+            foreach (var c in projektLista)
+            {
+                MessageBox.Show(c.ProjektID.ToString());
+                projektekListView.Items.Add(c.ProjektID.ToString());
+            }
+        }
+
+        private DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            DataTable table = new DataTable();
+            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
+            foreach (PropertyDescriptor prop in props)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in props)
+                {
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+            return table;
         }
 
         private void alkatrészekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,7 +165,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             int munkaoraID = int.Parse(munkaora);
 
             SzakEmberController x = new SzakEmberController();
-            x.Arkalkulacio(projektIDint,munkaoraID);
+            x.Arkalkulacio(projektIDint, munkaoraID);
 
             int munkadij = int.Parse(munkaora) * 15000;
             MessageBox.Show("Munkadíj meghatározva a(z) " + projektID + ". projekthez!\n" +
@@ -155,7 +186,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             darabszamTextBox.Clear();
             string selectedArucikknev = alkatreszComboBox.SelectedItem.ToString();
 
-            
+
 
             using (var context = new NapelemDbContext())
             {

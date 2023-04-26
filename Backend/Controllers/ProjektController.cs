@@ -83,10 +83,14 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                         Statusz = result.StatusInfo
                     }).ToList();
 
+                MessageBox.Show("TEST");
+
                 return projektek;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                MessageBox.Show(exception.Message);
+
                 return new List<ProjektViewModel>();
             }
         }
