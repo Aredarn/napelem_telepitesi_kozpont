@@ -42,7 +42,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                     {
                         projektArucikkhez = new ProjektArucikkhez
                         {
-                            ProjectToItemID = projectID,
+                            ProjectID = projectID,
                             ArucikkID = AruID_Nevbol.ArucikkID,
                             Quantity = quantity,
                             IsReserved = false
@@ -78,7 +78,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 {
                     MessageBox.Show($"Nem létezik a {projectID}. ID val ellátott projekt");
                 }
-                else if (project.ApproxCost != null)
+                else if (project.ApproxCost > null)
                 {
                     MessageBox.Show($"Ennek a projektnek már megtörtént az árkalkulációja");
                 }

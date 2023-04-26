@@ -72,21 +72,21 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             //a megírt backend függvény segítségével UPDATE utastást hajt végre az adatbázison
             //a kijelölt map<Árucikk,Darab> értékeivel, a "projektIDTextBox"-ban megadott projekthez
-            /*
-            Dictionary<int, string> Arucikkek = new Dictionary<int, string>();
+            
+            Dictionary<string, int> Arucikkek = new Dictionary<string, int>();
 
             foreach (ListViewItem item in arucikkListView.Items)
             {
-                int darab = int.Parse(item.SubItems[0].Text);
-                string Arucikknev = item.SubItems[1].Text;
-                Arucikkek.Add(darab, Arucikknev);
+                int darab = int.Parse(item.SubItems[1].Text);
+                string Arucikknev = item.SubItems[0].Text;
+                Arucikkek.Add(Arucikknev, darab);
             }
             string projektID = projektIDTextBox.Text;
             int projektIDint = int.Parse(projektID);
             
             SzakEmberController szakember = new SzakEmberController();
-            szakember.AruCikkekBerendel(Arucikkek,projektIDint);
-            */
+            szakember.AruCikkekBerendel(Arucikkek, projektIDint);
+            
         }
 
         private void kivalasztottAlkatreszekTextBox_TextChanged(object sender, EventArgs e)
@@ -127,10 +127,14 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
 
             string projektID = projektAzonositoTextBox.Text;
-            int.Parse(projektID);
+            int projektIDint = int.Parse(projektID);
+
 
             string munkaora = munkaoraTextBox.Text;
+            int munkaoraID = int.Parse(munkaora);
 
+            SzakEmberController x = new SzakEmberController();
+            x.Arkalkulacio(projektIDint,munkaoraID);
 
             int munkadij = int.Parse(munkaora) * 15000;
             MessageBox.Show("Munkadíj meghatározva a(z) " + projektID + ". projekthez!\n" +
