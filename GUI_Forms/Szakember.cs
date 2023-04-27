@@ -173,7 +173,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
             }
             */
 
-            //ArucikkController arucikkContoller = new();
+            ArucikkController arucikkContoller = new();
             /*
             var result = db.pruchasemasters.GroupBy(o => o.membername)
                    .Select(g => new { membername = g.Key, total = g.Sum(i => i.cost) });
@@ -182,39 +182,23 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 Console.WriteLine("Membername = {0} Totalcost={1}", group.membername, group.total);
             } */
-            /*
+            
             List<AlkatreszViewModel> alkatreszLista = arucikkContoller.AlkatreszListaLekerese();
+           // List<Arucikk> arucikkek = arucikkContoller.GetItems();
 
-            NapelemDbContext context = new();
-
-            List<AlkatreszViewModel> alkatreszListamasolat = alkatreszLista;
-
-            foreach (var a in alkatreszListamasolat)
-            {
-                for(int i=1; i<alkatreszListamasolat.Count; i++)
-                {
-                    int sum = 0;
-                    if (a.AlkatreszID == i)
-                    {
-                        sum += a.Raktaron;
-                    }
-                    a.Raktaron= sum;
-                }
-                
-            }
 
             foreach (var alk in alkatreszLista)
             {
                 ListViewItem item = new ListViewItem();
-                
 
-                item.Text = alk.AlkatreszNev
+
+                item.Text = alk.AlkatreszNev;
                 item.SubItems.Add(alk.Ar.ToString());
-                item.SubItems.Add(alk.Raktaron.ToString);
+                item.SubItems.Add(alk.Raktaron.ToString());
                 
-                projektekListView.Items.Add(item);
+                alkatreszekListView.Items.Add(item);
                 
-            } */
+            } 
 
         }
 
