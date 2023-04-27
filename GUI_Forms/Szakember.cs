@@ -111,7 +111,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             projektListazasPanel.Visible = true;
-
+            projektekListView.Items.Clear();
+           
+            
             ProjektController projektController = new();
             List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
 
@@ -154,6 +156,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             alkatreszekPanel.Visible = true;
+
+            alkatreszekListView.Items.Clear();
+
             /*
             ProjektController projektController = new();
             List<ProjektViewModel> projektLista = projektController.ProjektListaLekerese();
