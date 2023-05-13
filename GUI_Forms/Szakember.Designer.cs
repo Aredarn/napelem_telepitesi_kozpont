@@ -37,8 +37,10 @@
             this.projektekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újProjektLétrehozásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projektekListázásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projektLezárásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.munkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.munkadíjIdőtartamMeghatározásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.árkalkulációKészítéseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alkHozzarendelPanel = new System.Windows.Forms.Panel();
             this.darabszamTextBox = new System.Windows.Forms.TextBox();
             this.arucikkListView = new System.Windows.Forms.ListView();
@@ -92,12 +94,34 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.arkalkulacioPanel = new System.Windows.Forms.Panel();
+            this.arKalkulacioButton = new System.Windows.Forms.Button();
+            this.munkadijListView = new System.Windows.Forms.ListView();
+            this.munkaora = new System.Windows.Forms.ColumnHeader();
+            this.munkadij = new System.Windows.Forms.ColumnHeader();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.elemekListView = new System.Windows.Forms.ListView();
+            this.megnevezes = new System.Windows.Forms.ColumnHeader();
+            this.eszkozAr = new System.Windows.Forms.ColumnHeader();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.projektLezarasaPanel = new System.Windows.Forms.Panel();
+            this.lezarasComboBox = new System.Windows.Forms.ComboBox();
+            this.lezarButton = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.projektLezarComboBox = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.szakemberMenu.SuspendLayout();
             this.alkHozzarendelPanel.SuspendLayout();
             this.ujProjektPanel.SuspendLayout();
             this.projektListazasPanel.SuspendLayout();
             this.alkatreszekPanel.SuspendLayout();
             this.munkadijPanel.SuspendLayout();
+            this.arkalkulacioPanel.SuspendLayout();
+            this.projektLezarasaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLoginSzakember
@@ -123,7 +147,7 @@
             this.szakemberMenu.Location = new System.Drawing.Point(0, 0);
             this.szakemberMenu.Name = "szakemberMenu";
             this.szakemberMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.szakemberMenu.Size = new System.Drawing.Size(157, 895);
+            this.szakemberMenu.Size = new System.Drawing.Size(119, 895);
             this.szakemberMenu.TabIndex = 1;
             this.szakemberMenu.Text = "menuStrip1";
             // 
@@ -133,7 +157,7 @@
             this.projekthezRendelésToolStripMenuItem,
             this.alkatrészekListázásaToolStripMenuItem});
             this.alkatrészekProjekthezToolStripMenuItem.Name = "alkatrészekProjekthezToolStripMenuItem";
-            this.alkatrészekProjekthezToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.alkatrészekProjekthezToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.alkatrészekProjekthezToolStripMenuItem.Text = "alkatrészek";
             // 
             // projekthezRendelésToolStripMenuItem
@@ -154,9 +178,10 @@
             // 
             this.projektekToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.újProjektLétrehozásaToolStripMenuItem,
-            this.projektekListázásaToolStripMenuItem});
+            this.projektekListázásaToolStripMenuItem,
+            this.projektLezárásaToolStripMenuItem});
             this.projektekToolStripMenuItem.Name = "projektekToolStripMenuItem";
-            this.projektekToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.projektekToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.projektekToolStripMenuItem.Text = "projektek";
             // 
             // újProjektLétrehozásaToolStripMenuItem
@@ -173,12 +198,20 @@
             this.projektekListázásaToolStripMenuItem.Text = "projektek listázása";
             this.projektekListázásaToolStripMenuItem.Click += new System.EventHandler(this.projektekListázásaToolStripMenuItem_Click);
             // 
+            // projektLezárásaToolStripMenuItem
+            // 
+            this.projektLezárásaToolStripMenuItem.Name = "projektLezárásaToolStripMenuItem";
+            this.projektLezárásaToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.projektLezárásaToolStripMenuItem.Text = "projekt lezárása";
+            this.projektLezárásaToolStripMenuItem.Click += new System.EventHandler(this.projektLezárásaToolStripMenuItem_Click);
+            // 
             // munkaToolStripMenuItem
             // 
             this.munkaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.munkadíjIdőtartamMeghatározásaToolStripMenuItem});
+            this.munkadíjIdőtartamMeghatározásaToolStripMenuItem,
+            this.árkalkulációKészítéseToolStripMenuItem});
             this.munkaToolStripMenuItem.Name = "munkaToolStripMenuItem";
-            this.munkaToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.munkaToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.munkaToolStripMenuItem.Text = "munkavégzés";
             // 
             // munkadíjIdőtartamMeghatározásaToolStripMenuItem
@@ -187,6 +220,13 @@
             this.munkadíjIdőtartamMeghatározásaToolStripMenuItem.Size = new System.Drawing.Size(332, 26);
             this.munkadíjIdőtartamMeghatározásaToolStripMenuItem.Text = "munkadíj, időtartam meghatározása";
             this.munkadíjIdőtartamMeghatározásaToolStripMenuItem.Click += new System.EventHandler(this.munkadíjIdőtartamMeghatározásaToolStripMenuItem_Click);
+            // 
+            // árkalkulációKészítéseToolStripMenuItem
+            // 
+            this.árkalkulációKészítéseToolStripMenuItem.Name = "árkalkulációKészítéseToolStripMenuItem";
+            this.árkalkulációKészítéseToolStripMenuItem.Size = new System.Drawing.Size(332, 26);
+            this.árkalkulációKészítéseToolStripMenuItem.Text = "árkalkuláció készítése";
+            this.árkalkulációKészítéseToolStripMenuItem.Click += new System.EventHandler(this.árkalkulációKészítéseToolStripMenuItem_Click);
             // 
             // alkHozzarendelPanel
             // 
@@ -720,6 +760,216 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Munkadíj meghatározása";
             // 
+            // arkalkulacioPanel
+            // 
+            this.arkalkulacioPanel.BackColor = System.Drawing.Color.Transparent;
+            this.arkalkulacioPanel.Controls.Add(this.arKalkulacioButton);
+            this.arkalkulacioPanel.Controls.Add(this.munkadijListView);
+            this.arkalkulacioPanel.Controls.Add(this.label20);
+            this.arkalkulacioPanel.Controls.Add(this.label19);
+            this.arkalkulacioPanel.Controls.Add(this.elemekListView);
+            this.arkalkulacioPanel.Controls.Add(this.comboBox1);
+            this.arkalkulacioPanel.Controls.Add(this.label18);
+            this.arkalkulacioPanel.Controls.Add(this.label13);
+            this.arkalkulacioPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 47F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.arkalkulacioPanel.Location = new System.Drawing.Point(170, 184);
+            this.arkalkulacioPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arkalkulacioPanel.Name = "arkalkulacioPanel";
+            this.arkalkulacioPanel.Size = new System.Drawing.Size(1039, 617);
+            this.arkalkulacioPanel.TabIndex = 14;
+            // 
+            // arKalkulacioButton
+            // 
+            this.arKalkulacioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.arKalkulacioButton.Location = new System.Drawing.Point(36, 510);
+            this.arKalkulacioButton.Name = "arKalkulacioButton";
+            this.arKalkulacioButton.Size = new System.Drawing.Size(156, 42);
+            this.arKalkulacioButton.TabIndex = 7;
+            this.arKalkulacioButton.Text = "Kalkulálás";
+            this.arKalkulacioButton.UseVisualStyleBackColor = true;
+            this.arKalkulacioButton.Click += new System.EventHandler(this.arKalkulacioButton_Click);
+            // 
+            // munkadijListView
+            // 
+            this.munkadijListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.munkaora,
+            this.munkadij});
+            this.munkadijListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.munkadijListView.Location = new System.Drawing.Point(36, 419);
+            this.munkadijListView.Name = "munkadijListView";
+            this.munkadijListView.Size = new System.Drawing.Size(411, 66);
+            this.munkadijListView.TabIndex = 6;
+            this.munkadijListView.UseCompatibleStateImageBehavior = false;
+            this.munkadijListView.View = System.Windows.Forms.View.Details;
+            // 
+            // munkaora
+            // 
+            this.munkaora.Text = "Munkaóra";
+            this.munkaora.Width = 200;
+            // 
+            // munkadij
+            // 
+            this.munkadij.Text = "Munkadíj";
+            this.munkadij.Width = 200;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(36, 387);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(259, 29);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Szükséges munkadíj:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(33, 140);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(240, 29);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Szükséges elemek:";
+            // 
+            // elemekListView
+            // 
+            this.elemekListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.megnevezes,
+            this.eszkozAr});
+            this.elemekListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.elemekListView.Location = new System.Drawing.Point(36, 169);
+            this.elemekListView.Name = "elemekListView";
+            this.elemekListView.Size = new System.Drawing.Size(411, 203);
+            this.elemekListView.TabIndex = 3;
+            this.elemekListView.UseCompatibleStateImageBehavior = false;
+            this.elemekListView.View = System.Windows.Forms.View.Details;
+            // 
+            // megnevezes
+            // 
+            this.megnevezes.Text = "Megnevezés";
+            this.megnevezes.Width = 200;
+            // 
+            // eszkozAr
+            // 
+            this.eszkozAr.Text = "Ár";
+            this.eszkozAr.Width = 200;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(509, 101);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 33);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(30, 101);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(480, 29);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Válassza ki a kivánt projekt azonosítóját:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(27, 49);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(220, 46);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Árkalkuláció";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // projektLezarasaPanel
+            // 
+            this.projektLezarasaPanel.BackColor = System.Drawing.Color.Transparent;
+            this.projektLezarasaPanel.Controls.Add(this.lezarasComboBox);
+            this.projektLezarasaPanel.Controls.Add(this.lezarButton);
+            this.projektLezarasaPanel.Controls.Add(this.label21);
+            this.projektLezarasaPanel.Controls.Add(this.projektLezarComboBox);
+            this.projektLezarasaPanel.Controls.Add(this.label23);
+            this.projektLezarasaPanel.Controls.Add(this.label24);
+            this.projektLezarasaPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 47F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.projektLezarasaPanel.Location = new System.Drawing.Point(189, 184);
+            this.projektLezarasaPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.projektLezarasaPanel.Name = "projektLezarasaPanel";
+            this.projektLezarasaPanel.Size = new System.Drawing.Size(1039, 617);
+            this.projektLezarasaPanel.TabIndex = 15;
+            // 
+            // lezarasComboBox
+            // 
+            this.lezarasComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lezarasComboBox.FormattingEnabled = true;
+            this.lezarasComboBox.Items.AddRange(new object[] {
+            "Teljesítve",
+            "Megszakítva"});
+            this.lezarasComboBox.Location = new System.Drawing.Point(509, 143);
+            this.lezarasComboBox.Name = "lezarasComboBox";
+            this.lezarasComboBox.Size = new System.Drawing.Size(136, 33);
+            this.lezarasComboBox.TabIndex = 8;
+            // 
+            // lezarButton
+            // 
+            this.lezarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lezarButton.Location = new System.Drawing.Point(651, 101);
+            this.lezarButton.Name = "lezarButton";
+            this.lezarButton.Size = new System.Drawing.Size(237, 75);
+            this.lezarButton.TabIndex = 7;
+            this.lezarButton.Text = "Projekt lezárása";
+            this.lezarButton.UseVisualStyleBackColor = true;
+            this.lezarButton.Click += new System.EventHandler(this.lezarButton_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(36, 140);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(190, 29);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Lezárás módja:";
+            // 
+            // projektLezarComboBox
+            // 
+            this.projektLezarComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.projektLezarComboBox.FormattingEnabled = true;
+            this.projektLezarComboBox.Location = new System.Drawing.Point(509, 101);
+            this.projektLezarComboBox.Name = "projektLezarComboBox";
+            this.projektLezarComboBox.Size = new System.Drawing.Size(136, 33);
+            this.projektLezarComboBox.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(30, 101);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(480, 29);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Válassza ki a kivánt projekt azonosítóját:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(27, 49);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(272, 46);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Projekt lezárása";
+            // 
             // Szakember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -728,11 +978,13 @@
             this.ClientSize = new System.Drawing.Size(1399, 895);
             this.Controls.Add(this.buttonLoginSzakember);
             this.Controls.Add(this.szakemberMenu);
+            this.Controls.Add(this.projektLezarasaPanel);
+            this.Controls.Add(this.arkalkulacioPanel);
             this.Controls.Add(this.alkatreszekPanel);
             this.Controls.Add(this.projektListazasPanel);
             this.Controls.Add(this.ujProjektPanel);
-            this.Controls.Add(this.munkadijPanel);
             this.Controls.Add(this.alkHozzarendelPanel);
+            this.Controls.Add(this.munkadijPanel);
             this.Name = "Szakember";
             this.Text = "Szakember";
             this.Load += new System.EventHandler(this.Szakember_Load);
@@ -748,6 +1000,10 @@
             this.alkatreszekPanel.PerformLayout();
             this.munkadijPanel.ResumeLayout(false);
             this.munkadijPanel.PerformLayout();
+            this.arkalkulacioPanel.ResumeLayout(false);
+            this.arkalkulacioPanel.PerformLayout();
+            this.projektLezarasaPanel.ResumeLayout(false);
+            this.projektLezarasaPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,5 +1074,27 @@
         private Label label16;
         private Label label15;
         private Label label14;
+        private Panel arkalkulacioPanel;
+        private Label label13;
+        private ToolStripMenuItem árkalkulációKészítéseToolStripMenuItem;
+        private Button arKalkulacioButton;
+        private ListView munkadijListView;
+        private ColumnHeader munkaora;
+        private ColumnHeader munkadij;
+        private Label label20;
+        private Label label19;
+        private ListView elemekListView;
+        private ColumnHeader megnevezes;
+        private ColumnHeader eszkozAr;
+        private ComboBox comboBox1;
+        private Label label18;
+        private Panel projektLezarasaPanel;
+        private Button lezarButton;
+        private Label label21;
+        private ComboBox projektLezarComboBox;
+        private Label label23;
+        private Label label24;
+        private ToolStripMenuItem projektLezárásaToolStripMenuItem;
+        private ComboBox lezarasComboBox;
     }
 }

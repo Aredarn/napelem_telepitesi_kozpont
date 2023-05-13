@@ -51,6 +51,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             projektListazasPanel.Visible = false;
             alkatreszekPanel.Visible = false;
             munkadijPanel.Visible = false;
+            arkalkulacioPanel.Visible = false;
+            projektLezarasaPanel.Visible = false;
         }
 
         private void hozzaadButton_Click(object sender, EventArgs e)
@@ -344,6 +346,33 @@ namespace napelem_telepito_kozpont.GUI_Forms
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void árkalkulációKészítéseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            arkalkulacioPanel.Visible = true;
+        }
+
+        private void arKalkulacioButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ár megjelenítése");
+        }
+
+        private void projektLezárásaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            projektLezarasaPanel.Visible = true;
+        }
+
+        private void lezarButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Az id projekt sikeresen lezárva státusz státusszal");
         }
     }
 }
