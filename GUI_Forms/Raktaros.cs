@@ -18,6 +18,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             InitializeComponent();
             this.userID = userID;
+            mindLathatatlan();
         }
 
         private void buttonLoginRaktaros_Click(object sender, EventArgs e)
@@ -27,6 +28,16 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
             l1.Show();
             this.Hide();
+        }
+
+        public void mindLathatatlan() { 
+            projektListaPanel.Visible= false;
+        }
+
+        private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            projektListaPanel.Visible= true;
         }
     }
 }
