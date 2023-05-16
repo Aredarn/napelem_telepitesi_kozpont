@@ -129,13 +129,18 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
                 if (missingItems.Count > 0)
                 {
+                    
+                    
                     string missingItemsString = string.Join(", ", missingItems);
                     MessageBox.Show("Az alábbi árucikkek hiányoznak a raktárból: " + missingItemsString);
-                    context.projectStatuszok.Add(new ProjectStatuszok { ProjectID = projectID, StatusID = 3, FazisKezdete = DateTime.Now });
+                    if (!context.projectStatuszok.Any(ps => ps.ProjectID == projectID && ps.StatusID > 2))
+                        context.projectStatuszok.Add(new ProjectStatuszok { ProjectID = projectID, StatusID = 3, FazisKezdete = DateTime.Now });
+                    else
+                        MessageBox.Show("Már a 3-as (WAIT) fáziban van/volt egyszer");
                 }
                 else
                 {
-                    if (!context.projectStatuszok.Any(ps => ps.ProjectID == projectID && ps.StatusID > 4))
+                    if (!context.projectStatuszok.Any(ps => ps.ProjectID == projectID && ps.StatusID > 3))
                     {
                         var project = context.Projekt.FirstOrDefault(p => p.ProjectID == projectID);
                         int originalApproxCost = project.ApproxCost;
