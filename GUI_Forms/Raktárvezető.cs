@@ -29,6 +29,16 @@ namespace napelem_telepito_kozpont.GUI_Forms
             raktarHozzaadPanel.Visible = false;
             this.userID = userID;
             rekeszPanel.Visible = false;
+            hianyzoAlkatreszekPanel.Visible = false;
+            hianyzoLefoglaltPanel.Visible = false;  
+        }
+
+        public void mindLathatatlan() {
+            rekeszPanel.Visible = false;
+            raktarHozzaadPanel.Visible = false;
+            hozzaadPanel.Visible = false;
+            hianyzoAlkatreszekPanel.Visible = false;
+            hianyzoLefoglaltPanel.Visible = false; 
         }
 
         private void buttonLoginRaktarvezeto_Click(object sender, EventArgs e)
@@ -52,6 +62,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arucikkekCombobox.Visible = false;
             raktarHozzaadPanel.Visible = false;
             rekeszPanel.Visible = false;
+
+            hianyzoAlkatreszekPanel.Visible=false;
+            hianyzoLefoglaltPanel.Visible=false;
 
             ujNev.Text = "";
             ujAr.Text = "";
@@ -124,6 +137,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void modositMenu_Click(object sender, EventArgs e)
         {
+            hozzaadPanel.Visible = false;
             hozzaadPanel.Visible = true;
             almenu_cim.Text = "Alkatrész árának módosítása:";
             rekeszenkentiMax.Visible = false;
@@ -134,6 +148,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             ujNev.Visible = false;
             raktarHozzaadPanel.Visible = false;
             rekeszPanel.Visible = false;   
+
+            
 
             /* Lekéri az összes árucikket az adatbázisból.
                Majd ezután hozzáadja egyesével az összeset a
@@ -204,6 +220,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
             rekeszPanel.Visible = false;
+
+            hozzaadPanel.Visible = false;
 
             beerkezettAlkComboBox.Items.Clear();
 
@@ -308,6 +326,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             hozzaadPanel.Visible= false;
 
             rekeszPanel.Visible = true;
+
+            //hozzaadPanel.Visible= false;    
         }
 
         private void rekeszekDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -327,6 +347,18 @@ namespace napelem_telepito_kozpont.GUI_Forms
                     }
                 }
             
+        }
+
+        private void hianyzikMenu_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            hianyzoAlkatreszekPanel.Visible = true;
+        }
+
+        private void hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            hianyzoLefoglaltPanel.Visible = true;
         }
     }
 }
