@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace napelem_telepito_kozpont.Backend.Controllers
 {
@@ -161,5 +163,46 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 context.SaveChanges();
             }
         }
+
+
+
+        //A7
+        public void Véglegesítés(string status, int ProjectID)
+        {
+            using (var dbContext = new NapelemDbContext()) // DbContext példány létrehozása, a "YourDbContext" helyére a saját DbContext osztályodat kell írni
+            {
+                var existingStatus = dbContext.projectStatuszok.All(p => p.StateID > 5);
+
+                if (existingStatus != null)
+                {
+                    MessageBox.Show("Az állapot már be van állítva ebben a fázisban.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ProjectStatuszok newStatus = new ProjectStatuszok();
+                newStatus.ProjectID = ProjectID;
+                newStatus.StatusID = 1;
+                newStatus.FazisKezdete = DateTime.Now;
+
+                switch (status)
+                {
+                    case "Teljesítve":
+                        newStatus.StatusID = 6;
+                        break;
+                    case "Megszakítva":
+                        newStatus.StatusID = 7;
+                        break;
+                    default:
+                        MessageBox.Show("Ismeretlen státusz érték.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+                dbContext.projectStatuszok.Add(newStatus);
+                dbContext.SaveChanges();
+                MessageBox.Show($"Az állapot sikeresen beállítva: {status}", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
     }
 }
