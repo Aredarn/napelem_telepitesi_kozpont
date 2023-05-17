@@ -43,23 +43,13 @@ namespace napelem_telepito_kozpont.GUI_Forms
             utvonalPanel.Visible = false;
         }
 
-        private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lista()
         {
-            mindLathatatlan();
-            projektListaPanel.Visible = true;
-
             ProjektController projektController = new();
             List<ProjektViewModel2> projektek = projektController.ProjektLista2Lekerese();
-            projektListaListView.Items.Clear();
 
-            /*
-            ProjektID = result.ProjectID,
-                        VarhatoIdo = result.ApproxTimeToFinish.ToString(),
-                        Ar = result.ApproxCost.ToString(),
-                        Helyszin = result.helyszin,
-                        Leiras = result.leiras,
-                        Statusz = result.StatusInfo
-            */
+            projektIDCombobox.Items.Clear();
+            projektListaListView.Items.Clear();
 
             foreach (var projekt in projektek)
             {
@@ -71,7 +61,19 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 listViewItem.SubItems.Add(projekt.Statusz.ToString());
 
                 projektListaListView.Items.Add(listViewItem);
+
+                projektIDCombobox.Items.Add(projekt.ProjektID);
             }
+
+            projektIDCombobox.SelectedIndex = 0;
+        }
+
+        private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            projektListaPanel.Visible = true;
+
+            lista();
         }
 
         private void projekthezTartozóAlkatrészekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,5 +148,27 @@ namespace napelem_telepito_kozpont.GUI_Forms
             }
         }
 
+        private void kivitelezesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProjektController projektController = new();
+
+                if (projektIDCombobox.SelectedIndex == -1)
+                {
+                    throw new Exception("Nincs kijelölve ID!");
+                }
+
+                string projectID = projektIDCombobox.SelectedItem.ToString() ?? "0";
+
+                projektController.projektStatuszValtoztatasa(int.Parse(projectID), "InProgress");
+
+                lista();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }

@@ -141,10 +141,20 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 return new List<ProjektViewModel2>();
             }
         }
-        public void projektStatuszValtoztatasa(string ujStatusz)
+        public void projektStatuszValtoztatasa(int projektID, string ujStatusz)
         {
             try
             {
+                NapelemDbContext context = new();
+
+                var statusz = context.Statusz
+                    .Single(row => row.StatusInfo == ujStatusz);
+
+                var projectStatuszok = context.projectStatuszok
+                    .Single(row => row.ProjectID == projektID);
+
+                projectStatuszok.StatusID = statusz.StatusID;
+                context.SaveChanges();
 
             }
             catch (Exception exception)
