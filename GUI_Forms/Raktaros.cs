@@ -32,12 +32,26 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         public void mindLathatatlan() { 
             projektListaPanel.Visible= false;
+            projektAlkatreszPanel.Visible= false;
+            utvonalPanel.Visible= false;    
         }
 
         private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mindLathatatlan();
             projektListaPanel.Visible= true;
+        }
+
+        private void projekthezTartozóAlkatrészekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            projektAlkatreszPanel.Visible = true;
+        }
+
+        private void útvonalOptimalizálásaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mindLathatatlan();
+            utvonalPanel.Visible = true;
         }
     }
 }
