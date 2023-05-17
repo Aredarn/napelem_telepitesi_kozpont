@@ -246,6 +246,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
                    mezőkben megadott értékekkel. */
                 string nev = beerkezettAlkComboBox.Text;
                 string mennyiseg = mennyisegTextBox.Text;
+                int row = Convert.ToInt32(Math.Round(rowNumber.Value, 0));
+                int col = Convert.ToInt32(Math.Round(columnNumber.Value, 0));
+                int level = Convert.ToInt32(Math.Round(levelNumber.Value, 0));
 
                 /* Alapvető validáció, hogy elkerüljük az üres mezők
                    megadását. */
@@ -254,6 +257,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 {
                     throw new Exception("Mennyiség nem lehet üres!");
                 }
+
+                // a polc megadasanal csak 1 es 5 kozotti erteket lehet megadni, ugyhogy 
+                // azt mar nem kell tovabb ellenorizni
 
                 /*  Meg kell keresni azt az arucikket amibol eppen a raktarba erkezett */
 
@@ -272,9 +278,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
                 Polc polc = new Polc
                 {
-                    Column = 0,
-                    Row = 0,
-                    Level = 0,
+                    Column = col,
+                    Row = row,
+                    Level = level,
                     ItemsInShelf = Int32.Parse(mennyiseg),
                     ArucikkID = result.ArucikkID
                 };
@@ -290,7 +296,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
                     throw new Exception("Alkatrész felvétele a raktárba sikertelen!");
                 }
 
-                MessageBox.Show("Alkatrész felvétele a raktárba sikeresen megtörtént!");
+                //MessageBox.Show("Alkatrész felvétele a raktárba sikeresen megtörtént!");
             }
             catch (Exception exception)
             {

@@ -75,37 +75,26 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                    `Polc` nevű táblához egy új rekordot. */
                 NapelemDbContext context = new();
 
+                bool foglalt = true;
 
-                /* utolso sor utolso oszlop utolso rekeszet megkeresem 
-                    ami eddig a raktarban mar foglalt */
-
-                
-
-                if (context.Polc.ToList().Count < 0)
+                //var customers = context.Customers.Where(x => customerIds.Contains(x.CustomerID)).ToList();
+                var keresett = context.Polc.Where(x => x.Row == polc.Row && x.Column == polc.Column && x.Level == polc.Level).ToList();
+                if (keresett.Count == 0)
                 {
-                    polc.Column = 1;
-                    polc.Row = 1;
-                    polc.Level = 1;
+                    // üres a polc
+                    foglalt = false;
+                    
+                }
+
+                if (foglalt)
+                {
+                    MessageBox.Show("Ez a polc már foglalt.\n Válassz másikat!");
                 }
                 else
                 {
-                    int maxColumn = context.Polc.Max(p => p.Column);
-                    
-                    int maxRow = context.Polc.Max(p => p.Row);
-                    int maxLevel = context.Polc.Max(p => p.Level);
-                    
-                    /* a polc amit kapunk parameterben csak az ItemNamet es a mennyiseget tartalmazza
-                         azt hogy hol szeretnenk eltarolni az alkatreszt meg itt kell kiszamolni es hozzaadni
-                        az objektumhoz */
-
-                    /* ezt a reszet meg at kell irni --> normalisan kene megkeresni a kovi 
-                        szabad rekeszt !!!!!!!! */
-
-                    polc.Column = maxColumn + 1;
-                    polc.Row = maxRow + 1;
-                    
-                    polc.Level = maxLevel + 1;
-
+                    context.Polc.Add(polc);
+                    context.SaveChanges();
+                    MessageBox.Show("Az alkatrész felvétele a raktárba sikeresen megtörtént!");
                 }
                 /* Az `Add()` metódust alkalmazva a paraméterben megadott
                    `Polc` objektummal a hozzáadás egyszerűen
@@ -114,8 +103,6 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 //List<Polc> raktar = context.Polc.ToList();
 
                 //context.Polc.Add(new PolcViewModel { Row = polc.Row, Column = polc.Column, Level = polc.Level, ItemsInShelf = polc.ItemsInShelf, ItemName = polc.Arucikk.Arucikknev });
-                context.Polc.Add(polc);
-                context.SaveChanges();
 
                 /* Sikeresen lefutott a metódus, adjon vissza igaz értéket. */
                 return true;
