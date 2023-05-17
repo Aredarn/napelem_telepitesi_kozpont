@@ -338,7 +338,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void rekeszekDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-           
+                rekeszekDataGridView.Visible = true;
                 if (e.RowIndex >= 0 && e.ColumnIndex == rekeszekDataGridView.Columns["ItemsInShelf"].Index)
                 {
                     var polc = rekeszekDataGridView.Rows[e.RowIndex].DataBoundItem as Polc;
@@ -359,6 +359,20 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             hianyzoAlkatreszekPanel.Visible = true;
+
+            ArucikkController arucikkController = new();            
+           
+            foreach (var item in arucikkController.GetMissingItems())
+            {   
+                var uj = new ListViewItem();
+                uj.Text = item.ProjectID.ToString();
+                uj.SubItems.Add(item.AruNev);
+                uj.SubItems.Add(item.Mennyiseg.ToString());
+
+                hianyzoListView.Items.Add(uj);
+            }
+
+
         }
 
         private void hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click(object sender, EventArgs e)

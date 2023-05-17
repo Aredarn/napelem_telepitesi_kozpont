@@ -591,7 +591,7 @@
             this.hianyzoListView.Location = new System.Drawing.Point(11, 51);
             this.hianyzoListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hianyzoListView.Name = "hianyzoListView";
-            this.hianyzoListView.Size = new System.Drawing.Size(448, 242);
+            this.hianyzoListView.Size = new System.Drawing.Size(523, 242);
             this.hianyzoListView.TabIndex = 16;
             this.hianyzoListView.UseCompatibleStateImageBehavior = false;
             this.hianyzoListView.View = System.Windows.Forms.View.Details;
@@ -608,7 +608,7 @@
             // 
             // hianyzo_db
             // 
-            this.hianyzo_db.Text = "Hiányző mennyiség";
+            this.hianyzo_db.Text = "Hiányzó mennyiség";
             this.hianyzo_db.Width = 150;
             // 
             // label8
@@ -665,7 +665,7 @@
             // 
             // hiany_H_menny
             // 
-            this.hiany_H_menny.Text = "Hiányző mennyiség";
+            this.hiany_H_menny.Text = "Hiányzó mennyiség";
             this.hiany_H_menny.Width = 150;
             // 
             // label11
@@ -699,11 +699,11 @@
             this.ClientSize = new System.Drawing.Size(1224, 671);
             this.Controls.Add(this.buttonLoginRaktarvezeto);
             this.Controls.Add(this.raktarvezetoMenu);
+            this.Controls.Add(this.hianyzoAlkatreszekPanel);
+            this.Controls.Add(this.rekeszPanel);
             this.Controls.Add(this.raktarHozzaadPanel);
             this.Controls.Add(this.hozzaadPanel);
             this.Controls.Add(this.hianyzoLefoglaltPanel);
-            this.Controls.Add(this.hianyzoAlkatreszekPanel);
-            this.Controls.Add(this.rekeszPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.raktarvezetoMenu;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

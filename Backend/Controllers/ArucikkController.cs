@@ -50,6 +50,13 @@ namespace napelem_telepito_kozpont.Backend.Controllers
             return context.Arucikk.ToList();
         }
 
+        public List<UjArucikkIgeny> GetMissingItems()
+        {
+            NapelemDbContext context = new();
+
+            return context.ujArucikkIgeny.ToList();
+        }
+
         public int GetPrizeFromName(string name)
         {
             try
