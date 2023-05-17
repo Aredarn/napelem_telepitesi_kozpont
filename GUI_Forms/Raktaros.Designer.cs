@@ -29,405 +29,385 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raktaros));
-            this.buttonLoginRaktaros = new System.Windows.Forms.Button();
-            this.raktarosMenu = new System.Windows.Forms.MenuStrip();
-            this.projektekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projektekListázásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alkatrészekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.útvonalOptimalizálásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projektListaPanel = new System.Windows.Forms.Panel();
-            this.kivitelezesButton = new System.Windows.Forms.Button();
-            this.projektIDCombobox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.projektListaListView = new System.Windows.Forms.ListView();
-            this.projekt_id = new System.Windows.Forms.ColumnHeader();
-            this.befejezes = new System.Windows.Forms.ColumnHeader();
-            this.varhato_ar = new System.Windows.Forms.ColumnHeader();
-            this.helyszin = new System.Windows.Forms.ColumnHeader();
-            this.leiras = new System.Windows.Forms.ColumnHeader();
-            this.statusz = new System.Windows.Forms.ColumnHeader();
-            this.label1 = new System.Windows.Forms.Label();
-            this.projektAlkatreszPanel = new System.Windows.Forms.Panel();
-            this.projektAlkatreszListView = new System.Windows.Forms.ListView();
-            this.ID = new System.Windows.Forms.ColumnHeader();
-            this.Neve = new System.Windows.Forms.ColumnHeader();
-            this.Darabszám = new System.Windows.Forms.ColumnHeader();
-            this.Sor = new System.Windows.Forms.ColumnHeader();
-            this.Oszlop = new System.Windows.Forms.ColumnHeader();
-            this.Szint = new System.Windows.Forms.ColumnHeader();
-            this.projektIDAlkatreszComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.utvonalPanel = new System.Windows.Forms.Panel();
-            this.utvonalListView = new System.Windows.Forms.ListView();
-            this.sorrend = new System.Windows.Forms.ColumnHeader();
-            this.alkHely = new System.Windows.Forms.ColumnHeader();
-            this.alkMegn = new System.Windows.Forms.ColumnHeader();
-            this.projektIDUtvonalComboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.raktarosMenu.SuspendLayout();
-            this.projektListaPanel.SuspendLayout();
-            this.projektAlkatreszPanel.SuspendLayout();
-            this.utvonalPanel.SuspendLayout();
-            this.SuspendLayout();
+            buttonLoginRaktaros = new Button();
+            raktarosMenu = new MenuStrip();
+            projektekToolStripMenuItem = new ToolStripMenuItem();
+            projektekListázásaToolStripMenuItem = new ToolStripMenuItem();
+            alkatrészekToolStripMenuItem = new ToolStripMenuItem();
+            projekthezTartozóAlkatrészekListázásaToolStripMenuItem = new ToolStripMenuItem();
+            útvonalOptimalizálásaToolStripMenuItem = new ToolStripMenuItem();
+            projektListaPanel = new Panel();
+            kivitelezesButton = new Button();
+            projektIDCombobox = new ComboBox();
+            label2 = new Label();
+            projektListaListView = new ListView();
+            projekt_id = new ColumnHeader();
+            befejezes = new ColumnHeader();
+            varhato_ar = new ColumnHeader();
+            helyszin = new ColumnHeader();
+            leiras = new ColumnHeader();
+            statusz = new ColumnHeader();
+            label1 = new Label();
+            projektAlkatreszPanel = new Panel();
+            projektAlkatreszListView = new ListView();
+            ID = new ColumnHeader();
+            Neve = new ColumnHeader();
+            Darabszám = new ColumnHeader();
+            Sor = new ColumnHeader();
+            Oszlop = new ColumnHeader();
+            Szint = new ColumnHeader();
+            projektIDAlkatreszComboBox = new ComboBox();
+            label3 = new Label();
+            label4 = new Label();
+            utvonalPanel = new Panel();
+            utvonalListView = new ListView();
+            sorrend = new ColumnHeader();
+            alkHely = new ColumnHeader();
+            alkMegn = new ColumnHeader();
+            projektIDUtvonalComboBox = new ComboBox();
+            label5 = new Label();
+            label6 = new Label();
+            raktarosMenu.SuspendLayout();
+            projektListaPanel.SuspendLayout();
+            projektAlkatreszPanel.SuspendLayout();
+            utvonalPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // buttonLoginRaktaros
             // 
-            this.buttonLoginRaktaros.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLoginRaktaros.Location = new System.Drawing.Point(1003, 589);
-            this.buttonLoginRaktaros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonLoginRaktaros.Name = "buttonLoginRaktaros";
-            this.buttonLoginRaktaros.Size = new System.Drawing.Size(190, 56);
-            this.buttonLoginRaktaros.TabIndex = 0;
-            this.buttonLoginRaktaros.Text = "Vissza a Loginhez";
-            this.buttonLoginRaktaros.UseVisualStyleBackColor = true;
-            this.buttonLoginRaktaros.Click += new System.EventHandler(this.buttonLoginRaktaros_Click);
+            buttonLoginRaktaros.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLoginRaktaros.Location = new Point(1003, 589);
+            buttonLoginRaktaros.Margin = new Padding(3, 2, 3, 2);
+            buttonLoginRaktaros.Name = "buttonLoginRaktaros";
+            buttonLoginRaktaros.Size = new Size(190, 56);
+            buttonLoginRaktaros.TabIndex = 0;
+            buttonLoginRaktaros.Text = "Vissza a Loginhez";
+            buttonLoginRaktaros.UseVisualStyleBackColor = true;
+            buttonLoginRaktaros.Click += buttonLoginRaktaros_Click;
             // 
             // raktarosMenu
             // 
-            this.raktarosMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(201)))), ((int)(((byte)(136)))));
-            this.raktarosMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.raktarosMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.raktarosMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projektekToolStripMenuItem,
-            this.alkatrészekToolStripMenuItem});
-            this.raktarosMenu.Location = new System.Drawing.Point(0, 0);
-            this.raktarosMenu.Name = "raktarosMenu";
-            this.raktarosMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.raktarosMenu.Size = new System.Drawing.Size(81, 671);
-            this.raktarosMenu.TabIndex = 1;
-            this.raktarosMenu.Text = "menuStrip1";
+            raktarosMenu.BackColor = Color.FromArgb(236, 201, 136);
+            raktarosMenu.Dock = DockStyle.Left;
+            raktarosMenu.ImageScalingSize = new Size(20, 20);
+            raktarosMenu.Items.AddRange(new ToolStripItem[] { projektekToolStripMenuItem, alkatrészekToolStripMenuItem });
+            raktarosMenu.Location = new Point(0, 0);
+            raktarosMenu.Name = "raktarosMenu";
+            raktarosMenu.Padding = new Padding(5, 2, 0, 2);
+            raktarosMenu.Size = new Size(81, 671);
+            raktarosMenu.TabIndex = 1;
+            raktarosMenu.Text = "menuStrip1";
             // 
             // projektekToolStripMenuItem
             // 
-            this.projektekToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projektekListázásaToolStripMenuItem});
-            this.projektekToolStripMenuItem.Name = "projektekToolStripMenuItem";
-            this.projektekToolStripMenuItem.Size = new System.Drawing.Size(70, 19);
-            this.projektekToolStripMenuItem.Text = "projektek";
+            projektekToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { projektekListázásaToolStripMenuItem });
+            projektekToolStripMenuItem.Name = "projektekToolStripMenuItem";
+            projektekToolStripMenuItem.Size = new Size(70, 19);
+            projektekToolStripMenuItem.Text = "projektek";
             // 
             // projektekListázásaToolStripMenuItem
             // 
-            this.projektekListázásaToolStripMenuItem.Name = "projektekListázásaToolStripMenuItem";
-            this.projektekListázásaToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.projektekListázásaToolStripMenuItem.Text = "projektek listázása";
-            this.projektekListázásaToolStripMenuItem.Click += new System.EventHandler(this.projektekListázásaToolStripMenuItem_Click);
+            projektekListázásaToolStripMenuItem.Name = "projektekListázásaToolStripMenuItem";
+            projektekListázásaToolStripMenuItem.Size = new Size(169, 22);
+            projektekListázásaToolStripMenuItem.Text = "projektek listázása";
+            projektekListázásaToolStripMenuItem.Click += projektekListázásaToolStripMenuItem_Click;
             // 
             // alkatrészekToolStripMenuItem
             // 
-            this.alkatrészekToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem,
-            this.útvonalOptimalizálásaToolStripMenuItem});
-            this.alkatrészekToolStripMenuItem.Name = "alkatrészekToolStripMenuItem";
-            this.alkatrészekToolStripMenuItem.Size = new System.Drawing.Size(70, 19);
-            this.alkatrészekToolStripMenuItem.Text = "alkatrészek";
+            alkatrészekToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { projekthezTartozóAlkatrészekListázásaToolStripMenuItem, útvonalOptimalizálásaToolStripMenuItem });
+            alkatrészekToolStripMenuItem.Name = "alkatrészekToolStripMenuItem";
+            alkatrészekToolStripMenuItem.Size = new Size(70, 19);
+            alkatrészekToolStripMenuItem.Text = "alkatrészek";
             // 
             // projekthezTartozóAlkatrészekListázásaToolStripMenuItem
             // 
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Name = "projekthezTartozóAlkatrészekListázásaToolStripMenuItem";
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Text = "projekthez tartozó alkatrészek listázása";
-            this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Click += new System.EventHandler(this.projekthezTartozóAlkatrészekListázásaToolStripMenuItem_Click);
+            projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Name = "projekthezTartozóAlkatrészekListázásaToolStripMenuItem";
+            projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Size = new Size(275, 22);
+            projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Text = "projekthez tartozó alkatrészek listázása";
+            projekthezTartozóAlkatrészekListázásaToolStripMenuItem.Click += projekthezTartozóAlkatrészekListázásaToolStripMenuItem_Click;
             // 
             // útvonalOptimalizálásaToolStripMenuItem
             // 
-            this.útvonalOptimalizálásaToolStripMenuItem.Name = "útvonalOptimalizálásaToolStripMenuItem";
-            this.útvonalOptimalizálásaToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.útvonalOptimalizálásaToolStripMenuItem.Text = "útvonal optimalizálása";
-            this.útvonalOptimalizálásaToolStripMenuItem.Click += new System.EventHandler(this.útvonalOptimalizálásaToolStripMenuItem_Click);
+            útvonalOptimalizálásaToolStripMenuItem.Name = "útvonalOptimalizálásaToolStripMenuItem";
+            útvonalOptimalizálásaToolStripMenuItem.Size = new Size(275, 22);
+            útvonalOptimalizálásaToolStripMenuItem.Text = "útvonal optimalizálása";
+            útvonalOptimalizálásaToolStripMenuItem.Click += útvonalOptimalizálásaToolStripMenuItem_Click;
             // 
             // projektListaPanel
             // 
-            this.projektListaPanel.BackColor = System.Drawing.Color.Transparent;
-            this.projektListaPanel.Controls.Add(this.kivitelezesButton);
-            this.projektListaPanel.Controls.Add(this.projektIDCombobox);
-            this.projektListaPanel.Controls.Add(this.label2);
-            this.projektListaPanel.Controls.Add(this.projektListaListView);
-            this.projektListaPanel.Controls.Add(this.label1);
-            this.projektListaPanel.Location = new System.Drawing.Point(146, 164);
-            this.projektListaPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektListaPanel.Name = "projektListaPanel";
-            this.projektListaPanel.Size = new System.Drawing.Size(976, 395);
-            this.projektListaPanel.TabIndex = 2;
+            projektListaPanel.BackColor = Color.Transparent;
+            projektListaPanel.Controls.Add(kivitelezesButton);
+            projektListaPanel.Controls.Add(projektIDCombobox);
+            projektListaPanel.Controls.Add(label2);
+            projektListaPanel.Controls.Add(projektListaListView);
+            projektListaPanel.Controls.Add(label1);
+            projektListaPanel.Location = new Point(146, 164);
+            projektListaPanel.Margin = new Padding(3, 2, 3, 2);
+            projektListaPanel.Name = "projektListaPanel";
+            projektListaPanel.Size = new Size(976, 395);
+            projektListaPanel.TabIndex = 2;
             // 
             // kivitelezesButton
             // 
-            this.kivitelezesButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kivitelezesButton.Location = new System.Drawing.Point(404, 293);
-            this.kivitelezesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.kivitelezesButton.Name = "kivitelezesButton";
-            this.kivitelezesButton.Size = new System.Drawing.Size(108, 30);
-            this.kivitelezesButton.TabIndex = 4;
-            this.kivitelezesButton.Text = "Kivitelezés";
-            this.kivitelezesButton.UseVisualStyleBackColor = true;
+            kivitelezesButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            kivitelezesButton.Location = new Point(404, 293);
+            kivitelezesButton.Margin = new Padding(3, 2, 3, 2);
+            kivitelezesButton.Name = "kivitelezesButton";
+            kivitelezesButton.Size = new Size(108, 30);
+            kivitelezesButton.TabIndex = 4;
+            kivitelezesButton.Text = "Kivitelezés";
+            kivitelezesButton.UseVisualStyleBackColor = true;
+            kivitelezesButton.Click += kivitelezesButton_Click;
             // 
             // projektIDCombobox
             // 
-            this.projektIDCombobox.FormattingEnabled = true;
-            this.projektIDCombobox.Location = new System.Drawing.Point(307, 300);
-            this.projektIDCombobox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektIDCombobox.Name = "projektIDCombobox";
-            this.projektIDCombobox.Size = new System.Drawing.Size(67, 23);
-            this.projektIDCombobox.TabIndex = 3;
+            projektIDCombobox.FormattingEnabled = true;
+            projektIDCombobox.Location = new Point(307, 300);
+            projektIDCombobox.Margin = new Padding(3, 2, 3, 2);
+            projektIDCombobox.Name = "projektIDCombobox";
+            projektIDCombobox.Size = new Size(67, 23);
+            projektIDCombobox.TabIndex = 3;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(41, 292);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 30);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Projektek kivitelezése:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(41, 292);
+            label2.Name = "label2";
+            label2.Size = new Size(244, 30);
+            label2.TabIndex = 2;
+            label2.Text = "Projektek kivitelezése:";
             // 
             // projektListaListView
             // 
-            this.projektListaListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.projekt_id,
-            this.befejezes,
-            this.varhato_ar,
-            this.helyszin,
-            this.leiras,
-            this.statusz});
-            this.projektListaListView.Location = new System.Drawing.Point(41, 74);
-            this.projektListaListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektListaListView.Name = "projektListaListView";
-            this.projektListaListView.Size = new System.Drawing.Size(800, 200);
-            this.projektListaListView.TabIndex = 1;
-            this.projektListaListView.UseCompatibleStateImageBehavior = false;
-            this.projektListaListView.View = System.Windows.Forms.View.Details;
+            projektListaListView.Columns.AddRange(new ColumnHeader[] { projekt_id, befejezes, varhato_ar, helyszin, leiras, statusz });
+            projektListaListView.Location = new Point(41, 74);
+            projektListaListView.Margin = new Padding(3, 2, 3, 2);
+            projektListaListView.Name = "projektListaListView";
+            projektListaListView.Size = new Size(800, 200);
+            projektListaListView.TabIndex = 1;
+            projektListaListView.UseCompatibleStateImageBehavior = false;
+            projektListaListView.View = View.Details;
             // 
             // projekt_id
             // 
-            this.projekt_id.Text = "Projekt ID";
-            this.projekt_id.Width = 100;
+            projekt_id.Text = "Projekt ID";
+            projekt_id.Width = 100;
             // 
             // befejezes
             // 
-            this.befejezes.Text = "Várható befejezés";
-            this.befejezes.Width = 150;
+            befejezes.Text = "Várható befejezés";
+            befejezes.Width = 150;
             // 
             // varhato_ar
             // 
-            this.varhato_ar.Text = "Ár";
-            this.varhato_ar.Width = 100;
+            varhato_ar.Text = "Ár";
+            varhato_ar.Width = 100;
             // 
             // helyszin
             // 
-            this.helyszin.Text = "Helyszín";
-            this.helyszin.Width = 150;
+            helyszin.Text = "Helyszín";
+            helyszin.Width = 150;
             // 
             // leiras
             // 
-            this.leiras.Text = "Leírás";
-            this.leiras.Width = 250;
+            leiras.Text = "Leírás";
+            leiras.Width = 250;
             // 
             // statusz
             // 
-            this.statusz.Text = "Státusz";
-            this.statusz.Width = 150;
+            statusz.Text = "Státusz";
+            statusz.Width = 150;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Projektek listázása:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(41, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Projektek listázása:";
             // 
             // projektAlkatreszPanel
             // 
-            this.projektAlkatreszPanel.BackColor = System.Drawing.Color.Transparent;
-            this.projektAlkatreszPanel.Controls.Add(this.projektAlkatreszListView);
-            this.projektAlkatreszPanel.Controls.Add(this.projektIDAlkatreszComboBox);
-            this.projektAlkatreszPanel.Controls.Add(this.label3);
-            this.projektAlkatreszPanel.Controls.Add(this.label4);
-            this.projektAlkatreszPanel.Location = new System.Drawing.Point(161, 134);
-            this.projektAlkatreszPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektAlkatreszPanel.Name = "projektAlkatreszPanel";
-            this.projektAlkatreszPanel.Size = new System.Drawing.Size(976, 395);
-            this.projektAlkatreszPanel.TabIndex = 3;
-            this.projektAlkatreszPanel.VisibleChanged += new System.EventHandler(this.projektAlkatreszPanel_VisibleChanged);
+            projektAlkatreszPanel.BackColor = Color.Transparent;
+            projektAlkatreszPanel.Controls.Add(projektAlkatreszListView);
+            projektAlkatreszPanel.Controls.Add(projektIDAlkatreszComboBox);
+            projektAlkatreszPanel.Controls.Add(label3);
+            projektAlkatreszPanel.Controls.Add(label4);
+            projektAlkatreszPanel.Location = new Point(161, 134);
+            projektAlkatreszPanel.Margin = new Padding(3, 2, 3, 2);
+            projektAlkatreszPanel.Name = "projektAlkatreszPanel";
+            projektAlkatreszPanel.Size = new Size(976, 395);
+            projektAlkatreszPanel.TabIndex = 3;
+            projektAlkatreszPanel.VisibleChanged += projektAlkatreszPanel_VisibleChanged;
             // 
             // projektAlkatreszListView
             // 
-            this.projektAlkatreszListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.Neve,
-            this.Darabszám,
-            this.Sor,
-            this.Oszlop,
-            this.Szint});
-            this.projektAlkatreszListView.Location = new System.Drawing.Point(41, 118);
-            this.projektAlkatreszListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektAlkatreszListView.Name = "projektAlkatreszListView";
-            this.projektAlkatreszListView.Size = new System.Drawing.Size(363, 182);
-            this.projektAlkatreszListView.TabIndex = 4;
-            this.projektAlkatreszListView.UseCompatibleStateImageBehavior = false;
-            this.projektAlkatreszListView.View = System.Windows.Forms.View.Details;
+            projektAlkatreszListView.Columns.AddRange(new ColumnHeader[] { ID, Neve, Darabszám, Sor, Oszlop, Szint });
+            projektAlkatreszListView.Location = new Point(41, 118);
+            projektAlkatreszListView.Margin = new Padding(3, 2, 3, 2);
+            projektAlkatreszListView.Name = "projektAlkatreszListView";
+            projektAlkatreszListView.Size = new Size(363, 182);
+            projektAlkatreszListView.TabIndex = 4;
+            projektAlkatreszListView.UseCompatibleStateImageBehavior = false;
+            projektAlkatreszListView.View = View.Details;
             // 
             // ID
             // 
-            this.ID.Text = "ID";
+            ID.Text = "ID";
             // 
             // Neve
             // 
-            this.Neve.Text = "Neve";
+            Neve.Text = "Neve";
             // 
             // Darabszám
             // 
-            this.Darabszám.Text = "Darabszám";
+            Darabszám.Text = "Darabszám";
             // 
             // Sor
             // 
-            this.Sor.Text = "Sor";
+            Sor.Text = "Sor";
             // 
             // Oszlop
             // 
-            this.Oszlop.Text = "Oszlop";
-            this.Oszlop.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            Oszlop.Text = "Oszlop";
+            Oszlop.TextAlign = HorizontalAlignment.Right;
             // 
             // Szint
             // 
-            this.Szint.Text = "Szint";
+            Szint.Text = "Szint";
             // 
             // projektIDAlkatreszComboBox
             // 
-            this.projektIDAlkatreszComboBox.FormattingEnabled = true;
-            this.projektIDAlkatreszComboBox.Location = new System.Drawing.Point(294, 75);
-            this.projektIDAlkatreszComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektIDAlkatreszComboBox.Name = "projektIDAlkatreszComboBox";
-            this.projektIDAlkatreszComboBox.Size = new System.Drawing.Size(67, 23);
-            this.projektIDAlkatreszComboBox.TabIndex = 3;
-            this.projektIDAlkatreszComboBox.SelectedIndexChanged += new System.EventHandler(this.projektIDAlkatreszComboBox_SelectedIndexChanged);
+            projektIDAlkatreszComboBox.FormattingEnabled = true;
+            projektIDAlkatreszComboBox.Location = new Point(294, 75);
+            projektIDAlkatreszComboBox.Margin = new Padding(3, 2, 3, 2);
+            projektIDAlkatreszComboBox.Name = "projektIDAlkatreszComboBox";
+            projektIDAlkatreszComboBox.Size = new Size(67, 23);
+            projektIDAlkatreszComboBox.TabIndex = 3;
+            projektIDAlkatreszComboBox.SelectedIndexChanged += projektIDAlkatreszComboBox_SelectedIndexChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(224, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Projekt kiválasztása:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(41, 70);
+            label3.Name = "label3";
+            label3.Size = new Size(224, 30);
+            label3.TabIndex = 2;
+            label3.Text = "Projekt kiválasztása:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(41, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(533, 37);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Projekthez tartozó alkatrészek listázása:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(41, 23);
+            label4.Name = "label4";
+            label4.Size = new Size(533, 37);
+            label4.TabIndex = 0;
+            label4.Text = "Projekthez tartozó alkatrészek listázása:";
             // 
             // utvonalPanel
             // 
-            this.utvonalPanel.BackColor = System.Drawing.Color.Transparent;
-            this.utvonalPanel.Controls.Add(this.utvonalListView);
-            this.utvonalPanel.Controls.Add(this.projektIDUtvonalComboBox);
-            this.utvonalPanel.Controls.Add(this.label5);
-            this.utvonalPanel.Controls.Add(this.label6);
-            this.utvonalPanel.Location = new System.Drawing.Point(130, 124);
-            this.utvonalPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.utvonalPanel.Name = "utvonalPanel";
-            this.utvonalPanel.Size = new System.Drawing.Size(976, 395);
-            this.utvonalPanel.TabIndex = 4;
+            utvonalPanel.BackColor = Color.Transparent;
+            utvonalPanel.Controls.Add(utvonalListView);
+            utvonalPanel.Controls.Add(projektIDUtvonalComboBox);
+            utvonalPanel.Controls.Add(label5);
+            utvonalPanel.Controls.Add(label6);
+            utvonalPanel.Location = new Point(130, 124);
+            utvonalPanel.Margin = new Padding(3, 2, 3, 2);
+            utvonalPanel.Name = "utvonalPanel";
+            utvonalPanel.Size = new Size(976, 395);
+            utvonalPanel.TabIndex = 4;
             // 
             // utvonalListView
             // 
-            this.utvonalListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.sorrend,
-            this.alkHely,
-            this.alkMegn});
-            this.utvonalListView.Location = new System.Drawing.Point(41, 118);
-            this.utvonalListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.utvonalListView.Name = "utvonalListView";
-            this.utvonalListView.Size = new System.Drawing.Size(532, 182);
-            this.utvonalListView.TabIndex = 4;
-            this.utvonalListView.UseCompatibleStateImageBehavior = false;
-            this.utvonalListView.View = System.Windows.Forms.View.Details;
+            utvonalListView.Columns.AddRange(new ColumnHeader[] { sorrend, alkHely, alkMegn });
+            utvonalListView.Location = new Point(41, 118);
+            utvonalListView.Margin = new Padding(3, 2, 3, 2);
+            utvonalListView.Name = "utvonalListView";
+            utvonalListView.Size = new Size(532, 182);
+            utvonalListView.TabIndex = 4;
+            utvonalListView.UseCompatibleStateImageBehavior = false;
+            utvonalListView.View = View.Details;
             // 
             // sorrend
             // 
-            this.sorrend.Text = "Sorrend";
-            this.sorrend.Width = 100;
+            sorrend.Text = "Sorrend";
+            sorrend.Width = 100;
             // 
             // alkHely
             // 
-            this.alkHely.Text = "Alkatrész helye:";
-            this.alkHely.Width = 250;
+            alkHely.Text = "Alkatrész helye:";
+            alkHely.Width = 250;
             // 
             // alkMegn
             // 
-            this.alkMegn.Text = "Alkatrész neve:";
-            this.alkMegn.Width = 250;
+            alkMegn.Text = "Alkatrész neve:";
+            alkMegn.Width = 250;
             // 
             // projektIDUtvonalComboBox
             // 
-            this.projektIDUtvonalComboBox.Location = new System.Drawing.Point(294, 75);
-            this.projektIDUtvonalComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.projektIDUtvonalComboBox.Name = "projektIDUtvonalComboBox";
-            this.projektIDUtvonalComboBox.Size = new System.Drawing.Size(67, 23);
-            this.projektIDUtvonalComboBox.TabIndex = 3;
+            projektIDUtvonalComboBox.Location = new Point(294, 75);
+            projektIDUtvonalComboBox.Margin = new Padding(3, 2, 3, 2);
+            projektIDUtvonalComboBox.Name = "projektIDUtvonalComboBox";
+            projektIDUtvonalComboBox.Size = new Size(67, 23);
+            projektIDUtvonalComboBox.TabIndex = 3;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(41, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(224, 30);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Projekt kiválasztása:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(41, 70);
+            label5.Name = "label5";
+            label5.Size = new Size(224, 30);
+            label5.TabIndex = 2;
+            label5.Text = "Projekt kiválasztása:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(41, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(320, 37);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Útvonal optimalizálása:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(41, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(320, 37);
+            label6.TabIndex = 0;
+            label6.Text = "Útvonal optimalizálása:";
             // 
             // Raktaros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1224, 671);
-            this.Controls.Add(this.projektAlkatreszPanel);
-            this.Controls.Add(this.projektListaPanel);
-            this.Controls.Add(this.buttonLoginRaktaros);
-            this.Controls.Add(this.raktarosMenu);
-            this.Controls.Add(this.utvonalPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.raktarosMenu;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Raktaros";
-            this.Text = "Raktaros";
-            this.raktarosMenu.ResumeLayout(false);
-            this.raktarosMenu.PerformLayout();
-            this.projektListaPanel.ResumeLayout(false);
-            this.projektListaPanel.PerformLayout();
-            this.projektAlkatreszPanel.ResumeLayout(false);
-            this.projektAlkatreszPanel.PerformLayout();
-            this.utvonalPanel.ResumeLayout(false);
-            this.utvonalPanel.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1224, 671);
+            Controls.Add(projektListaPanel);
+            Controls.Add(buttonLoginRaktaros);
+            Controls.Add(raktarosMenu);
+            Controls.Add(utvonalPanel);
+            Controls.Add(projektAlkatreszPanel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = raktarosMenu;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Raktaros";
+            Text = "Raktaros";
+            raktarosMenu.ResumeLayout(false);
+            raktarosMenu.PerformLayout();
+            projektListaPanel.ResumeLayout(false);
+            projektListaPanel.PerformLayout();
+            projektAlkatreszPanel.ResumeLayout(false);
+            projektAlkatreszPanel.PerformLayout();
+            utvonalPanel.ResumeLayout(false);
+            utvonalPanel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

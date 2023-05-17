@@ -155,7 +155,6 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
                 projectStatuszok.StatusID = statusz.StatusID;
                 context.SaveChanges();
-
             }
             catch (Exception exception)
             {
