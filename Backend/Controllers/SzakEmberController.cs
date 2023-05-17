@@ -18,7 +18,6 @@ namespace napelem_telepito_kozpont.Backend.Controllers
         // A4.
         public void AruCikkekBerendel(Dictionary<string, int> arucikkek, int projectID)
         {
-            
             if (arucikkek == null || arucikkek.Count == 0)
             {
                 MessageBox.Show("Nincs árucikk hozzáadva a kosárhoz.");
@@ -58,14 +57,22 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                     }
                 }
 
-                // PROJEKTSTATUST is modosítani kell DRAFT-ra
+                // Új érték felvétele a ProjectStatuszok táblába
+                var projectStatus = new ProjectStatuszok
+                {
+                    ProjectID = projectID,
+                    StatusID = 2, 
+                    FazisKezdete = DateTime.Now 
+                };
+                context.projectStatuszok.Add(projectStatus);
 
+                // PROJEKTSTATUST is modosítani kell DRAFT-ra
 
                 context.SaveChanges();
                 MessageBox.Show("A termékek sikeresen hozzárendelve a projekthez.");
             }
-            
         }
+
 
 
         // A5.

@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MySqlX.XDevAPI.Common;
+using napelem_telepito_kozpont.Backend.Controllers;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
+using napelem_telepito_kozpont.Backend.Modells_Tables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static napelem_telepito_kozpont.Backend.Controllers.ProjektController;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace napelem_telepito_kozpont.GUI_Forms
@@ -25,23 +29,51 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void buttonLoginRaktaros_Click(object sender, EventArgs e)
         {
-           
+
             Login l1 = new Login();
 
             l1.Show();
             this.Hide();
         }
 
-        public void mindLathatatlan() { 
-            projektListaPanel.Visible= false;
-            projektAlkatreszPanel.Visible= false;
-            utvonalPanel.Visible= false;    
+        public void mindLathatatlan()
+        {
+            projektListaPanel.Visible = false;
+            projektAlkatreszPanel.Visible = false;
+            utvonalPanel.Visible = false;
+        }
+
+        private void lista()
+        {
+            ProjektController projektController = new();
+            List<ProjektViewModel2> projektek = projektController.ProjektLista2Lekerese();
+
+            projektIDCombobox.Items.Clear();
+            projektListaListView.Items.Clear();
+
+            foreach (var projekt in projektek)
+            {
+                var listViewItem = new ListViewItem(projekt.ProjektID.ToString());
+                listViewItem.SubItems.Add(projekt.VarhatoIdo);
+                listViewItem.SubItems.Add(projekt.Ar.ToString());
+                listViewItem.SubItems.Add(projekt.Leiras.ToString());
+                listViewItem.SubItems.Add(projekt.Helyszin.ToString());
+                listViewItem.SubItems.Add(projekt.Statusz.ToString());
+
+                projektListaListView.Items.Add(listViewItem);
+
+                projektIDCombobox.Items.Add(projekt.ProjektID);
+            }
+
+            projektIDCombobox.SelectedIndex = 0;
         }
 
         private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mindLathatatlan();
-            projektListaPanel.Visible= true;
+            projektListaPanel.Visible = true;
+
+            lista();
         }
 
         private void projekthezTartozóAlkatrészekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,5 +148,27 @@ namespace napelem_telepito_kozpont.GUI_Forms
             }
         }
 
+        private void kivitelezesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProjektController projektController = new();
+
+                if (projektIDCombobox.SelectedIndex == -1)
+                {
+                    throw new Exception("Nincs kijelölve ID!");
+                }
+
+                string projectID = projektIDCombobox.SelectedItem.ToString() ?? "0";
+
+                projektController.projektStatuszValtoztatasa(int.Parse(projectID), "InProgress");
+
+                lista();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }

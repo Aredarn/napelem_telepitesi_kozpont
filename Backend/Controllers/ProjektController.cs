@@ -57,7 +57,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                               result.ProjectID,
                               result.leiras,
                               result.helyszin,
-                              result.Name,
+                              result.Name, 
                               result.Address,
                               projektStatuszok.StatusID
                           })
@@ -92,6 +92,75 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 return new List<ProjektViewModel>();
             }
         }
+        public List<ProjektViewModel2> ProjektLista2Lekerese()
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                List<ProjektViewModel2> projektek = context.Projekt
+                    .Join(context.projectStatuszok,
+                          projectStatuszok => projectStatuszok.ProjectID,
+                          projekt => projekt.ProjectID,
+                          (projekt, projectStatuszok) => new {
+                              projekt.ProjectID,
+                              projekt.leiras,
+                              projekt.helyszin,
+                              projekt.ApproxTimeToFinish,
+                              projekt.ApproxCost,
+                              projectStatuszok.StatusID
+                          })
+                    .Join(context.Statusz,
+                          result => result.StatusID,
+                          statusz => statusz.StatusID,
+                          (result, statusz) => new {
+                              result.ProjectID,
+                              result.helyszin,
+                              result.leiras,
+                              result.StatusID,
+                              result.ApproxTimeToFinish,
+                              result.ApproxCost,
+                              statusz.StatusInfo
+                          })
+                    .Select(result => new ProjektViewModel2
+                    {
+                        ProjektID = result.ProjectID,
+                        VarhatoIdo = result.ApproxTimeToFinish.ToString(),
+                        Ar = result.ApproxCost.ToString(),
+                        Helyszin = result.helyszin,
+                        Leiras = result.leiras,
+                        Statusz = result.StatusInfo
+                    }).ToList();
+
+                return projektek;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+
+                return new List<ProjektViewModel2>();
+            }
+        }
+        public void projektStatuszValtoztatasa(int projektID, string ujStatusz)
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                var statusz = context.Statusz
+                    .Single(row => row.StatusInfo == ujStatusz);
+
+                var projectStatuszok = context.projectStatuszok
+                    .Single(row => row.ProjectID == projektID);
+
+                projectStatuszok.StatusID = statusz.StatusID;
+                context.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
     public class ProjektViewModel
     {
@@ -100,6 +169,15 @@ namespace napelem_telepito_kozpont.Backend.Controllers
         public string Leiras { get; set; }
         public string MegrendeloNev { get; set; }
         public string MegrendeloCim { get; set; }
+        public string Statusz { get; set; }
+    }
+    public class ProjektViewModel2
+    {
+        public int ProjektID { get; set; }
+        public string VarhatoIdo { get; set; }
+        public string Ar { get; set; }
+        public string Helyszin { get; set; }
+        public string Leiras { get; set; }
         public string Statusz { get; set; }
     }
 }
