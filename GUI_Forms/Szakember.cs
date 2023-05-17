@@ -361,7 +361,9 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void arKalkulacioButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ár megjelenítése");
+            SzakEmberController A6 = new SzakEmberController();
+
+            A6.TeljesArkalkulacio(int.Parse(comboBox1.Text));
         }
 
         private void projektLezárásaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -372,7 +374,86 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void lezarButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Az id projekt sikeresen lezárva státusz státusszal");
+            SzakEmberController A7 = new SzakEmberController();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadItemsFromTable();
+        }
+
+
+        private void LoadItemsFromTable()
+        {
+            // Törlés az előző elemekről a ListView-ben
+            elemekListView.Items.Clear();
+
+            // ComboBox kiválasztott elemének text értékének lekérése
+            int selectedProjectID = int.Parse(comboBox1.Text);
+
+            // Adatbázis kapcsolat inicializálása
+            using (var dbContext = new NapelemDbContext())
+            {
+                // ProjektekArucikkhez elemek lekérdezése a megadott projektnév alapján
+                var items = dbContext.ProjektekArucikkhez
+                    .Where(p => p.ProjectID == selectedProjectID)
+                    .ToList();
+
+                // Elemek hozzáadása a ListView-hoz
+                foreach (var item in items)
+                {
+                    // Azonosító alapján lekérdezzük a projektnév és ár adatokat
+                    var project = dbContext.Projekt.FirstOrDefault(p => p.ProjectID == item.ProjectID);
+                    var product = dbContext.Arucikk.FirstOrDefault(p => p.ArucikkID == item.ArucikkID);
+
+                    if (project != null && product != null)
+                    {
+                        // ListView elem hozzáadása
+                        var listViewItem = new ListViewItem(product.Arucikknev); // Az árucikk neve
+                        listViewItem.SubItems.Add(product.Price.ToString()); // Az ár
+                        elemekListView.Items.Add(listViewItem);
+
+                    }
+                }
+            }
+        }
+
+        private void arkalkulacioPanel_VisibleChanged(object sender, EventArgs e)
+        {
+
+                // Törlés az előző elemekről a ComboBox1-ben
+            comboBox1.Items.Clear();
+
+            // Adatbázis kapcsolat inicializálása
+            using (var dbContext = new NapelemDbContext())
+            {
+                // Projektek lekérdezése
+                var projektek = dbContext.Projekt.ToList();
+
+                // Projektek hozzáadása a ComboBox-hoz
+                foreach (var projekt in projektek)
+                {
+                    comboBox1.Items.Add(projekt.ProjectID);
+                }
+            }
+        }
+
+        private void projektLezarasaPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            projektLezarComboBox.Items.Clear();
+
+            using (var dbContext = new NapelemDbContext())
+            {
+                // Projektek lekérdezése
+                var projektek = dbContext.Projekt.ToList();
+
+                // Projektek hozzáadása a ComboBox-hoz
+                foreach (var projekt in projektek)
+                {
+                    projektLezarComboBox.Items.Add(projekt.ProjectID);
+                }
+            }
         }
     }
 }

@@ -151,11 +151,11 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
                         context.projectStatuszok.Add(new ProjectStatuszok { ProjectID = projectID, StatusID = 4, FazisKezdete = DateTime.Now });
 
-                        Console.WriteLine("Az árkalkuláció sikeresen megtörtént. Az új árkalkuláció értéke: " + project.ApproxCost);
+                        MessageBox.Show("Az árkalkuláció sikeresen megtörtént. Az új árkalkuláció értéke: " + project.ApproxCost);
                     }
                     else
                     {
-                        Console.WriteLine("Az árkalkuláció már megtörtént a projektben.");
+                        MessageBox.Show("Az árkalkuláció már megtörtént a projektben.");
                     }
 
                 }
@@ -169,13 +169,13 @@ namespace napelem_telepito_kozpont.Backend.Controllers
         //A7
         public void Véglegesítés(string status, int ProjectID)
         {
-            using (var dbContext = new NapelemDbContext()) // DbContext példány létrehozása, a "YourDbContext" helyére a saját DbContext osztályodat kell írni
+            using (var dbContext = new NapelemDbContext())
             {
                 var existingStatus = dbContext.projectStatuszok.All(p => p.StateID > 5);
 
                 if (existingStatus != null)
                 {
-                    MessageBox.Show("Az állapot már be van állítva ebben a fázisban.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Az állapot már be van állítva ebben a fázisban." );
                     return;
                 }
 
@@ -202,7 +202,5 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 MessageBox.Show($"Az állapot sikeresen beállítva: {status}", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
     }
 }
