@@ -35,6 +35,7 @@
             this.hozzaadMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modositMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.hianyzikMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raktarMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.beerkezoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tarolasMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +57,13 @@
             this.mennyisegTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.raktarHozzaadPanel = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.levelNumber = new System.Windows.Forms.NumericUpDown();
+            this.columnNumber = new System.Windows.Forms.NumericUpDown();
+            this.rowNumber = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             this.raktarHozzaadButton = new System.Windows.Forms.Button();
             this.rekeszPanel = new System.Windows.Forms.Panel();
             this.rekeszekDataGridView = new System.Windows.Forms.DataGridView();
@@ -74,11 +82,13 @@
             this.hiany_H_menny = new System.Windows.Forms.ColumnHeader();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raktarvezetoMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rekeszenkentiMax)).BeginInit();
             this.hozzaadPanel.SuspendLayout();
             this.raktarHozzaadPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.levelNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowNumber)).BeginInit();
             this.rekeszPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rekeszekDataGridView)).BeginInit();
             this.hianyzoAlkatreszekPanel.SuspendLayout();
@@ -88,9 +98,10 @@
             // buttonLoginRaktarvezeto
             // 
             this.buttonLoginRaktarvezeto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLoginRaktarvezeto.Location = new System.Drawing.Point(1146, 785);
+            this.buttonLoginRaktarvezeto.Location = new System.Drawing.Point(1003, 589);
+            this.buttonLoginRaktarvezeto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLoginRaktarvezeto.Name = "buttonLoginRaktarvezeto";
-            this.buttonLoginRaktarvezeto.Size = new System.Drawing.Size(217, 75);
+            this.buttonLoginRaktarvezeto.Size = new System.Drawing.Size(190, 56);
             this.buttonLoginRaktarvezeto.TabIndex = 0;
             this.buttonLoginRaktarvezeto.Text = "Vissza a Loginhez";
             this.buttonLoginRaktarvezeto.UseVisualStyleBackColor = true;
@@ -106,8 +117,7 @@
             this.raktarMenu});
             this.raktarvezetoMenu.Location = new System.Drawing.Point(0, 0);
             this.raktarvezetoMenu.Name = "raktarvezetoMenu";
-            this.raktarvezetoMenu.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.raktarvezetoMenu.Size = new System.Drawing.Size(157, 895);
+            this.raktarvezetoMenu.Size = new System.Drawing.Size(82, 671);
             this.raktarvezetoMenu.TabIndex = 1;
             this.raktarvezetoMenu.Text = "raktarvezetoMenu";
             // 
@@ -119,29 +129,36 @@
             this.hianyzikMenu,
             this.hiányzóLefoglaltAlkatrészekToolStripMenuItem});
             this.alkatreszekMenu.Name = "alkatreszekMenu";
-            this.alkatreszekMenu.Size = new System.Drawing.Size(142, 24);
+            this.alkatreszekMenu.Size = new System.Drawing.Size(69, 19);
             this.alkatreszekMenu.Text = "alkatrészek";
             // 
             // hozzaadMenu
             // 
             this.hozzaadMenu.Name = "hozzaadMenu";
-            this.hozzaadMenu.Size = new System.Drawing.Size(280, 26);
+            this.hozzaadMenu.Size = new System.Drawing.Size(221, 22);
             this.hozzaadMenu.Text = "hozzáadás";
             this.hozzaadMenu.Click += new System.EventHandler(this.hozzaadMenu_Click);
             // 
             // modositMenu
             // 
             this.modositMenu.Name = "modositMenu";
-            this.modositMenu.Size = new System.Drawing.Size(280, 26);
+            this.modositMenu.Size = new System.Drawing.Size(221, 22);
             this.modositMenu.Text = "módosítás";
             this.modositMenu.Click += new System.EventHandler(this.modositMenu_Click);
             // 
             // hianyzikMenu
             // 
             this.hianyzikMenu.Name = "hianyzikMenu";
-            this.hianyzikMenu.Size = new System.Drawing.Size(280, 26);
+            this.hianyzikMenu.Size = new System.Drawing.Size(221, 22);
             this.hianyzikMenu.Text = "hiányzó alkatrészek";
             this.hianyzikMenu.Click += new System.EventHandler(this.hianyzikMenu_Click);
+            // 
+            // hiányzóLefoglaltAlkatrészekToolStripMenuItem
+            // 
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Name = "hiányzóLefoglaltAlkatrészekToolStripMenuItem";
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Text = "hiányzó lefoglalt alkatrészek";
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Click += new System.EventHandler(this.hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click);
             // 
             // raktarMenu
             // 
@@ -149,20 +166,20 @@
             this.beerkezoMenu,
             this.tarolasMenu});
             this.raktarMenu.Name = "raktarMenu";
-            this.raktarMenu.Size = new System.Drawing.Size(142, 24);
+            this.raktarMenu.Size = new System.Drawing.Size(69, 19);
             this.raktarMenu.Text = "raktár";
             // 
             // beerkezoMenu
             // 
             this.beerkezoMenu.Name = "beerkezoMenu";
-            this.beerkezoMenu.Size = new System.Drawing.Size(267, 26);
+            this.beerkezoMenu.Size = new System.Drawing.Size(211, 22);
             this.beerkezoMenu.Text = "beérkező alkatrészek";
             this.beerkezoMenu.Click += new System.EventHandler(this.beerkezoMenu_Click);
             // 
             // tarolasMenu
             // 
             this.tarolasMenu.Name = "tarolasMenu";
-            this.tarolasMenu.Size = new System.Drawing.Size(267, 26);
+            this.tarolasMenu.Size = new System.Drawing.Size(211, 22);
             this.tarolasMenu.Text = "rekesz méretének kezelése";
             this.tarolasMenu.Click += new System.EventHandler(this.tarolasMenu_Click);
             // 
@@ -172,9 +189,9 @@
             this.almenu_cim.BackColor = System.Drawing.Color.Transparent;
             this.almenu_cim.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.almenu_cim.ForeColor = System.Drawing.Color.White;
-            this.almenu_cim.Location = new System.Drawing.Point(27, 49);
+            this.almenu_cim.Location = new System.Drawing.Point(24, 37);
             this.almenu_cim.Name = "almenu_cim";
-            this.almenu_cim.Size = new System.Drawing.Size(117, 46);
+            this.almenu_cim.Size = new System.Drawing.Size(96, 37);
             this.almenu_cim.TabIndex = 2;
             this.almenu_cim.Text = "label1";
             // 
@@ -184,9 +201,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(27, 211);
+            this.label1.Location = new System.Drawing.Point(24, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 32);
+            this.label1.Size = new System.Drawing.Size(52, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Név:";
             // 
@@ -196,9 +213,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 275);
+            this.label2.Location = new System.Drawing.Point(24, 206);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 32);
+            this.label2.Size = new System.Drawing.Size(38, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ár:";
             // 
@@ -208,32 +225,29 @@
             this.rekeszMaxLabel.BackColor = System.Drawing.Color.Transparent;
             this.rekeszMaxLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rekeszMaxLabel.ForeColor = System.Drawing.Color.White;
-            this.rekeszMaxLabel.Location = new System.Drawing.Point(27, 335);
+            this.rekeszMaxLabel.Location = new System.Drawing.Point(24, 251);
             this.rekeszMaxLabel.Name = "rekeszMaxLabel";
-            this.rekeszMaxLabel.Size = new System.Drawing.Size(416, 32);
+            this.rekeszMaxLabel.Size = new System.Drawing.Size(329, 25);
             this.rekeszMaxLabel.TabIndex = 5;
             this.rekeszMaxLabel.Text = "Rekeszenkénti maximális darabszám:";
             // 
             // ujNev
             // 
-            this.ujNev.Location = new System.Drawing.Point(200, 217);
-            this.ujNev.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ujNev.Location = new System.Drawing.Point(175, 163);
             this.ujNev.Name = "ujNev";
-            this.ujNev.Size = new System.Drawing.Size(321, 27);
+            this.ujNev.Size = new System.Drawing.Size(281, 23);
             this.ujNev.TabIndex = 6;
             // 
             // ujAr
             // 
-            this.ujAr.Location = new System.Drawing.Point(202, 275);
-            this.ujAr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ujAr.Location = new System.Drawing.Point(177, 206);
             this.ujAr.Name = "ujAr";
-            this.ujAr.Size = new System.Drawing.Size(321, 27);
+            this.ujAr.Size = new System.Drawing.Size(281, 23);
             this.ujAr.TabIndex = 7;
             // 
             // rekeszenkentiMax
             // 
-            this.rekeszenkentiMax.Location = new System.Drawing.Point(480, 335);
-            this.rekeszenkentiMax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rekeszenkentiMax.Location = new System.Drawing.Point(420, 251);
             this.rekeszenkentiMax.Maximum = new decimal(new int[] {
             5,
             0,
@@ -245,7 +259,7 @@
             0,
             0});
             this.rekeszenkentiMax.Name = "rekeszenkentiMax";
-            this.rekeszenkentiMax.Size = new System.Drawing.Size(43, 27);
+            this.rekeszenkentiMax.Size = new System.Drawing.Size(38, 23);
             this.rekeszenkentiMax.TabIndex = 8;
             this.rekeszenkentiMax.Value = new decimal(new int[] {
             1,
@@ -266,19 +280,17 @@
             this.hozzaadPanel.Controls.Add(this.label1);
             this.hozzaadPanel.Controls.Add(this.arucikkekCombobox);
             this.hozzaadPanel.Controls.Add(this.ujNev);
-            this.hozzaadPanel.Location = new System.Drawing.Point(158, 171);
-            this.hozzaadPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hozzaadPanel.Location = new System.Drawing.Point(138, 128);
             this.hozzaadPanel.Name = "hozzaadPanel";
-            this.hozzaadPanel.Size = new System.Drawing.Size(840, 491);
+            this.hozzaadPanel.Size = new System.Drawing.Size(735, 368);
             this.hozzaadPanel.TabIndex = 9;
             // 
             // arModositasButton
             // 
             this.arModositasButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.arModositasButton.Location = new System.Drawing.Point(605, 308);
-            this.arModositasButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arModositasButton.Location = new System.Drawing.Point(529, 231);
             this.arModositasButton.Name = "arModositasButton";
-            this.arModositasButton.Size = new System.Drawing.Size(157, 47);
+            this.arModositasButton.Size = new System.Drawing.Size(137, 35);
             this.arModositasButton.TabIndex = 10;
             this.arModositasButton.Text = "Módosítás";
             this.arModositasButton.UseVisualStyleBackColor = true;
@@ -287,10 +299,9 @@
             // hozzaadasButton
             // 
             this.hozzaadasButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.hozzaadasButton.Location = new System.Drawing.Point(605, 363);
-            this.hozzaadasButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hozzaadasButton.Location = new System.Drawing.Point(529, 272);
             this.hozzaadasButton.Name = "hozzaadasButton";
-            this.hozzaadasButton.Size = new System.Drawing.Size(158, 49);
+            this.hozzaadasButton.Size = new System.Drawing.Size(138, 37);
             this.hozzaadasButton.TabIndex = 9;
             this.hozzaadasButton.Text = "Hozzáadás";
             this.hozzaadasButton.UseVisualStyleBackColor = true;
@@ -299,10 +310,9 @@
             // arucikkekCombobox
             // 
             this.arucikkekCombobox.FormattingEnabled = true;
-            this.arucikkekCombobox.Location = new System.Drawing.Point(199, 211);
-            this.arucikkekCombobox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.arucikkekCombobox.Location = new System.Drawing.Point(174, 158);
             this.arucikkekCombobox.Name = "arucikkekCombobox";
-            this.arucikkekCombobox.Size = new System.Drawing.Size(322, 28);
+            this.arucikkekCombobox.Size = new System.Drawing.Size(282, 23);
             this.arucikkekCombobox.TabIndex = 11;
             this.arucikkekCombobox.SelectedValueChanged += new System.EventHandler(this.arucikkekComboboxChanged);
             // 
@@ -312,19 +322,18 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(13, 19);
+            this.label3.Location = new System.Drawing.Point(11, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(664, 46);
+            this.label3.Size = new System.Drawing.Size(542, 37);
             this.label3.TabIndex = 10;
             this.label3.Text = "Beérkezett alkatrész felvétele a raktárba:";
             // 
             // beerkezettAlkComboBox
             // 
             this.beerkezettAlkComboBox.FormattingEnabled = true;
-            this.beerkezettAlkComboBox.Location = new System.Drawing.Point(225, 135);
-            this.beerkezettAlkComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.beerkezettAlkComboBox.Location = new System.Drawing.Point(197, 101);
             this.beerkezettAlkComboBox.Name = "beerkezettAlkComboBox";
-            this.beerkezettAlkComboBox.Size = new System.Drawing.Size(323, 28);
+            this.beerkezettAlkComboBox.Size = new System.Drawing.Size(283, 23);
             this.beerkezettAlkComboBox.TabIndex = 11;
             // 
             // label4
@@ -333,9 +342,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(29, 132);
+            this.label4.Location = new System.Drawing.Point(25, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 32);
+            this.label4.Size = new System.Drawing.Size(147, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Alkatrész neve: ";
             // 
@@ -345,18 +354,17 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(29, 212);
+            this.label5.Location = new System.Drawing.Point(25, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 32);
+            this.label5.Size = new System.Drawing.Size(111, 25);
             this.label5.TabIndex = 13;
             this.label5.Text = "Mennyiség:";
             // 
             // mennyisegTextBox
             // 
-            this.mennyisegTextBox.Location = new System.Drawing.Point(225, 212);
-            this.mennyisegTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mennyisegTextBox.Location = new System.Drawing.Point(197, 159);
             this.mennyisegTextBox.Name = "mennyisegTextBox";
-            this.mennyisegTextBox.Size = new System.Drawing.Size(110, 27);
+            this.mennyisegTextBox.Size = new System.Drawing.Size(97, 23);
             this.mennyisegTextBox.TabIndex = 14;
             // 
             // label6
@@ -365,14 +373,21 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(29, 212);
+            this.label6.Location = new System.Drawing.Point(25, 159);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 32);
+            this.label6.Size = new System.Drawing.Size(0, 25);
             this.label6.TabIndex = 15;
             // 
             // raktarHozzaadPanel
             // 
             this.raktarHozzaadPanel.BackColor = System.Drawing.Color.Transparent;
+            this.raktarHozzaadPanel.Controls.Add(this.label16);
+            this.raktarHozzaadPanel.Controls.Add(this.label15);
+            this.raktarHozzaadPanel.Controls.Add(this.label14);
+            this.raktarHozzaadPanel.Controls.Add(this.levelNumber);
+            this.raktarHozzaadPanel.Controls.Add(this.columnNumber);
+            this.raktarHozzaadPanel.Controls.Add(this.rowNumber);
+            this.raktarHozzaadPanel.Controls.Add(this.label13);
             this.raktarHozzaadPanel.Controls.Add(this.raktarHozzaadButton);
             this.raktarHozzaadPanel.Controls.Add(this.label6);
             this.raktarHozzaadPanel.Controls.Add(this.mennyisegTextBox);
@@ -380,19 +395,131 @@
             this.raktarHozzaadPanel.Controls.Add(this.label4);
             this.raktarHozzaadPanel.Controls.Add(this.beerkezettAlkComboBox);
             this.raktarHozzaadPanel.Controls.Add(this.label3);
-            this.raktarHozzaadPanel.Location = new System.Drawing.Point(449, 152);
-            this.raktarHozzaadPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.raktarHozzaadPanel.Location = new System.Drawing.Point(393, 114);
             this.raktarHozzaadPanel.Name = "raktarHozzaadPanel";
-            this.raktarHozzaadPanel.Size = new System.Drawing.Size(675, 352);
+            this.raktarHozzaadPanel.Size = new System.Drawing.Size(591, 323);
             this.raktarHozzaadPanel.TabIndex = 16;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label16.Location = new System.Drawing.Point(180, 255);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 25);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "oszlop -->";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(182, 291);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(86, 25);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "szint -->";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Location = new System.Drawing.Point(180, 222);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 25);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "sor -->";
+            // 
+            // levelNumber
+            // 
+            this.levelNumber.Location = new System.Drawing.Point(309, 291);
+            this.levelNumber.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.levelNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.levelNumber.Name = "levelNumber";
+            this.levelNumber.Size = new System.Drawing.Size(37, 23);
+            this.levelNumber.TabIndex = 22;
+            this.levelNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // columnNumber
+            // 
+            this.columnNumber.Location = new System.Drawing.Point(309, 260);
+            this.columnNumber.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.columnNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.columnNumber.Name = "columnNumber";
+            this.columnNumber.Size = new System.Drawing.Size(37, 23);
+            this.columnNumber.TabIndex = 21;
+            this.columnNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // rowNumber
+            // 
+            this.rowNumber.Location = new System.Drawing.Point(309, 228);
+            this.rowNumber.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.rowNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.rowNumber.Name = "rowNumber";
+            this.rowNumber.Size = new System.Drawing.Size(37, 23);
+            this.rowNumber.TabIndex = 19;
+            this.rowNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(25, 220);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 25);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Rekesz helye:";
             // 
             // raktarHozzaadButton
             // 
             this.raktarHozzaadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.raktarHozzaadButton.Location = new System.Drawing.Point(471, 275);
-            this.raktarHozzaadButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.raktarHozzaadButton.Location = new System.Drawing.Point(418, 260);
             this.raktarHozzaadButton.Name = "raktarHozzaadButton";
-            this.raktarHozzaadButton.Size = new System.Drawing.Size(160, 48);
+            this.raktarHozzaadButton.Size = new System.Drawing.Size(140, 36);
             this.raktarHozzaadButton.TabIndex = 16;
             this.raktarHozzaadButton.Text = "Felvesz";
             this.raktarHozzaadButton.UseVisualStyleBackColor = true;
@@ -404,20 +531,20 @@
             this.rekeszPanel.Controls.Add(this.rekeszekDataGridView);
             this.rekeszPanel.Controls.Add(this.label7);
             this.rekeszPanel.Controls.Add(this.label10);
-            this.rekeszPanel.Location = new System.Drawing.Point(161, 150);
-            this.rekeszPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rekeszPanel.Location = new System.Drawing.Point(141, 112);
             this.rekeszPanel.Name = "rekeszPanel";
-            this.rekeszPanel.Size = new System.Drawing.Size(989, 582);
+            this.rekeszPanel.Size = new System.Drawing.Size(865, 436);
             this.rekeszPanel.TabIndex = 17;
             // 
             // rekeszekDataGridView
             // 
             this.rekeszekDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rekeszekDataGridView.Location = new System.Drawing.Point(29, 159);
+            this.rekeszekDataGridView.Location = new System.Drawing.Point(25, 119);
+            this.rekeszekDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rekeszekDataGridView.Name = "rekeszekDataGridView";
             this.rekeszekDataGridView.RowHeadersWidth = 51;
             this.rekeszekDataGridView.RowTemplate.Height = 29;
-            this.rekeszekDataGridView.Size = new System.Drawing.Size(931, 353);
+            this.rekeszekDataGridView.Size = new System.Drawing.Size(815, 265);
             this.rekeszekDataGridView.TabIndex = 16;
             this.rekeszekDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.rekeszekDataGridView_CellValueChanged);
             // 
@@ -427,9 +554,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(29, 212);
+            this.label7.Location = new System.Drawing.Point(25, 159);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 32);
+            this.label7.Size = new System.Drawing.Size(0, 25);
             this.label7.TabIndex = 15;
             // 
             // label10
@@ -438,9 +565,9 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(13, 19);
+            this.label10.Location = new System.Drawing.Point(11, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(576, 92);
+            this.label10.Size = new System.Drawing.Size(468, 74);
             this.label10.TabIndex = 10;
             this.label10.Text = "Rekeszben elhelyezhető maximális \r\ndarabszámú alkatrész";
             // 
@@ -450,10 +577,9 @@
             this.hianyzoAlkatreszekPanel.Controls.Add(this.hianyzoListView);
             this.hianyzoAlkatreszekPanel.Controls.Add(this.label8);
             this.hianyzoAlkatreszekPanel.Controls.Add(this.label9);
-            this.hianyzoAlkatreszekPanel.Location = new System.Drawing.Point(205, 156);
-            this.hianyzoAlkatreszekPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hianyzoAlkatreszekPanel.Location = new System.Drawing.Point(179, 117);
             this.hianyzoAlkatreszekPanel.Name = "hianyzoAlkatreszekPanel";
-            this.hianyzoAlkatreszekPanel.Size = new System.Drawing.Size(989, 582);
+            this.hianyzoAlkatreszekPanel.Size = new System.Drawing.Size(865, 436);
             this.hianyzoAlkatreszekPanel.TabIndex = 18;
             // 
             // hianyzoListView
@@ -462,9 +588,10 @@
             this.p_id,
             this.alk_nev,
             this.hianyzo_db});
-            this.hianyzoListView.Location = new System.Drawing.Point(13, 68);
+            this.hianyzoListView.Location = new System.Drawing.Point(11, 51);
+            this.hianyzoListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hianyzoListView.Name = "hianyzoListView";
-            this.hianyzoListView.Size = new System.Drawing.Size(512, 321);
+            this.hianyzoListView.Size = new System.Drawing.Size(448, 242);
             this.hianyzoListView.TabIndex = 16;
             this.hianyzoListView.UseCompatibleStateImageBehavior = false;
             this.hianyzoListView.View = System.Windows.Forms.View.Details;
@@ -490,9 +617,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(29, 212);
+            this.label8.Location = new System.Drawing.Point(25, 159);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 32);
+            this.label8.Size = new System.Drawing.Size(0, 25);
             this.label8.TabIndex = 15;
             // 
             // label9
@@ -501,9 +628,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(13, 19);
+            this.label9.Location = new System.Drawing.Point(11, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(488, 46);
+            this.label9.Size = new System.Drawing.Size(397, 37);
             this.label9.TabIndex = 10;
             this.label9.Text = "Hiányzó alkatrészek listázása:";
             // 
@@ -513,10 +640,9 @@
             this.hianyzoLefoglaltPanel.Controls.Add(this.hianyzoLefoglaltListView);
             this.hianyzoLefoglaltPanel.Controls.Add(this.label11);
             this.hianyzoLefoglaltPanel.Controls.Add(this.label12);
-            this.hianyzoLefoglaltPanel.Location = new System.Drawing.Point(213, 164);
-            this.hianyzoLefoglaltPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hianyzoLefoglaltPanel.Location = new System.Drawing.Point(186, 123);
             this.hianyzoLefoglaltPanel.Name = "hianyzoLefoglaltPanel";
-            this.hianyzoLefoglaltPanel.Size = new System.Drawing.Size(989, 582);
+            this.hianyzoLefoglaltPanel.Size = new System.Drawing.Size(865, 436);
             this.hianyzoLefoglaltPanel.TabIndex = 19;
             // 
             // hianyzoLefoglaltListView
@@ -524,9 +650,10 @@
             this.hianyzoLefoglaltListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.alk_h_megn,
             this.hiany_H_menny});
-            this.hianyzoLefoglaltListView.Location = new System.Drawing.Point(13, 68);
+            this.hianyzoLefoglaltListView.Location = new System.Drawing.Point(11, 51);
+            this.hianyzoLefoglaltListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hianyzoLefoglaltListView.Name = "hianyzoLefoglaltListView";
-            this.hianyzoLefoglaltListView.Size = new System.Drawing.Size(512, 321);
+            this.hianyzoLefoglaltListView.Size = new System.Drawing.Size(448, 242);
             this.hianyzoLefoglaltListView.TabIndex = 16;
             this.hianyzoLefoglaltListView.UseCompatibleStateImageBehavior = false;
             this.hianyzoLefoglaltListView.View = System.Windows.Forms.View.Details;
@@ -547,9 +674,9 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(29, 212);
+            this.label11.Location = new System.Drawing.Point(25, 159);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 32);
+            this.label11.Size = new System.Drawing.Size(0, 25);
             this.label11.TabIndex = 15;
             // 
             // label12
@@ -558,34 +685,28 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(13, 19);
+            this.label12.Location = new System.Drawing.Point(11, 14);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(769, 46);
+            this.label12.Size = new System.Drawing.Size(624, 37);
             this.label12.TabIndex = 10;
             this.label12.Text = "Hiányzó, de már lefoglalt  alkatrészek listázása:";
             // 
-            // hiányzóLefoglaltAlkatrészekToolStripMenuItem
-            // 
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Name = "hiányzóLefoglaltAlkatrészekToolStripMenuItem";
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Text = "hiányzó lefoglalt alkatrészek";
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Click += new System.EventHandler(this.hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click);
-            // 
             // Raktárvezető
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1399, 895);
+            this.ClientSize = new System.Drawing.Size(1224, 671);
             this.Controls.Add(this.buttonLoginRaktarvezeto);
             this.Controls.Add(this.raktarvezetoMenu);
-            this.Controls.Add(this.hianyzoAlkatreszekPanel);
-            this.Controls.Add(this.rekeszPanel);
             this.Controls.Add(this.raktarHozzaadPanel);
             this.Controls.Add(this.hozzaadPanel);
             this.Controls.Add(this.hianyzoLefoglaltPanel);
+            this.Controls.Add(this.hianyzoAlkatreszekPanel);
+            this.Controls.Add(this.rekeszPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.raktarvezetoMenu;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Raktárvezető";
             this.Text = "Raktárvezető";
             this.Load += new System.EventHandler(this.Raktárvezető_Load);
@@ -596,6 +717,9 @@
             this.hozzaadPanel.PerformLayout();
             this.raktarHozzaadPanel.ResumeLayout(false);
             this.raktarHozzaadPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.levelNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowNumber)).EndInit();
             this.rekeszPanel.ResumeLayout(false);
             this.rekeszPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rekeszekDataGridView)).EndInit();
@@ -656,5 +780,12 @@
         private Label label11;
         private Label label12;
         private ToolStripMenuItem hiányzóLefoglaltAlkatrészekToolStripMenuItem;
+        private Label label13;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private NumericUpDown levelNumber;
+        private NumericUpDown columnNumber;
+        private NumericUpDown rowNumber;
     }
 }
