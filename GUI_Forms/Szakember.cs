@@ -217,20 +217,28 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
         private void szamitasButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string projektID = projektAzonositoTextBox.Text;
+                int projektIDint = int.Parse(projektID);
 
-            string projektID = projektAzonositoTextBox.Text;
-            int projektIDint = int.Parse(projektID);
 
+                string munkaora = munkaoraTextBox.Text;
+                int munkaoraID = int.Parse(munkaora);
 
-            string munkaora = munkaoraTextBox.Text;
-            int munkaoraID = int.Parse(munkaora);
+                SzakEmberController x = new SzakEmberController();
+                x.Arkalkulacio(projektIDint, munkaoraID);
 
-            SzakEmberController x = new SzakEmberController();
-            x.Arkalkulacio(projektIDint, munkaoraID);
-
-            int munkadij = int.Parse(munkaora) * 15000;
-            MessageBox.Show("Munkadíj meghatározva a(z) " + projektID + ". projekthez!\n" +
-                "Munkadíj összege: " + munkadij + " Ft");
+                int munkadij = int.Parse(munkaora) * 15000;
+                MessageBox.Show("Munkadíj meghatározva a(z) " + projektID + ". projekthez!\n" +
+                    "Munkadíj összege: " + munkadij + " Ft");
+            }
+            catch(Exception x) {
+                MessageBox.Show(x.Message);
+            
+            }
+        
+        
         }
 
         private void Szakember_Load(object sender, EventArgs e)
@@ -375,6 +383,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
         private void lezarButton_Click(object sender, EventArgs e)
         {
             SzakEmberController A7 = new SzakEmberController();
+            A7.Véglegesítés(lezarasComboBox.Text, int.Parse(projektLezarComboBox.Text));
 
         }
 
@@ -382,7 +391,6 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             LoadItemsFromTable();
         }
-
 
         private void LoadItemsFromTable()
         {
@@ -417,27 +425,56 @@ namespace napelem_telepito_kozpont.GUI_Forms
                     }
                 }
             }
+            if (comboBox1.SelectedItem != null)
+            {
+                int selectedProjectId = (int)comboBox1.SelectedItem;
+                using (var dbContext = new NapelemDbContext())
+                {
+                    var selectedProject = dbContext.Projekt.FirstOrDefault(p => p.ProjectID == selectedProjectId);
+
+                    if (selectedProject != null)
+                    {
+                        if (selectedProject.ApproxCost == 0)
+                        {
+                            munkadijListView.Items.Clear();
+                            munkadijListView.Items.Add("Még nincs árkalkuláció");
+                        }
+                        else if (selectedProject.ApproxCost < 24)
+                        {
+                            int munkaora = selectedProject.ApproxCost * 15000;
+                            munkadijListView.Items.Clear();
+                            munkadijListView.Items.Add(new ListViewItem(new[] { "Munkaóra", munkaora.ToString() }));
+                            munkadijListView.Items.Add(new ListViewItem(new[] { "ApproxCost", selectedProject.ApproxCost.ToString() }));
+                        }
+                        else
+                        {
+                            munkadijListView.Items.Clear();
+                            munkadijListView.Items.Add("Már megtörtént az árkalkuláció");
+                        }
+                    }
+                }
+            }
+
         }
 
         private void arkalkulacioPanel_VisibleChanged(object sender, EventArgs e)
         {
-
-                // Törlés az előző elemekről a ComboBox1-ben
             comboBox1.Items.Clear();
-
-            // Adatbázis kapcsolat inicializálása
             using (var dbContext = new NapelemDbContext())
             {
-                // Projektek lekérdezése
                 var projektek = dbContext.Projekt.ToList();
 
-                // Projektek hozzáadása a ComboBox-hoz
                 foreach (var projekt in projektek)
                 {
-                    comboBox1.Items.Add(projekt.ProjectID);
+                    var existingStatus = dbContext.projectStatuszok.Any(p => p.ProjectID == projekt.ProjectID && (p.StatusID == 6 || p.StatusID == 7));
+                    if (!existingStatus)
+                    {
+                        comboBox1.Items.Add(projekt.ProjectID);
+                    }
                 }
             }
         }
+
 
         private void projektLezarasaPanel_VisibleChanged(object sender, EventArgs e)
         {
@@ -445,13 +482,15 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
             using (var dbContext = new NapelemDbContext())
             {
-                // Projektek lekérdezése
                 var projektek = dbContext.Projekt.ToList();
 
-                // Projektek hozzáadása a ComboBox-hoz
                 foreach (var projekt in projektek)
                 {
-                    projektLezarComboBox.Items.Add(projekt.ProjectID);
+                    var existingStatus = dbContext.projectStatuszok.Any(p => p.ProjectID == projekt.ProjectID && (p.StatusID == 6 || p.StatusID == 7));
+                    if (!existingStatus)
+                    {
+                        projektLezarComboBox.Items.Add(projekt.ProjectID);
+                    }
                 }
             }
         }

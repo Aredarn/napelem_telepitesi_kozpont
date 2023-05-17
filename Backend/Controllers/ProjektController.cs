@@ -61,7 +61,7 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                               result.Address,
                               projektStatuszok.StatusID
                           })
-                    .Join(context.Státusz,
+                    .Join(context.Statusz,
                           result => result.StatusID,
                           statusz => statusz.StatusID,
                           (result, statusz) => new {

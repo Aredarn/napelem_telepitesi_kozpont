@@ -794,7 +794,7 @@
             // arKalkulacioButton
             // 
             this.arKalkulacioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.arKalkulacioButton.Location = new System.Drawing.Point(32, 382);
+            this.arKalkulacioButton.Location = new System.Drawing.Point(32, 400);
             this.arKalkulacioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.arKalkulacioButton.Name = "arKalkulacioButton";
             this.arKalkulacioButton.Size = new System.Drawing.Size(136, 32);
@@ -812,7 +812,7 @@
             this.munkadijListView.Location = new System.Drawing.Point(32, 314);
             this.munkadijListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.munkadijListView.Name = "munkadijListView";
-            this.munkadijListView.Size = new System.Drawing.Size(360, 50);
+            this.munkadijListView.Size = new System.Drawing.Size(360, 79);
             this.munkadijListView.TabIndex = 6;
             this.munkadijListView.UseCompatibleStateImageBehavior = false;
             this.munkadijListView.View = System.Windows.Forms.View.Details;
@@ -999,13 +999,13 @@
             this.ClientSize = new System.Drawing.Size(1224, 671);
             this.Controls.Add(this.buttonLoginSzakember);
             this.Controls.Add(this.szakemberMenu);
-            this.Controls.Add(this.projektLezarasaPanel);
-            this.Controls.Add(this.arkalkulacioPanel);
-            this.Controls.Add(this.alkatreszekPanel);
             this.Controls.Add(this.projektListazasPanel);
             this.Controls.Add(this.ujProjektPanel);
             this.Controls.Add(this.alkHozzarendelPanel);
             this.Controls.Add(this.munkadijPanel);
+            this.Controls.Add(this.projektLezarasaPanel);
+            this.Controls.Add(this.arkalkulacioPanel);
+            this.Controls.Add(this.alkatreszekPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Szakember";
             this.Text = "Szakember";

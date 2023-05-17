@@ -69,7 +69,6 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
 
         // A5.
-
         public void Arkalkulacio(int projectID, int becsultOra)
         {
             using (var context = new NapelemDbContext())
@@ -153,6 +152,10 @@ namespace napelem_telepito_kozpont.Backend.Controllers
 
                         MessageBox.Show("Az árkalkuláció sikeresen megtörtént. Az új árkalkuláció értéke: " + project.ApproxCost);
                     }
+                    else if (totalPrice == 0)
+                    {
+                        MessageBox.Show("Nincsen termék rendelve ehhez a projekthez.");
+                    }
                     else
                     {
                         MessageBox.Show("Az árkalkuláció már megtörtént a projektben.");
@@ -164,18 +167,16 @@ namespace napelem_telepito_kozpont.Backend.Controllers
             }
         }
 
-
-
         //A7
         public void Véglegesítés(string status, int ProjectID)
         {
             using (var dbContext = new NapelemDbContext())
             {
-                var existingStatus = dbContext.projectStatuszok.All(p => p.StateID > 5);
+                var existingStatus = dbContext.projectStatuszok.FirstOrDefault(p => p.ProjectID == ProjectID && (p.StatusID == 6 || p.StatusID == 7));
 
                 if (existingStatus != null)
                 {
-                    MessageBox.Show("Az állapot már be van állítva ebben a fázisban." );
+                    MessageBox.Show("Az állapot már be van állítva ebben a fázisban.");
                     return;
                 }
 
@@ -193,14 +194,15 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                         newStatus.StatusID = 7;
                         break;
                     default:
-                        MessageBox.Show("Ismeretlen státusz érték.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ismeretlen státusz érték.");
                         return;
                 }
 
                 dbContext.projectStatuszok.Add(newStatus);
                 dbContext.SaveChanges();
-                MessageBox.Show($"Az állapot sikeresen beállítva: {status}", "Siker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Az állapot sikeresen beállítva: {status}");
             }
         }
+
     }
 }
