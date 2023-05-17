@@ -220,6 +220,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
             arModositasButton.Visible = false;
             arucikkekCombobox.Visible = false;
             rekeszPanel.Visible = false;
+            mindLathatatlan();
+            raktarHozzaadPanel.Visible = true;
 
             hozzaadPanel.Visible = false;
 
@@ -360,25 +362,37 @@ namespace napelem_telepito_kozpont.GUI_Forms
             mindLathatatlan();
             hianyzoAlkatreszekPanel.Visible = true;
 
+            hianyzoListView.Items.Clear();
+
             ArucikkController arucikkController = new();            
            
-            foreach (var item in arucikkController.GetMissingItems())
-            {   
+            foreach (var item in arucikkController.GetMissingReservedItems())
+            {
                 var uj = new ListViewItem();
-                uj.Text = item.ProjectID.ToString();
-                uj.SubItems.Add(item.AruNev);
-                uj.SubItems.Add(item.Mennyiseg.ToString());
+                uj.Text = item.Key;
+                uj.SubItems.Add(item.Value.ToString());
 
                 hianyzoListView.Items.Add(uj);
             }
-
-
         }
 
         private void hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mindLathatatlan();
             hianyzoLefoglaltPanel.Visible = true;
+
+            hianyzoLefoglaltListView.Items.Clear();
+
+            ArucikkController arucikkController = new();
+
+            foreach (var item in arucikkController.GetMissingItems())
+            {
+                var uj = new ListViewItem();
+                uj.Text = item.AruNev;
+                uj.SubItems.Add(item.Mennyiseg.ToString());
+
+                hianyzoLefoglaltListView.Items.Add(uj);
+            }
         }
     }
 }

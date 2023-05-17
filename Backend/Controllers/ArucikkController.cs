@@ -157,6 +157,70 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 return new List<AlkatreszViewModel>();
             }
         }
+
+        public Dictionary<string, int> GetMissingReservedItems()
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                // meg kell nezni hogy a projektek arucikkekhez tabla 
+                // IsReserved == true elemei teljesithetoek-e a raktarbol
+                // ha nem akkor kell oket kilistazni
+
+                List<ProjektArucikkhez> igenyek = context.ProjektekArucikkhez.ToList();
+                List<Polc> raktaron = context.Polc.ToList();
+
+                // alkatreszviewmodel "raktaron" reszebe fogom rakni amennyi meg kell belole
+                Dictionary<string, int> hianyoznak = new Dictionary<string, int>();
+                //MessageBox.Show("pls");
+
+                // vegigmegyek az igenyeken
+                foreach (var igeny in igenyek)
+                {
+                    // ha le van foglalva akkor megnezem hogy van-e a raktarban annyi kapacitas
+                    if (igeny.IsReserved)
+                    {
+                        int db = 0; //osszesen mennyi ilyen termek van a raktarban
+                        var keresettAru = context.Arucikk.Find(igeny.ArucikkID);
+                        string arunev = ""; 
+                        if (keresettAru != null)
+                        {
+                            arunev = keresettAru.Arucikknev;
+                            // alapjaraton 0-val adom hozza a hianyzast
+                            // hianyoznak.Add(keresettAru, 0);
+                            //MessageBox.Show("megtalalta az arucikket");
+                            foreach (var raktar in raktaron)
+                            {
+                                // ha a raktarban van ugyanolyan id-val arucikk, akkor 
+                                // a hozza tartozo itemsinshelf adattagot hozzaadjuk a db-hoz
+                                if (raktar.ArucikkID == igeny.ArucikkID)
+                                {
+                                    db += raktar.ItemsInShelf;
+                                }
+                            }
+                            //MessageBox.Show(db.ToString());
+                            // megnezem hogy az igenyelt mennyiseg kevesebb-e mint amennyi van a raktarban
+                            if (igeny.Quantity > db)
+                            {
+                                if (!hianyoznak.ContainsKey(arunev)) // ha nincs meg benne hozzaadjuk
+                                {
+                                    hianyoznak.Add(keresettAru.Arucikknev, igeny.Quantity);
+                                }
+                                //MessageBox.Show(hianyoznak.Keys.First());
+                            }
+                        }
+                    }
+                }
+                return hianyoznak;
+                
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                return new Dictionary<string, int>();
+            }
+        }
     }
     public class AlkatreszViewModel
     {

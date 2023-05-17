@@ -71,15 +71,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.hianyzoAlkatreszekPanel = new System.Windows.Forms.Panel();
             this.hianyzoListView = new System.Windows.Forms.ListView();
-            this.p_id = new System.Windows.Forms.ColumnHeader();
             this.alk_nev = new System.Windows.Forms.ColumnHeader();
             this.hianyzo_db = new System.Windows.Forms.ColumnHeader();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.hianyzoLefoglaltPanel = new System.Windows.Forms.Panel();
             this.hianyzoLefoglaltListView = new System.Windows.Forms.ListView();
-            this.alk_h_megn = new System.Windows.Forms.ColumnHeader();
-            this.hiany_H_menny = new System.Windows.Forms.ColumnHeader();
+            this.alk_h_megnevezes = new System.Windows.Forms.ColumnHeader();
+            this.hiany_H_mennyi = new System.Windows.Forms.ColumnHeader();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.raktarvezetoMenu.SuspendLayout();
@@ -150,14 +149,14 @@
             // 
             this.hianyzikMenu.Name = "hianyzikMenu";
             this.hianyzikMenu.Size = new System.Drawing.Size(221, 22);
-            this.hianyzikMenu.Text = "hiányzó alkatrészek";
+            this.hianyzikMenu.Text = "hiányzó lefoglalt alkatrészek";
             this.hianyzikMenu.Click += new System.EventHandler(this.hianyzikMenu_Click);
             // 
             // hiányzóLefoglaltAlkatrészekToolStripMenuItem
             // 
             this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Name = "hiányzóLefoglaltAlkatrészekToolStripMenuItem";
             this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Text = "hiányzó lefoglalt alkatrészek";
+            this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Text = "hiányzó alkatrészek";
             this.hiányzóLefoglaltAlkatrészekToolStripMenuItem.Click += new System.EventHandler(this.hiányzóLefoglaltAlkatrészekToolStripMenuItem_Click);
             // 
             // raktarMenu
@@ -585,7 +584,6 @@
             // hianyzoListView
             // 
             this.hianyzoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.p_id,
             this.alk_nev,
             this.hianyzo_db});
             this.hianyzoListView.Location = new System.Drawing.Point(11, 51);
@@ -595,11 +593,6 @@
             this.hianyzoListView.TabIndex = 16;
             this.hianyzoListView.UseCompatibleStateImageBehavior = false;
             this.hianyzoListView.View = System.Windows.Forms.View.Details;
-            // 
-            // p_id
-            // 
-            this.p_id.Text = "Projekt_ID";
-            this.p_id.Width = 100;
             // 
             // alk_nev
             // 
@@ -630,9 +623,9 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(11, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(397, 37);
+            this.label9.Size = new System.Drawing.Size(520, 37);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Hiányzó alkatrészek listázása:";
+            this.label9.Text = "Hiányzó, lefoglalt alkatrészek listázása:";
             // 
             // hianyzoLefoglaltPanel
             // 
@@ -648,25 +641,24 @@
             // hianyzoLefoglaltListView
             // 
             this.hianyzoLefoglaltListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.alk_h_megn,
-            this.hiany_H_menny});
-            this.hianyzoLefoglaltListView.Location = new System.Drawing.Point(11, 51);
+            this.alk_h_megnevezes,
+            this.hiany_H_mennyi});
+            this.hianyzoLefoglaltListView.Location = new System.Drawing.Point(34, 53);
             this.hianyzoLefoglaltListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hianyzoLefoglaltListView.Name = "hianyzoLefoglaltListView";
-            this.hianyzoLefoglaltListView.Size = new System.Drawing.Size(448, 242);
+            this.hianyzoLefoglaltListView.Size = new System.Drawing.Size(508, 242);
             this.hianyzoLefoglaltListView.TabIndex = 16;
             this.hianyzoLefoglaltListView.UseCompatibleStateImageBehavior = false;
             this.hianyzoLefoglaltListView.View = System.Windows.Forms.View.Details;
             // 
-            // alk_h_megn
+            // alk_h_megnevezes
             // 
-            this.alk_h_megn.Text = "Alkatrész megnevezése";
-            this.alk_h_megn.Width = 250;
+            this.alk_h_megnevezes.Text = "Alkatrész neve";
+            this.alk_h_megnevezes.Width = 150;
             // 
-            // hiany_H_menny
+            // hiany_H_mennyi
             // 
-            this.hiany_H_menny.Text = "Hiányzó mennyiség";
-            this.hiany_H_menny.Width = 150;
+            this.hiany_H_mennyi.Text = "Hiányzó mennyiség";
             // 
             // label11
             // 
@@ -687,9 +679,9 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label12.Location = new System.Drawing.Point(11, 14);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(624, 37);
+            this.label12.Size = new System.Drawing.Size(397, 37);
             this.label12.TabIndex = 10;
-            this.label12.Text = "Hiányzó, de már lefoglalt  alkatrészek listázása:";
+            this.label12.Text = "Hiányzó alkatrészek listázása:";
             // 
             // Raktárvezető
             // 
@@ -768,15 +760,13 @@
         private Label label10;
         private Panel hianyzoAlkatreszekPanel;
         private ListView hianyzoListView;
-        private ColumnHeader p_id;
         private ColumnHeader alk_nev;
         private ColumnHeader hianyzo_db;
         private Label label8;
         private Label label9;
         private Panel hianyzoLefoglaltPanel;
         private ListView hianyzoLefoglaltListView;
-        private ColumnHeader alk_h_megn;
-        private ColumnHeader hiany_H_menny;
+        private ColumnHeader alk_h_megnevezes;
         private Label label11;
         private Label label12;
         private ToolStripMenuItem hiányzóLefoglaltAlkatrészekToolStripMenuItem;
@@ -787,5 +777,6 @@
         private NumericUpDown levelNumber;
         private NumericUpDown columnNumber;
         private NumericUpDown rowNumber;
+        private ColumnHeader hiany_H_mennyi;
     }
 }
