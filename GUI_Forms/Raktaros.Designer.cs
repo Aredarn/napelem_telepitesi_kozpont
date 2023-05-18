@@ -108,7 +108,7 @@
             // projektekListázásaToolStripMenuItem
             // 
             projektekListázásaToolStripMenuItem.Name = "projektekListázásaToolStripMenuItem";
-            projektekListázásaToolStripMenuItem.Size = new Size(169, 22);
+            projektekListázásaToolStripMenuItem.Size = new Size(180, 22);
             projektekListázásaToolStripMenuItem.Text = "projektek listázása";
             projektekListázásaToolStripMenuItem.Click += projektekListázásaToolStripMenuItem_Click;
             // 
@@ -359,6 +359,7 @@
             projektIDUtvonalComboBox.Name = "projektIDUtvonalComboBox";
             projektIDUtvonalComboBox.Size = new Size(67, 23);
             projektIDUtvonalComboBox.TabIndex = 3;
+            projektIDUtvonalComboBox.SelectedIndexChanged += projektIDUtvonalComboBox_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -388,11 +389,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1224, 671);
-            Controls.Add(projektListaPanel);
             Controls.Add(buttonLoginRaktaros);
             Controls.Add(raktarosMenu);
             Controls.Add(utvonalPanel);
             Controls.Add(projektAlkatreszPanel);
+            Controls.Add(projektListaPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = raktarosMenu;
             Margin = new Padding(3, 2, 3, 2);

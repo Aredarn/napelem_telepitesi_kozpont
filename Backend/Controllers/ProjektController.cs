@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Mysqlx.Crud;
 using napelem_telepito_kozpont.Backend.DatabaseConnection;
 using napelem_telepito_kozpont.Backend.Modells_Tables;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -161,6 +162,45 @@ namespace napelem_telepito_kozpont.Backend.Controllers
                 MessageBox.Show(exception.Message);
             }
         }
+        public List<ProjektViewModel3> helyszinekLista(int projektID)
+        {
+            try
+            {
+                NapelemDbContext context = new();
+
+                List<ProjektViewModel3> arucikkek = context.Projekt
+                    .Where(pa => pa.ProjectID == projektID)
+                    .Join(context.ProjektekArucikkhez,
+                          projektekArucikkhez => projektekArucikkhez.ProjectID,
+                          projekt => projekt.ProjectID,
+                          (projekt, projektekArucikkhez) => new {
+                              projekt.helyszin,
+                              projektekArucikkhez.ArucikkID
+                          })
+                    .Join(context.Arucikk,
+                          result => result.ArucikkID,
+                          arucikk => arucikk.ArucikkID,
+                          (result, arucikk) => new {
+                              result.helyszin,
+                              arucikk.ArucikkID,
+                              arucikk.Arucikknev
+                          })
+                    .Select(result => new ProjektViewModel3
+                    {
+                        Sorrend = result.ArucikkID,
+                        AlkatreszHely = result.helyszin.ToString(),
+                        AlkatreszNev = result.Arucikknev.ToString(),
+                    }).ToList();
+
+                return arucikkek;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+
+                return new List<ProjektViewModel3>();
+            }
+        }
     }
     public class ProjektViewModel
     {
@@ -179,5 +219,11 @@ namespace napelem_telepito_kozpont.Backend.Controllers
         public string Helyszin { get; set; }
         public string Leiras { get; set; }
         public string Statusz { get; set; }
+    }
+    public class ProjektViewModel3
+    {
+        public int Sorrend { get; set; }
+        public string AlkatreszHely { get; set; }
+        public string AlkatreszNev { get; set; }
     }
 }

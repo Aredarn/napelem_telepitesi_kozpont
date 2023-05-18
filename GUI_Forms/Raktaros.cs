@@ -50,6 +50,7 @@ namespace napelem_telepito_kozpont.GUI_Forms
 
             projektIDCombobox.Items.Clear();
             projektListaListView.Items.Clear();
+            projektIDUtvonalComboBox.Items.Clear();
 
             foreach (var projekt in projektek)
             {
@@ -63,9 +64,12 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 projektListaListView.Items.Add(listViewItem);
 
                 projektIDCombobox.Items.Add(projekt.ProjektID);
+
+                projektIDUtvonalComboBox.Items.Add(projekt.ProjektID);
             }
 
             projektIDCombobox.SelectedIndex = 0;
+            projektIDUtvonalComboBox.SelectedIndex = 0;
         }
 
         private void projektekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,6 +90,8 @@ namespace napelem_telepito_kozpont.GUI_Forms
         {
             mindLathatatlan();
             utvonalPanel.Visible = true;
+
+            lista();
         }
 
         private void projektIDAlkatreszComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,6 +170,39 @@ namespace napelem_telepito_kozpont.GUI_Forms
                 projektController.projektStatuszValtoztatasa(int.Parse(projectID), "InProgress");
 
                 lista();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void projektIDUtvonalComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ProjektController projektController = new();
+
+                if (projektIDUtvonalComboBox.SelectedIndex == -1)
+                {
+                    throw new Exception("Nincs kijelölve ID!");
+                }
+
+                string projectID = projektIDUtvonalComboBox.SelectedItem.ToString() ?? "0";
+
+                List<ProjektViewModel3> helyszinek = projektController.helyszinekLista(int.Parse(projectID));
+
+                utvonalListView.Items.Clear();
+
+                foreach (var helyszin in helyszinek)
+                {
+                    var listViewItem = new ListViewItem(helyszin.Sorrend.ToString());
+                    listViewItem.SubItems.Add(helyszin.AlkatreszHely);
+                    listViewItem.SubItems.Add(helyszin.AlkatreszNev.ToString());
+
+                    utvonalListView.Items.Add(listViewItem);
+                }
+
             }
             catch (Exception exception)
             {
